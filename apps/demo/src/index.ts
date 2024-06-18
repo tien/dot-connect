@@ -24,9 +24,8 @@ const wallets = [
   }),
 ];
 
-await Promise.all([
-  initializeWallets(wallets),
-  registerDotConnect({
-    wallets,
-  }),
-]);
+registerDotConnect({
+  wallets,
+});
+
+await initializeWallets(wallets);
