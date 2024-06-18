@@ -1,0 +1,22 @@
+{
+  "name": "dot-connect-monorepo",
+  "private": true,
+  "version": "0.0.0",
+  "license": "LGPL-3.0-or-later",
+  "type": "module",
+  "packageManager": "yarn@4.3.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "nx run-many -t dev",
+    "build": "nx run-many -t build",
+    "lint": "nx run-many -t lint"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "nx": "^19.3.0",
+    "prettier": "^3.3.2"
+  }
+}

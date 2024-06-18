@@ -1,0 +1,9 @@
+{
+  "extends": ["@tsconfig/recommended", "@tsconfig/strictest"],
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext"
+  },
+  "include": ["src"]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "dot-connect",
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./build/index.js",
+    "./font.css": "./src/fonts.css"
+  },
+  "files": [
+    "build",
+    "src/fonts.css"
+  ],
+  "scripts": {
+    "dev": "tsc --build --watch",
+    "build": "rm -rf build && tsc --build",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "@lit-labs/preact-signals": "^1.0.2",
+    "lit": "^3.1.4",
+    "qrcode": "^1.5.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.5.0",
+    "@reactive-dot/core": "0.0.0-snapshot.d262fa9",
+    "@tsconfig/recommended": "^1.0.6",
+    "@tsconfig/strictest": "^2.0.5",
+    "@types/eslint__js": "^8.42.3",
+    "@types/qrcode": "^1.5.5",
+    "eslint": "^9.5.0",
+    "polkadot-api": "^0.9.0",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.13.0"
+  },
+  "peerDependencies": {
+    "@reactive-dot/core": "*"
+  }
+}
