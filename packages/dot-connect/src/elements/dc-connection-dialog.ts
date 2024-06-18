@@ -222,14 +222,19 @@ export class DownloadableWallet extends DotConnectElement {
       return;
     }
 
+    const isMobile =
+      this.#downloadUrl.platform === "android" ||
+      this.#downloadUrl.platform === "ios";
+
     return html`<a
       style="display: content; text-decoration: none;"
-      href=${this.#downloadUrl}
+      href=${this.#downloadUrl.url}
       target="_blank"
       ><dc-list-item id="list-item" .clickable=${true}>
         <div slot="leading">${this.wallet.logo}</div>
         <span slot="headline">${this.wallet.name}</span>
-        <span slot="supporting">Not installed</span>
+        <!-- No way to detect wether or not wallet is installed on mobile browser -->
+        ${isMobile ? "" : html`<span slot="supporting">Not installed</span>`}
         <div id="hover-icon" slot="trailing">
           ${downloadIcon({ size: "100%" })}
         </div>

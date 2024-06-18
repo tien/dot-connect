@@ -36,7 +36,7 @@ export const getDownloadUrl = (walletInfo: InjectedWalletInfo) => {
   }
 
   if (typeof walletInfo.downloadUrl === "string") {
-    return walletInfo.downloadUrl;
+    return { platform: undefined, url: walletInfo.downloadUrl };
   }
 
   const urls = walletInfo.downloadUrl;
@@ -47,5 +47,11 @@ export const getDownloadUrl = (walletInfo: InjectedWalletInfo) => {
         urls[platform]
       : undefined;
 
-  return exactUrl ?? ("default" in urls ? urls.default : undefined);
+  const url = exactUrl ?? ("default" in urls ? urls.default : undefined);
+
+  if (url === undefined) {
+    return undefined;
+  }
+
+  return { platform, url };
 };
