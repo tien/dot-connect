@@ -2701,9 +2701,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dot-connect-example@workspace:apps/example":
+"dot-connect-demo@workspace:apps/demo":
   version: 0.0.0-use.local
-  resolution: "dot-connect-example@workspace:apps/example"
+  resolution: "dot-connect-demo@workspace:apps/demo"
   dependencies:
     "@eslint/js": "npm:^9.5.0"
     "@reactive-dot/core": "npm:0.0.0-snapshot.a7586c0"
