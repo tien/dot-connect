@@ -12,7 +12,7 @@ const wallets = [
     projectId: "6089356d0a4448aeda421a025cc286c9",
     providerOptions: {
       metadata: {
-        name: "DOT Connect example",
+        name: "DOT Connect demo",
         description: "Simple App showcasing DOT Connect",
         url: globalThis.location.origin,
         icons: ["https://walletconnect.com/walletconnect-logo.png"],
