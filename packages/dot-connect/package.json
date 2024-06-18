@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.5.0",
-    "@reactive-dot/core": "0.0.0-snapshot.d262fa9",
+    "@reactive-dot/core": "0.0.0-snapshot.a7586c0",
     "@tsconfig/recommended": "^1.0.6",
     "@tsconfig/strictest": "^2.0.5",
     "@types/eslint__js": "^8.42.3",

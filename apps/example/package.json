@@ -10,7 +10,7 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "@reactive-dot/core": "0.0.0-snapshot.d262fa9",
+    "@reactive-dot/core": "0.0.0-snapshot.a7586c0",
     "@walletconnect/modal": "^2.6.2",
     "@walletconnect/universal-provider": "^2.13.3",
     "dot-connect": "workspace:^"
