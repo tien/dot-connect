@@ -71,7 +71,7 @@ export default class QrCode extends DotConnectElement {
 
   protected override render() {
     return html`
-      <div id="container" style=${styleMap({ padding: this.#padding })}>
+      <div id="container" style=${styleMap({ padding: `${this.#padding}px` })}>
         <div id="qr-code-container">
           <div id="logo-container">
             ${this.logoSrc === undefined
@@ -79,8 +79,8 @@ export default class QrCode extends DotConnectElement {
               : html`<img
                   src=${this.logoSrc}
                   style=${styleMap({
-                    width: this.logoSize,
-                    height: this.logoSize,
+                    width: `${this.logoSize}px`,
+                    height: `${this.logoSize}px`,
                   })}
                 />`}
           </div>
