@@ -5,32 +5,11 @@ import type {
 } from "./types.js";
 import { wallets as rawWalletConfigs } from "./wallets/index.js";
 import { computed, signal } from "@lit-labs/preact-signals";
-import {
-  InjectedAggregator,
-  Wallet,
-  WalletAggregator,
-  WalletConnect,
-} from "@reactive-dot/core/wallets.js";
+import { Wallet, WalletAggregator } from "@reactive-dot/core/wallets.js";
 import { Observable, combineLatest } from "rxjs";
 import { map, switchMap } from "rxjs/operators";
 
-export const walletsOrAggregators = signal<SupportedWalletOrAggregator[]>([
-  new InjectedAggregator(),
-  new WalletConnect({
-    projectId: "68f5b7e972a51cf379b127f51a791c34",
-    providerOptions: {
-      metadata: {
-        name: "DOT Connect example",
-        description: "Simple App showcasing DOT Connect",
-        url: globalThis.location.origin,
-        icons: ["https://walletconnect.com/walletconnect-logo.png"],
-      },
-    },
-    chainIds: [
-      "polkadot:91b171bb158e2d3848fa23a9f1c25182", // Polkadot
-    ],
-  }),
-]);
+export const walletsOrAggregators = signal<SupportedWalletOrAggregator[]>([]);
 
 const directWallets = computed(() =>
   walletsOrAggregators.value.filter(
