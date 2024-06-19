@@ -7,44 +7,49 @@ export const subWallet: WalletConfig<InjectedWalletInfo> = {
   name: "SubWallet",
   platforms: ["chrome", "firefox", "ios", "android"],
   logo: html`<svg
-    width="100%"
-    height="100%"
-    viewBox="0 0 40 40"
+    viewBox="0 0 704 704"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path
-      d="M20 0C35.1658 0 40 4.83421 40 20C40 35.1658 35.1658 40 20 40C4.83421 40 0 35.1658 0 20C0 4.83421 4.83421 0 20 0Z"
-      fill="url(#paint0_linear_16261_2233)"
-    />
-    <g clip-path="url(#clip0_16261_2233)">
-      <path
-        d="M28.583 16.5052V12.9995L14.4104 7.36841L11.5789 8.79261L11.5939 19.7042L22.1971 23.933L16.5341 26.3213V24.4744L13.9342 23.429L11.5939 24.5246L11.5939 31.2074L14.4129 32.6316L28.583 26.2993V21.8076L15.8299 16.7517V13.6842L25.9482 17.6884L28.583 16.5052Z"
-        fill="white"
+    <g clip-path="url(#clip0_362_8013)">
+      <rect
+        width="704"
+        height="704"
+        rx="48"
+        fill="url(#paint0_linear_362_8013)"
       />
+      <g clip-path="url(#clip1_362_8013)">
+        <path
+          d="M512 285.599V218.99L245.286 112L192 139.06L192.281 346.38L391.824 426.727L285.251 472.104V437.013L236.324 417.152L192.281 437.967L192.281 564.94L245.333 592L512 471.688V386.345L272 290.283V232L462.417 308.08L512 285.599Z"
+          fill="white"
+        />
+      </g>
     </g>
     <defs>
       <linearGradient
-        id="paint0_linear_16261_2233"
-        x1="20"
+        id="paint0_linear_362_8013"
+        x1="352"
         y1="0"
-        x2="20"
-        y2="40"
+        x2="352"
+        y2="704"
         gradientUnits="userSpaceOnUse"
       >
         <stop stop-color="#004BFF" />
         <stop offset="1" stop-color="#4CEAAC" />
       </linearGradient>
-      <clipPath id="clip0_16261_2233">
+      <clipPath id="clip0_362_8013">
+        <rect width="704" height="704" rx="16" fill="white" />
+      </clipPath>
+      <clipPath id="clip1_362_8013">
         <rect
-          width="17.004"
-          height="25.2632"
+          width="320"
+          height="480"
           fill="white"
-          transform="translate(11.5789 7.36841)"
+          transform="translate(192 112)"
         />
       </clipPath>
     </defs>
-  </svg>`,
+  </svg> `,
   downloadUrl: {
     chrome:
       "https://chrome.google.com/webstore/detail/subwallet-polkadot-extens/onhogfjeacnfoofkfgppdlbmlmnplgbn",
