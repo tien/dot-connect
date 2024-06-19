@@ -19,8 +19,10 @@ export default class Dialog extends DotConnectElement {
             min-width: 20rem;
           }
 
-          border: none;
+          box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.32);
+          border: 1px solid rgba(255, 255, 255, 0.08);
           border-radius: 1.5rem;
+          background-color: var(--surface-color);
           padding: 1.2rem;
 
           opacity: 0;

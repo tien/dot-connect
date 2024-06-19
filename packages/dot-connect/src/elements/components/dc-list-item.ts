@@ -17,7 +17,7 @@ export default class ListItem extends DotConnectElement {
           "leading supporting trailing";
         grid-template-columns: min-content 1fr min-content;
         align-items: center;
-        gap: 0 0.5rem;
+        gap: 0 0.75rem;
 
         border-radius: 1rem;
         padding: 0.5rem;

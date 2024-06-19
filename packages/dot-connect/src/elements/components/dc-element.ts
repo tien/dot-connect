@@ -12,11 +12,11 @@ export default abstract class DotConnectElement extends SignalWatcher(
       --primary-color: var(--dc-primary-color, #e6007a);
       --on-primary-color: var(--dc-on-primary-color, white);
 
-      --secondary-color: var(--dc-secondary-color, #552bbf);
+      --secondary-color: var(--dc-secondary-color, #000523);
       --on-secondary-color: var(--dc-on-secondary-color, white);
 
-      --surface-color: var(--dc-surface-color, white);
-      --on-surface-color: var(--dc-on-surface-color, black);
+      --surface-color: var(--dc-surface-color, light-dark(white, #1a1b1f));
+      --on-surface-color: var(--dc-on-surface-color, light-dark(black, white));
 
       --info-color: var(--dc-info-color, #0e76fd);
       --success-color: var(--dc-success-color, #1db847);

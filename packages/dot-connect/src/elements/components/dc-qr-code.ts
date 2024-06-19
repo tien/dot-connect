@@ -139,7 +139,6 @@ export default class QrCode extends DotConnectElement {
       for (let i = 0; i < 3; i++) {
         dots.push(
           svg`<rect
-            fill=${i % 2 !== 0 ? "white" : "black"}
             height=${cellSize * (7 - i * 2)}
             key=${`${i}-${x}-${y}`}
             rx=${(i - 2) * -5 + (i === 0 ? 2 : 0)}
@@ -147,6 +146,12 @@ export default class QrCode extends DotConnectElement {
             width=${cellSize * (7 - i * 2)}
             x=${x1 + cellSize * i}
             y=${y1 + cellSize * i}
+            style=${styleMap({
+              fill:
+                i % 2 !== 0
+                  ? "var(--surface-color)"
+                  : "var(--on-surface-color)",
+            })}
           />`,
         );
       }
@@ -178,9 +183,11 @@ export default class QrCode extends DotConnectElement {
                 svg`<circle
                   cx=${outerIndex * cellSize + cellSize / 2}
                   cy=${innerIndex * cellSize + cellSize / 2}
-                  fill="black"
                   key="circle-${outerIndex}-${innerIndex}"
                   r=${cellSize / 3}
+                  style=${styleMap({
+                    fill: "var(--on-surface-color)",
+                  })}
                 />`,
               );
             }
