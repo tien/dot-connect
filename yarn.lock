@@ -1170,10 +1170,35 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@reactive-dot/core@npm:0.0.0-snapshot.c85358d":
+  version: 0.0.0-snapshot.c85358d
+  resolution: "@reactive-dot/core@npm:0.0.0-snapshot.c85358d"
+  dependencies:
+    "@reactive-dot/utils": "npm:0.0.0-snapshot.c85358d"
+  peerDependencies:
+    "@walletconnect/modal": 2.x
+    "@walletconnect/universal-provider": 2.x
+    polkadot-api: ^0.9.0
+  peerDependenciesMeta:
+    "@walletconnect/modal":
+      optional: true
+    "@walletconnect/universal-provider":
+      optional: true
+  checksum: 10c0/bd6c9d3c1c37683f18c49374f9625dd9f67b2d57c7f18b24d418cb3d6739c3525f6da70f21fbefd4980d911fd93010f6edc90e2631e4930945bfe78d0cefecea
+  languageName: node
+  linkType: hard
+
 "@reactive-dot/utils@npm:0.0.0-snapshot.a7586c0":
   version: 0.0.0-snapshot.a7586c0
   resolution: "@reactive-dot/utils@npm:0.0.0-snapshot.a7586c0"
   checksum: 10c0/0b7c96b7570210821e4c13c0dbee87e2b053ec82b80076c5316ab21bbc2d1bf3e930ab47d430a67a99b30ad80254c3f08f47b0396b4a8877dda152b52a1ef4bd
+  languageName: node
+  linkType: hard
+
+"@reactive-dot/utils@npm:0.0.0-snapshot.c85358d":
+  version: 0.0.0-snapshot.c85358d
+  resolution: "@reactive-dot/utils@npm:0.0.0-snapshot.c85358d"
+  checksum: 10c0/0f1fb2dd80f765af8a9d989a8d2b400d4f30486f18bd4506c087e38f2b910de5f3cbd3c9479185db1817cc244d4134a684d23ccda1538802e6cd34c2e393f5ba
   languageName: node
   linkType: hard
 
@@ -2706,7 +2731,7 @@ __metadata:
   resolution: "dot-connect-demo@workspace:apps/demo"
   dependencies:
     "@eslint/js": "npm:^9.5.0"
-    "@reactive-dot/core": "npm:0.0.0-snapshot.a7586c0"
+    "@reactive-dot/core": "npm:0.0.0-snapshot.c85358d"
     "@tsconfig/recommended": "npm:^1.0.6"
     "@tsconfig/strictest": "npm:^2.0.5"
     "@types/eslint__js": "npm:^8.42.3"
