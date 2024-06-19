@@ -51,14 +51,27 @@ export class InjectedWalletConnection extends DotConnectElement {
     this.#connectedWallets.value.includes(this.wallet),
   );
 
+  readonly #pending = signal(false);
+
   protected override render() {
     return html`<dc-list-item
       id="list-item"
-      .clickable=${true}
-      @click=${() =>
-        this.#connected.value
-          ? disconnectWallet(this.wallet)
-          : connectWallet(this.wallet)}
+      ?clickable=${true}
+      @click=${async () => {
+        if (this.#pending.value) {
+          return;
+        }
+
+        try {
+          this.#pending.value = true;
+          this.#connected.value
+            ? await disconnectWallet(this.wallet)
+            : await connectWallet(this.wallet);
+        } finally {
+          this.#pending.value = false;
+        }
+      }}
+      ?pending=${this.#pending.value}
     >
       <div slot="leading">
         ${this.walletInfo?.logo ?? walletIcon({ size: "100%" })}
@@ -115,7 +128,7 @@ export class DeepLinkWalletConnection extends DotConnectElement {
 
   readonly #uri = signal<string | undefined>(undefined);
 
-  readonly #connecting = signal(false);
+  readonly #pending = signal(false);
 
   constructor() {
     super();
@@ -133,12 +146,12 @@ export class DeepLinkWalletConnection extends DotConnectElement {
         id="list-item"
         ?clickable=${true}
         @click=${async () => {
-          if (this.#connecting.value) {
+          if (this.#pending.value) {
             return;
           }
 
-          this.#connecting.value = true;
           try {
+            this.#pending.value = true;
             if (this.#connected.value) {
               disconnectWallet(this.wallet);
             } else {
@@ -146,10 +159,10 @@ export class DeepLinkWalletConnection extends DotConnectElement {
               this.#uri.value = uri;
             }
           } finally {
-            this.#connecting.value = false;
+            this.#pending.value = false;
           }
         }}
-        ?pending=${this.#connecting.value}
+        ?pending=${this.#pending.value}
       >
         <div slot="leading">
           ${this.#walletInfo?.logo ?? walletIcon({ size: "100%" })}
