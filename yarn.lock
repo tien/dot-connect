@@ -1152,11 +1152,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@reactive-dot/core@npm:0.0.0-snapshot.c85358d":
-  version: 0.0.0-snapshot.c85358d
-  resolution: "@reactive-dot/core@npm:0.0.0-snapshot.c85358d"
+"@reactive-dot/core@npm:0.0.0-snapshot.9492c24":
+  version: 0.0.0-snapshot.9492c24
+  resolution: "@reactive-dot/core@npm:0.0.0-snapshot.9492c24"
   dependencies:
-    "@reactive-dot/utils": "npm:0.0.0-snapshot.c85358d"
+    "@reactive-dot/utils": "npm:0.0.0-snapshot.9492c24"
   peerDependencies:
     "@walletconnect/modal": 2.x
     "@walletconnect/universal-provider": 2.x
@@ -1166,14 +1166,14 @@ __metadata:
       optional: true
     "@walletconnect/universal-provider":
       optional: true
-  checksum: 10c0/bd6c9d3c1c37683f18c49374f9625dd9f67b2d57c7f18b24d418cb3d6739c3525f6da70f21fbefd4980d911fd93010f6edc90e2631e4930945bfe78d0cefecea
+  checksum: 10c0/4ff945afe25e77dbece5d5a48196b6e08b36e8d1471d9ce926d5b771c01ce37600408b007d6ba4119d7110090c1687ea12eba6caae7952160cd2fb818591a74e
   languageName: node
   linkType: hard
 
-"@reactive-dot/utils@npm:0.0.0-snapshot.c85358d":
-  version: 0.0.0-snapshot.c85358d
-  resolution: "@reactive-dot/utils@npm:0.0.0-snapshot.c85358d"
-  checksum: 10c0/0f1fb2dd80f765af8a9d989a8d2b400d4f30486f18bd4506c087e38f2b910de5f3cbd3c9479185db1817cc244d4134a684d23ccda1538802e6cd34c2e393f5ba
+"@reactive-dot/utils@npm:0.0.0-snapshot.9492c24":
+  version: 0.0.0-snapshot.9492c24
+  resolution: "@reactive-dot/utils@npm:0.0.0-snapshot.9492c24"
+  checksum: 10c0/8cabd6b8c256664e371baa6b2493b3d520be479a6037bff6df4d99fd338a696380c0c98048008984dcc04ffdba73a6d223c60c3bce36e029eff4233149444b89
   languageName: node
   linkType: hard
 
@@ -2706,7 +2706,7 @@ __metadata:
   resolution: "dot-connect-demo@workspace:apps/demo"
   dependencies:
     "@eslint/js": "npm:^9.5.0"
-    "@reactive-dot/core": "npm:0.0.0-snapshot.c85358d"
+    "@reactive-dot/core": "npm:0.0.0-snapshot.9492c24"
     "@tsconfig/recommended": "npm:^1.0.6"
     "@tsconfig/strictest": "npm:^2.0.5"
     "@types/eslint__js": "npm:^8.42.3"
@@ -2736,7 +2736,7 @@ __metadata:
   dependencies:
     "@eslint/js": "npm:^9.5.0"
     "@lit-labs/preact-signals": "npm:^1.0.2"
-    "@reactive-dot/core": "npm:0.0.0-snapshot.c85358d"
+    "@reactive-dot/core": "npm:0.0.0-snapshot.9492c24"
     "@tsconfig/recommended": "npm:^1.0.6"
     "@tsconfig/strictest": "npm:^2.0.5"
     "@types/eslint__js": "npm:^8.42.3"
