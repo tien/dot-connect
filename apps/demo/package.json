@@ -10,7 +10,7 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "@reactive-dot/core": "0.0.0-snapshot.9492c24",
+    "@reactive-dot/core": "0.0.0-snapshot.78cc1a2",
     "@walletconnect/modal": "^2.6.2",
     "@walletconnect/universal-provider": "^2.13.3",
     "dot-connect": "workspace:^"
@@ -21,8 +21,8 @@
     "@tsconfig/strictest": "^2.0.5",
     "@types/eslint__js": "^8.42.3",
     "eslint": "^9.5.0",
-    "typescript": "^5.4.5",
-    "typescript-eslint": "^7.13.0",
+    "typescript": "^5.5.2",
+    "typescript-eslint": "^7.14.1",
     "vite": "^5.3.1"
   }
 }
