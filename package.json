@@ -4,7 +4,11 @@
   "version": "0.0.0",
   "license": "LGPL-3.0-or-later",
   "type": "module",
-  "packageManager": "yarn@4.3.0",
+  "packageManager": "yarn@4.3.1",
+  "volta": {
+    "node": "20.15.0",
+    "yarn": "4.3.1"
+  },
   "workspaces": [
     "apps/*",
     "packages/*"
