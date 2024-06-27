@@ -169,6 +169,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@dot-connect/demo@workspace:apps/demo":
+  version: 0.0.0-use.local
+  resolution: "@dot-connect/demo@workspace:apps/demo"
+  dependencies:
+    "@eslint/js": "npm:^9.5.0"
+    "@reactive-dot/core": "npm:0.0.0-snapshot.78cc1a2"
+    "@tsconfig/recommended": "npm:^1.0.6"
+    "@tsconfig/strictest": "npm:^2.0.5"
+    "@types/eslint__js": "npm:^8.42.3"
+    "@walletconnect/modal": "npm:^2.6.2"
+    "@walletconnect/universal-provider": "npm:^2.13.3"
+    dot-connect: "workspace:^"
+    eslint: "npm:^9.5.0"
+    typescript: "npm:^5.5.2"
+    typescript-eslint: "npm:^7.14.1"
+    vite: "npm:^5.3.1"
+  languageName: unknown
+  linkType: soft
+
 "@esbuild/aix-ppc64@npm:0.21.5":
   version: 0.21.5
   resolution: "@esbuild/aix-ppc64@npm:0.21.5"
@@ -2700,35 +2719,6 @@ __metadata:
   checksum: 10c0/dcac00920a4d503e38bb64001acb19df4efc14536ada475725e12f52c16777afdee4db827f55f13a908ee7efc0cb282e2e3dbaeeb98c0993dd93d1802d3bf00c
   languageName: node
   linkType: hard
-
-"dot-connect-demo@workspace:apps/demo":
-  version: 0.0.0-use.local
-  resolution: "dot-connect-demo@workspace:apps/demo"
-  dependencies:
-    "@eslint/js": "npm:^9.5.0"
-    "@reactive-dot/core": "npm:0.0.0-snapshot.78cc1a2"
-    "@tsconfig/recommended": "npm:^1.0.6"
-    "@tsconfig/strictest": "npm:^2.0.5"
-    "@types/eslint__js": "npm:^8.42.3"
-    "@walletconnect/modal": "npm:^2.6.2"
-    "@walletconnect/universal-provider": "npm:^2.13.3"
-    dot-connect: "workspace:^"
-    eslint: "npm:^9.5.0"
-    typescript: "npm:^5.5.2"
-    typescript-eslint: "npm:^7.14.1"
-    vite: "npm:^5.3.1"
-  languageName: unknown
-  linkType: soft
-
-"dot-connect-monorepo@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "dot-connect-monorepo@workspace:."
-  dependencies:
-    "@trivago/prettier-plugin-sort-imports": "npm:^4.3.0"
-    nx: "npm:^19.3.2"
-    prettier: "npm:^3.3.2"
-  languageName: unknown
-  linkType: soft
 
 "dot-connect@workspace:^, dot-connect@workspace:packages/dot-connect":
   version: 0.0.0-use.local
@@ -5405,6 +5395,16 @@ __metadata:
   checksum: 10c0/7d0239f029c48d977e0d0b942433bed9ca187d2328b962fc815fc775d0fdf1966ffcd701fef265477e999a1fb01bddcc984fc675d1b9d9864bf8e1f1f487e23e
   languageName: node
   linkType: hard
+
+"root-workspace-0b6124@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "root-workspace-0b6124@workspace:."
+  dependencies:
+    "@trivago/prettier-plugin-sort-imports": "npm:^4.3.0"
+    nx: "npm:^19.3.2"
+    prettier: "npm:^3.3.2"
+  languageName: unknown
+  linkType: soft
 
 "run-parallel@npm:^1.1.9":
   version: 1.2.0
