@@ -41,7 +41,7 @@ import { registerDotConnect } from "dot-connect";
 // ...
 
 // More information on how to set up your config: https://reactivedot.dev/docs/getting-started/setup#create-config
-const config: Config = {
+const config = {
   // ...
   wallets: [
     new InjectedWalletAggregator(),
@@ -61,7 +61,7 @@ const config: Config = {
       ],
     }),
   ],
-};
+} as const satisfies Config;
 
 // Register dot-connect custom elements & configure supported wallets
 registerDotConnect({
