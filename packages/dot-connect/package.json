@@ -1,6 +1,24 @@
 {
   "name": "dot-connect",
   "version": "0.1.3",
+  "description": "Wallets connector for Substrate DApps",
+  "keywords": [
+    "front-end",
+    "substrate",
+    "polkadot"
+  ],
+  "homepage": "https://dotconnect.dev/",
+  "bugs": {
+    "url": "https://github.com/tien/dot-connect/issues",
+    "email": "tien.nguyenkhac@icloud.com"
+  },
+  "license": "LGPL-3.0-or-later",
+  "author": "Tiến Nguyễn Khắc <tien.nguyenkhac@icloud.com> (https://tien.zone/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tien/dot-connect.git",
+    "directory": "packages/dot-connect"
+  },
   "type": "module",
   "exports": {
     ".": "./build/index.js",
