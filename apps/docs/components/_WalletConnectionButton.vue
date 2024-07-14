@@ -1,11 +1,10 @@
-import "./index.css";
+<script lang="ts" type="module">
 import {
   InjectedWalletAggregator,
   WalletConnect,
   initializeWallets,
 } from "@reactive-dot/core/wallets.js";
 import { registerDotConnect } from "dot-connect";
-import "dot-connect/font.css";
 
 const wallets = [
   new InjectedWalletAggregator(),
@@ -29,4 +28,13 @@ registerDotConnect({
   wallets,
 });
 
-await initializeWallets(wallets);
+initializeWallets(wallets);
+
+export default {
+  setup() {},
+};
+</script>
+
+<template>
+  <dc-connection-button></dc-connection-button>
+</template>

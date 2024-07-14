@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  deploy-demo:
+  deploy-docs:
     runs-on: ubuntu-latest
 
     permissions:
@@ -15,11 +15,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
 
-      - run: yarn nx run @dot-connect/demo:build
+      - run: yarn nx run @dot-connect/docs:build
 
       - uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: dot-connect-demo
-          directory: apps/demo/dist
+          projectName: dot-connect
+          directory: apps/docs/.vitepress/dist
