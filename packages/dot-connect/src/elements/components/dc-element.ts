@@ -40,16 +40,17 @@ export default abstract class DotConnectElement extends SignalWatcher(
     }
 
     button {
+      color: var(--on-primary-color);
+      font-weight: 600;
       border: none;
       border-radius: min(999px, var(--max-border-radius));
       background-color: var(--primary-color);
-      padding: 0.5rem 1rem;
-      color: var(--on-primary-color);
+      padding: 0.8em 1.25rem;
       cursor: pointer;
       transition: scale 0.25s;
 
       &:hover {
-        scale: 1.025;
+        scale: 1.04;
       }
     }
 
