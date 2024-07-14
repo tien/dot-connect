@@ -1,5 +1,5 @@
 import { observableSignal } from "../observable-signal.js";
-import { wallets$ } from "../stores.js";
+import { connectedWallets$ } from "../stores.js";
 import DotConnectElement from "./components/dc-element.js";
 import "./dc-connection-dialog.js";
 import { signal } from "@lit-labs/preact-signals";
@@ -10,7 +10,7 @@ import { customElement } from "lit/decorators.js";
 export default class ConnectionButton extends DotConnectElement {
   readonly #dialogOpen = signal(false);
 
-  readonly #connectedWallets = observableSignal(this, wallets$, []);
+  readonly #connectedWallets = observableSignal(this, connectedWallets$, []);
 
   override render() {
     return html`<div>
@@ -19,7 +19,7 @@ export default class ConnectionButton extends DotConnectElement {
         @close=${() => (this.#dialogOpen.value = false)}
       ></dc-connection-dialog>
       <button @click=${() => (this.#dialogOpen.value = true)}>
-        ${this.#connectedWallets.value.length > 1
+        ${this.#connectedWallets.value.length > 0
           ? "Manage wallets"
           : "Connect wallets"}
       </button>
