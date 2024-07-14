@@ -140,6 +140,7 @@ form {
 }
 
 fieldset {
+  border: 1px solid var(--vp-c-divider);
   border-radius: 1rem;
 
   /* Bug with Vue or VitePress */
