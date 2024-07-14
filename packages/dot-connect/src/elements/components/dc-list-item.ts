@@ -19,7 +19,7 @@ export default class ListItem extends DotConnectElement {
         align-items: center;
         gap: 0 0.75rem;
 
-        border-radius: 1rem;
+        border-radius: min(1rem, var(--max-border-radius));
         padding: 0.5rem;
 
         transition: backdrop-filter 0.125s;

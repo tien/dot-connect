@@ -63,7 +63,7 @@ export default class QrCode extends DotConnectElement {
         img {
           margin: auto;
           border-color: rgba(0, 0, 0, 0.06);
-          border-radius: 1.2rem;
+          border-radius: min(1.2rem, var(--max-border-radius));
         }
       }
     `,

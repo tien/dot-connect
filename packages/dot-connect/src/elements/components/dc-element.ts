@@ -12,18 +12,19 @@ export default abstract class DotConnectElement extends SignalWatcher(
       --primary-color: var(--dc-primary-color, #e6007a);
       --on-primary-color: var(--dc-on-primary-color, white);
 
-      --secondary-color: var(--dc-secondary-color, #000523);
-      --on-secondary-color: var(--dc-on-secondary-color, white);
-
       --surface-color: var(--dc-surface-color, light-dark(white, #1a1b1f));
       --on-surface-color: var(--dc-on-surface-color, light-dark(black, white));
 
       --info-color: var(--dc-info-color, #0e76fd);
       --success-color: var(--dc-success-color, #1db847);
       --error-color: var(--dc-error-color, #ff494a);
+
+      --max-border-radius: var(--dc-max-border-radius, 999px);
     }
 
     :host {
+      all: initial;
+      color-scheme: inherit;
       font-family: var(--body-font-family), sans-serif;
       color: var(--on-surface-color);
     }
@@ -40,7 +41,7 @@ export default abstract class DotConnectElement extends SignalWatcher(
 
     button {
       border: none;
-      border-radius: 999px;
+      border-radius: min(999px, var(--max-border-radius));
       background-color: var(--primary-color);
       padding: 0.5rem 1rem;
       color: var(--on-primary-color);
