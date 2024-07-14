@@ -141,7 +141,9 @@ form {
 
 fieldset {
   border-radius: 1rem;
-  padding: 1rem;
+
+  /* Bug with Vue or VitePress */
+  padding: 1rem !important;
 
   @container (max-width: 60rem) {
     flex-basis: 100%;
