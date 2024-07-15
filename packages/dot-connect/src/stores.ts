@@ -5,9 +5,10 @@ import type {
 } from "./types.js";
 import { wallets as rawWalletConfigs } from "./wallets/index.js";
 import { computed, signal } from "@lit-labs/preact-signals";
+import { aggregateWallets, getConnectedWallets } from "@reactive-dot/core";
 import { Wallet, WalletAggregator } from "@reactive-dot/core/wallets.js";
 import { Observable, combineLatest } from "rxjs";
-import { map, switchMap } from "rxjs/operators";
+import { map } from "rxjs/operators";
 
 export const walletsOrAggregators = signal<SupportedWalletOrAggregator[]>([]);
 
@@ -33,23 +34,7 @@ const aggregators$ = new Observable<SupportedWalletAggregator[]>((subscriber) =>
   aggregators.subscribe(subscriber.next.bind(subscriber)),
 );
 
-const aggregatorWallets$ = aggregators$
-  .pipe(
-    switchMap((aggregators) =>
-      Promise.all(
-        aggregators.map(async (aggregator) => {
-          await aggregator.scan();
-          return aggregator;
-        }),
-      ),
-    ),
-  )
-  .pipe(
-    switchMap((aggregators) =>
-      combineLatest(aggregators.map((aggregator) => aggregator.wallets$)),
-    ),
-  )
-  .pipe(map((wallets) => wallets.flat()));
+const aggregatorWallets$ = aggregateWallets(aggregators$);
 
 export const wallets$ = combineLatest([
   directWallets$,
@@ -61,22 +46,6 @@ export const wallets$ = combineLatest([
   ]),
 );
 
-export const connectedWallets$ = wallets$
-  .pipe(
-    switchMap((wallets) =>
-      combineLatest(
-        wallets.map((wallet) =>
-          wallet.connected$.pipe(
-            map((connected) => [wallet, connected] as const),
-          ),
-        ),
-      ),
-    ),
-  )
-  .pipe(
-    map((wallets) =>
-      wallets.filter(([_, connected]) => connected).map(([wallet]) => wallet),
-    ),
-  );
+export const connectedWallets$ = getConnectedWallets(wallets$);
 
 export const walletConfigs = signal(rawWalletConfigs);
