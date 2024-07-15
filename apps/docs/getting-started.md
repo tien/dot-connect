@@ -28,7 +28,7 @@ pnpm add dot-connect
 
 Install any optional dependencies depending on the wallet types you want to support by following this [documentation](https://reactivedot.dev/docs/getting-started/connect-wallets#install-optional-dependencies).
 
-## Setup
+## Setup config
 
 ```ts
 import type { Config } from "@reactive-dot/core";
@@ -69,6 +69,18 @@ registerDotConnect({
 });
 
 export default config;
+```
+
+## Import required fonts
+
+```ts
+import "dot-connect/font.css";
+```
+
+Or
+
+```css
+@import "dot-connect/font.css";
 ```
 
 ## Usage
