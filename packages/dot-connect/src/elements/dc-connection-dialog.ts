@@ -347,8 +347,13 @@ export default class ConnectionDialog extends DotConnectElement {
 declare global {
   interface HTMLElementTagNameMap {
     "dc-connection-dialog": ConnectionDialog;
-    "dc-injected-wallet": InjectedWalletConnection;
-    "dc-downloadable-wallet": DownloadableWallet;
-    "dc-deep-link-wallet": DeepLinkWallet;
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-namespace
+  namespace JSX {
+    interface IntrinsicElements {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      "dc-connection-dialog": any;
+    }
   }
 }
