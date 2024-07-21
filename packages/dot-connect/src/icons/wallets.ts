@@ -5,7 +5,7 @@ const wallets = ({ size = 24 }: IconProps) =>
   html`<svg
     width=${size}
     height=${size}
-    viewBox="0 0 29 29"
+    viewBox="0 0 28 28"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     stroke-width="2"

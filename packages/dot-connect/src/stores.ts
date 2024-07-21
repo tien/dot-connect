@@ -5,7 +5,11 @@ import type {
 } from "./types.js";
 import { wallets as rawWalletConfigs } from "./wallets/index.js";
 import { computed, signal } from "@lit-labs/preact-signals";
-import { aggregateWallets, getConnectedWallets } from "@reactive-dot/core";
+import {
+  aggregateWallets,
+  getAccounts,
+  getConnectedWallets,
+} from "@reactive-dot/core";
 import { Wallet, WalletAggregator } from "@reactive-dot/core/wallets.js";
 import { Observable, combineLatest } from "rxjs";
 import { map } from "rxjs/operators";
@@ -47,5 +51,7 @@ export const wallets$ = combineLatest([
 );
 
 export const connectedWallets$ = getConnectedWallets(wallets$);
+
+export const accounts$ = getAccounts(wallets$);
 
 export const walletConfigs = signal(rawWalletConfigs);

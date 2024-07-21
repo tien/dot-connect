@@ -1,9 +1,10 @@
 import {
   wallets as walletsIcon,
   wallet as walletIcon,
+  users as usersIcon,
 } from "../icons/index.js";
 import { observableSignal } from "../observable-signal.js";
-import { connectedWallets$ } from "../stores.js";
+import { accounts$, connectedWallets$ } from "../stores.js";
 import DotConnectElement from "./components/dc-element.js";
 import "./dc-connection-dialog.js";
 import { signal } from "@lit-labs/preact-signals";
@@ -20,7 +21,10 @@ export default class ConnectionButton extends DotConnectElement {
       }
 
       .icon {
-        vertical-align: middle;
+        display: contents;
+        > * {
+          vertical-align: -0.125em;
+        }
       }
     `,
   ];
@@ -28,6 +32,8 @@ export default class ConnectionButton extends DotConnectElement {
   readonly #dialogOpen = signal(false);
 
   readonly #connectedWallets = observableSignal(this, connectedWallets$, []);
+
+  readonly #accounts = observableSignal(this, accounts$, []);
 
   override render() {
     return html`<div>
@@ -42,7 +48,9 @@ export default class ConnectionButton extends DotConnectElement {
                 >${this.#connectedWallets.value.length === 1
                   ? walletIcon({ size: "1em" })
                   : walletsIcon({ size: "1em" })}</span
-              >`
+              >
+              ${this.#accounts.value.length}
+              <span class="icon">${usersIcon({ size: "1em" })}</span>`
           : html`Connect
               <span class="icon">${walletsIcon({ size: "1em" })}</span>`}
       </button>
