@@ -41,7 +41,7 @@ import { registerDotConnect } from "dot-connect";
 // ...
 
 // More information on how to set up your config: https://reactivedot.dev/docs/getting-started/setup#create-config
-const config = {
+export const config = {
   // ...
   wallets: [
     new InjectedWalletAggregator(),
@@ -67,8 +67,6 @@ const config = {
 registerDotConnect({
   wallets: config.wallets,
 });
-
-export default config;
 ```
 
 ## Import required fonts
