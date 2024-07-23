@@ -1,5 +1,5 @@
 import { wallet as walletIcon } from "../../icons/index.js";
-import DotConnectElement from "./dc-element.js";
+import { DotConnectElement } from "./dc-element.js";
 import { TemplateResult, css, html, svg } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { styleMap } from "lit/directives/style-map.js";
@@ -10,7 +10,7 @@ import {
 } from "qrcode";
 
 @customElement("dc-qr-code")
-export default class QrCode extends DotConnectElement {
+export class QrCode extends DotConnectElement {
   @property()
   ecl: QRCodeErrorCorrectionLevel = "M";
 

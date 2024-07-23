@@ -1,12 +1,12 @@
 import "./dc-circular-progress-indicator.js";
-import DotConnectElement from "./dc-element.js";
+import { DotConnectElement } from "./dc-element.js";
 import { css, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 import { styleMap } from "lit/directives/style-map.js";
 
 @customElement("dc-list-item")
-export default class ListItem extends DotConnectElement {
+export class ListItem extends DotConnectElement {
   static override readonly styles = [
     super.styles,
     css`

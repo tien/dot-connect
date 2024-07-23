@@ -1,8 +1,8 @@
 import type { IconProps } from "./types.js";
 import { html } from "lit";
 
-const qrCode = ({ size = 24 }: IconProps) =>
-  html`<svg
+export function qrCode({ size = 24 }: IconProps) {
+  return html`<svg
     width=${size}
     height=${size}
     viewBox="0 0 28 29"
@@ -34,5 +34,4 @@ const qrCode = ({ size = 24 }: IconProps) =>
     <path d="M22.0002 16.375H16.0002V22.375H22.0002V16.375Z"></path>
     <path d="M12.0001 16.375H6.00012V22.375H12.0001V16.375Z"></path>
   </svg>`;
-
-export default qrCode;
+}

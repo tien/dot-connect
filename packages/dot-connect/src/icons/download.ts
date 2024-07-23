@@ -1,8 +1,8 @@
 import type { IconProps } from "./types.js";
 import { html } from "lit";
 
-const download = ({ size = 24 }: IconProps) =>
-  html`<svg
+export function download({ size = 24 }: IconProps) {
+  return html`<svg
     width=${size}
     height=${size}
     viewBox="0 0 28 28"
@@ -20,5 +20,4 @@ const download = ({ size = 24 }: IconProps) =>
       data-nofill="true"
     ></path>
   </svg>`;
-
-export default download;
+}

@@ -1,8 +1,8 @@
 import type { IconProps } from "./types.js";
 import { html } from "lit";
 
-const connected = ({ size = 24 }: IconProps) =>
-  html`<svg
+export function connected({ size = 24 }: IconProps) {
+  return html`<svg
     width=${size}
     height=${size}
     viewBox="0 0 29 29"
@@ -31,5 +31,4 @@ const connected = ({ size = 24 }: IconProps) =>
       ></path>
     </g>
   </svg>`;
-
-export default connected;
+}

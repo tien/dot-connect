@@ -1,18 +1,18 @@
 import {
-  wallets as walletsIcon,
-  wallet as walletIcon,
   users as usersIcon,
+  wallet as walletIcon,
+  wallets as walletsIcon,
 } from "../icons/index.js";
 import { observableSignal } from "../observable-signal.js";
 import { accounts$, connectedWallets$ } from "../stores.js";
-import DotConnectElement from "./components/dc-element.js";
+import { DotConnectElement } from "./components/dc-element.js";
 import "./dc-connection-dialog.js";
 import { signal } from "@lit-labs/preact-signals";
 import { css, html } from "lit";
 import { customElement } from "lit/decorators.js";
 
 @customElement("dc-connection-button")
-export default class ConnectionButton extends DotConnectElement {
+export class ConnectionButton extends DotConnectElement {
   static override styles = [
     super.styles,
     css`

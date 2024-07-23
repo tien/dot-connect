@@ -11,7 +11,7 @@ import { SupportedWallet } from "../types.js";
 import { getDownloadUrl } from "../utils.js";
 import { InjectedWalletInfo, WalletConfig } from "../wallets/types.js";
 import "./components/dc-dialog.js";
-import DotConnectElement from "./components/dc-element.js";
+import { DotConnectElement } from "./components/dc-element.js";
 import "./components/dc-list-item.js";
 import "./components/dc-qr-code.js";
 import { computed, effect, signal } from "@lit-labs/preact-signals";
@@ -257,7 +257,7 @@ export class DownloadableWallet extends DotConnectElement {
 }
 
 @customElement("dc-connection-dialog")
-export default class ConnectionDialog extends DotConnectElement {
+export class ConnectionDialog extends DotConnectElement {
   static override get styles() {
     return [
       super.styles,

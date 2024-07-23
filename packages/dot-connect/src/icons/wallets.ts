@@ -1,8 +1,8 @@
 import type { IconProps } from "./types.js";
 import { html } from "lit";
 
-const wallets = ({ size = 24 }: IconProps) =>
-  html`<svg
+export function wallets({ size = 24 }: IconProps) {
+  return html`<svg
     width=${size}
     height=${size}
     viewBox="0 0 28 28"
@@ -22,5 +22,4 @@ const wallets = ({ size = 24 }: IconProps) =>
       <path d="M15.0181 16.0181L15 16" stroke-miterlimit="10"></path>
     </g>
   </svg>`;
-
-export default wallets;
+}

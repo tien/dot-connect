@@ -1,9 +1,7 @@
 import { SignalWatcher } from "@lit-labs/preact-signals";
 import { LitElement, css, type CSSResultGroup } from "lit";
 
-export default abstract class DotConnectElement extends SignalWatcher(
-  LitElement,
-) {
+export abstract class DotConnectElement extends SignalWatcher(LitElement) {
   static override readonly styles: CSSResultGroup = css`
     * {
       --headline-font-family: var(--dc-headline-font-family, Unbounded);

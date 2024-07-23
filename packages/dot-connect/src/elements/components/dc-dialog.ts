@@ -1,12 +1,12 @@
 import { close as closeIcon } from "../../icons/index.js";
-import DotConnectElement from "./dc-element.js";
+import { DotConnectElement } from "./dc-element.js";
 import { effect, signal } from "@lit-labs/preact-signals";
 import { css, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { ref } from "lit/directives/ref.js";
 
 @customElement("dc-dialog")
-export default class Dialog extends DotConnectElement {
+export class Dialog extends DotConnectElement {
   static override get styles() {
     return [
       super.styles,

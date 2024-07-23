@@ -1,8 +1,8 @@
 import type { IconProps } from "./types.js";
 import { html } from "lit";
 
-const disconnected = ({ size = 24 }: IconProps) =>
-  html`<svg
+export function disconnected({ size = 24 }: IconProps) {
+  return html`<svg
     width=${size}
     height=${size}
     viewBox="0 0 28 28"
@@ -32,5 +32,4 @@ const disconnected = ({ size = 24 }: IconProps) =>
       <path d="M2.99982 2L24.9998 26" fill="none" data-nofill="true"></path>
     </g>
   </svg>`;
-
-export default disconnected;
+}

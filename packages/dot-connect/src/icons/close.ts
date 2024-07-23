@@ -1,8 +1,8 @@
 import type { IconProps } from "./types.js";
 import { html } from "lit";
 
-const close = ({ size = 24 }: IconProps) =>
-  html`<svg
+export function close({ size = 24 }: IconProps) {
+  return html`<svg
     width=${size}
     height=${size}
     viewBox="0 0 29 29"
@@ -26,5 +26,4 @@ const close = ({ size = 24 }: IconProps) =>
       ></path>
     </g>
   </svg>`;
-
-export default close;
+}
