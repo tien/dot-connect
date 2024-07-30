@@ -21,10 +21,14 @@
   "scripts": {
     "dev": "nx run-many -t dev",
     "build": "nx run-many -t build",
-    "lint": "nx run-many -t lint"
+    "lint": "nx run-many -t lint",
+    "postinstall": "husky"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "husky": "^9.1.4",
     "nx": "^19.5.1",
     "prettier": "^3.3.3"
   }
