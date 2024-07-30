@@ -7,9 +7,9 @@ import {
 } from "../icons/index.js";
 import { observableSignal } from "../observable-signal.js";
 import { connectedWallets$, walletConfigs, wallets$ } from "../stores.js";
-import { SupportedWallet } from "../types.js";
+import type { SupportedWallet } from "../types.js";
 import { getDownloadUrl } from "../utils.js";
-import { InjectedWalletInfo, WalletConfig } from "../wallets/types.js";
+import type { InjectedWalletInfo, WalletConfig } from "../wallets/types.js";
 import "./components/dc-dialog.js";
 import { DotConnectElement } from "./components/dc-element.js";
 import "./components/dc-list-item.js";

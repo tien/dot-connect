@@ -1,4 +1,4 @@
-import { InjectedWalletInfo, Platform } from "./wallets/types.js";
+import type { InjectedWalletInfo, Platform } from "./wallets/types.js";
 
 export const identifyBrowser = (): Platform | undefined => {
   const userAgent = globalThis.navigator.userAgent;

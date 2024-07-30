@@ -1,7 +1,7 @@
 import "./elements/dc-connection-button.js";
 import "./elements/dc-connection-dialog.js";
 import { walletsOrAggregators } from "./stores.js";
-import { SupportedWalletOrAggregator } from "./types.js";
+import type { SupportedWalletOrAggregator } from "./types.js";
 
 export type Options = {
   wallets: Array<SupportedWalletOrAggregator>;

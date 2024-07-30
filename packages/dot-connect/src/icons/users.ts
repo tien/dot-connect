@@ -1,4 +1,4 @@
-import { IconProps } from "./types.js";
+import type { IconProps } from "./types.js";
 import { html } from "lit";
 
 export function users({ size = 24 }: IconProps) {

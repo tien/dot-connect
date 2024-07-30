@@ -1,6 +1,6 @@
 import { wallet as walletIcon } from "../../icons/index.js";
 import { DotConnectElement } from "./dc-element.js";
-import { TemplateResult, css, html, svg } from "lit";
+import { type TemplateResult, css, html, svg } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { styleMap } from "lit/directives/style-map.js";
 import {

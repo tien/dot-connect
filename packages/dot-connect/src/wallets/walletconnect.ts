@@ -1,4 +1,4 @@
-import { WalletConfig, BaseWalletInfo } from "./types.js";
+import type { WalletConfig, BaseWalletInfo } from "./types.js";
 import { WalletConnect } from "@reactive-dot/core/wallets.js";
 import { html } from "lit";
 
