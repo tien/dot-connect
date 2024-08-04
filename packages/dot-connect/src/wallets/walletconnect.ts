@@ -1,9 +1,8 @@
 import type { WalletConfig, BaseWalletInfo } from "./types.js";
-import { WalletConnect } from "@reactive-dot/core/wallets/wallet-connect.js";
 import { html } from "lit";
 
 export const walletConnect: WalletConfig<BaseWalletInfo> = {
-  selector: (wallet) => wallet instanceof WalletConnect,
+  selector: (wallet) => wallet.id === "wallet-connect",
   name: "WalletConnect",
   logo: html`
     <svg fill="none" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
