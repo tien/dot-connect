@@ -32,10 +32,8 @@ Install any optional dependencies depending on the wallet types you want to supp
 
 ```ts
 import type { Config } from "@reactive-dot/core";
-import {
-  InjectedWalletAggregator,
-  WalletConnect,
-} from "@reactive-dot/core/wallets.js";
+import { InjectedWalletAggregator } from "@reactive-dot/core/wallets.js";
+import { WalletConnect } from "@reactive-dot/core/wallets/wallet-connect.js";
 import { registerDotConnect } from "dot-connect";
 
 // ...
