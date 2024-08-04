@@ -1,9 +1,9 @@
 <script lang="ts" type="module">
 import {
   InjectedWalletAggregator,
-  WalletConnect,
   initializeWallets,
 } from "@reactive-dot/core/wallets.js";
+import { WalletConnect } from "@reactive-dot/core/wallets/wallet-connect.js";
 import { registerDotConnect } from "dot-connect";
 
 const wallets = [

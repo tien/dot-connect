@@ -1,5 +1,5 @@
 import type { WalletConfig, BaseWalletInfo } from "./types.js";
-import { WalletConnect } from "@reactive-dot/core/wallets.js";
+import { WalletConnect } from "@reactive-dot/core/wallets/wallet-connect.js";
 import { html } from "lit";
 
 export const walletConnect: WalletConfig<BaseWalletInfo> = {
