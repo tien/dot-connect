@@ -885,7 +885,7 @@ __metadata:
     "@walletconnect/universal-provider": "npm:^2.14.0"
     dot-connect: "workspace:^"
     polkadot-api: "npm:^0.12.1"
-    vitepress: "npm:^1.3.1"
+    vitepress: "npm:^1.3.2"
     vue: "npm:^3.4.35"
   languageName: unknown
   linkType: soft
@@ -8875,9 +8875,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitepress@npm:^1.3.1":
-  version: 1.3.1
-  resolution: "vitepress@npm:1.3.1"
+"vitepress@npm:^1.3.2":
+  version: 1.3.2
+  resolution: "vitepress@npm:1.3.2"
   dependencies:
     "@docsearch/css": "npm:^3.6.0"
     "@docsearch/js": "npm:^3.6.0"
@@ -8905,7 +8905,7 @@ __metadata:
       optional: true
   bin:
     vitepress: bin/vitepress.js
-  checksum: 10c0/0b87acffac9b4fc4fde385e7aab25fca7cd1ff417b38a68ac38612438d70179c7b96d1f93828d3b2467c9c21fab2b6916eaee92c18862ff168e4232477be3ca2
+  checksum: 10c0/36009afc959994ae3818e9fe8c4d12ae757a33fc45f36296073562d857f390f5f2fbd0053b7d776307794f0b68d01ad1830b11c57930ef8adae64c788bd2651a
   languageName: node
   linkType: hard
 
