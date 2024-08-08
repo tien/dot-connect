@@ -1,5 +1,11 @@
 # dot-connect
 
+## 0.4.0
+
+### Minor Changes
+
+- [#14](https://github.com/tien/dot-connect/pull/14) [`966b35b`](https://github.com/tien/dot-connect/commit/966b35ba675e1fe39a491a22033cc758e4f999be) Thanks [@tien](https://github.com/tien)! - Display the number of connected accounts for each wallet.
+
 ## 0.3.0
 
 ### Minor Changes
