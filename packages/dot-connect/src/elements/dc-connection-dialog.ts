@@ -3,10 +3,16 @@ import {
   disconnected as disconnectedIcon,
   download as downloadIcon,
   qrCode as qrCodeIcon,
+  users as usersIcon,
   wallet as walletIcon,
 } from "../icons/index.js";
 import { observableSignal } from "../observable-signal.js";
-import { connectedWallets$, walletConfigs, wallets$ } from "../stores.js";
+import {
+  accounts$,
+  connectedWallets$,
+  walletConfigs,
+  wallets$,
+} from "../stores.js";
 import type { SupportedWallet } from "../types.js";
 import { getDownloadUrl } from "../utils.js";
 import type { InjectedWalletInfo, WalletConfig } from "../wallets/types.js";
@@ -35,6 +41,13 @@ export class InjectedWalletConnection extends DotConnectElement {
           color: var(--error-color);
         }
       }
+
+      .icon {
+        display: contents;
+        > * {
+          vertical-align: -0.125em;
+        }
+      }
     `,
   ];
 
@@ -46,6 +59,14 @@ export class InjectedWalletConnection extends DotConnectElement {
   }
 
   readonly #connectedWallets = observableSignal(this, connectedWallets$, []);
+
+  readonly #connectedAccounts = observableSignal(this, accounts$, []);
+
+  readonly #accounts = computed(() =>
+    this.#connectedAccounts.value.filter(
+      (account) => account.wallet === this.wallet,
+    ),
+  );
 
   readonly #connected = computed(() =>
     this.#connectedWallets.value.includes(this.wallet),
@@ -64,9 +85,11 @@ export class InjectedWalletConnection extends DotConnectElement {
 
         try {
           this.#pending.value = true;
-          this.#connected.value
-            ? await disconnectWallet(this.wallet)
-            : await connectWallet(this.wallet);
+          if (this.#connected.value) {
+            await disconnectWallet(this.wallet);
+          } else {
+            await connectWallet(this.wallet);
+          }
         } finally {
           this.#pending.value = false;
         }
@@ -81,7 +104,10 @@ export class InjectedWalletConnection extends DotConnectElement {
         id="connection-status"
         slot="supporting"
         class=${classMap({ connected: this.#connected.value })}
-        >${this.#connected.value ? "Connected" : "Not connected"}</span
+        >${this.#connected.value
+          ? html`Connected | ${this.#accounts.value.length}
+              <span class="icon">${usersIcon({ size: "1em" })}</span>`
+          : "Not connected"}</span
       >
       <div
         id="hover-icon"
