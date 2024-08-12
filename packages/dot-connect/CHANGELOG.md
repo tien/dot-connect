@@ -1,5 +1,11 @@
 # dot-connect
 
+## 0.5.0
+
+### Minor Changes
+
+- [#20](https://github.com/tien/dot-connect/pull/20) [`5fd7b62`](https://github.com/tien/dot-connect/commit/5fd7b6215b26616c16705a798dd592b3eaf92022) Thanks [@tien](https://github.com/tien)! - Add methods for manually showing and closing the connection dialog.
+
 ## 0.4.0
 
 ### Minor Changes
