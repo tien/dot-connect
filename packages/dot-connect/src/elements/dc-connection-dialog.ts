@@ -27,6 +27,102 @@ import { css, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 
+@customElement("dc-connection-dialog")
+export class ConnectionDialog extends DotConnectElement {
+  static override get styles() {
+    return [
+      super.styles,
+      css`
+        h3 {
+          font-size: 0.75em;
+          margin: 0.5rem 0.5rem;
+        }
+
+        #wallet-list {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+      `,
+    ];
+  }
+
+  @property({ type: Boolean })
+  open = false;
+
+  readonly #availableWallets = observableSignal(this, wallets$, []);
+
+  readonly #installedWallets = computed(() =>
+    this.#availableWallets.value.filter(
+      (wallet) => wallet instanceof InjectedWallet,
+    ),
+  );
+
+  readonly #deepLinkWallets = computed(() =>
+    this.#availableWallets.value.filter(
+      (wallet) => wallet instanceof DeepLinkWallet,
+    ),
+  );
+
+  readonly #nonInstalledWallets = computed(() =>
+    walletConfigs.value.filter(
+      (config): config is WalletConfig<InjectedWalletInfo> =>
+        "downloadUrl" in config &&
+        !this.#installedWallets.value.some((wallet) => config.selector(wallet)),
+    ),
+  );
+
+  show() {
+    this.open = true;
+  }
+
+  close() {
+    this.open = false;
+  }
+
+  override render() {
+    return html`<dc-dialog
+      ?open=${this.open}
+      @close=${(event: Event) =>
+        this.dispatchEvent(new Event(event.type, event))}
+    >
+      <span slot="title">Connect wallet</span>
+      <div slot="content">
+        ${this.#installedWallets.value.length <= 0
+          ? ""
+          : html`<section>
+              <header><h3>Installed</h3></header>
+              <ul id="wallet-list">
+                ${this.#installedWallets.value.map(
+                  (wallet) =>
+                    html`<dc-injected-wallet
+                      .wallet=${wallet}
+                    ></dc-injected-wallet>`,
+                )}
+              </ul>
+            </section>`}
+        <section>
+          <header><h3>Popular</h3></header>
+          <ul>
+            ${this.#nonInstalledWallets.value.map(
+              (wallet) =>
+                html`<dc-downloadable-wallet
+                  .wallet=${wallet}
+                ></dc-downloadable-wallet>`,
+            )}
+            ${this.#deepLinkWallets.value.map(
+              (wallet) =>
+                html`<dc-deep-link-wallet
+                  .wallet=${wallet}
+                ></dc-deep-link-wallet>`,
+            )}
+          </ul>
+        </section>
+      </div>
+    </dc-dialog>`;
+  }
+}
+
 @customElement("dc-injected-wallet")
 export class InjectedWalletConnection extends DotConnectElement {
   static override readonly styles = [
@@ -54,7 +150,7 @@ export class InjectedWalletConnection extends DotConnectElement {
   @property({ attribute: false })
   wallet!: SupportedWallet;
 
-  get walletInfo() {
+  get #walletInfo() {
     return walletConfigs.value.find((config) => config.selector(this.wallet));
   }
 
@@ -97,9 +193,9 @@ export class InjectedWalletConnection extends DotConnectElement {
       ?pending=${this.#pending.value}
     >
       <div slot="leading">
-        ${this.walletInfo?.logo ?? walletIcon({ size: "100%" })}
+        ${this.#walletInfo?.logo ?? walletIcon({ size: "100%" })}
       </div>
-      <span slot="headline">${this.walletInfo?.name ?? this.wallet.name}</span>
+      <span slot="headline">${this.#walletInfo?.name ?? this.wallet.name}</span>
       <span
         id="connection-status"
         slot="supporting"
@@ -279,94 +375,6 @@ export class DownloadableWallet extends DotConnectElement {
         </div>
       </dc-list-item></a
     >`;
-  }
-}
-
-@customElement("dc-connection-dialog")
-export class ConnectionDialog extends DotConnectElement {
-  static override get styles() {
-    return [
-      super.styles,
-      css`
-        h3 {
-          font-size: 0.75em;
-          margin: 0.5rem 0.5rem;
-        }
-
-        #wallet-list {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-        }
-      `,
-    ];
-  }
-
-  @property({ type: Boolean })
-  open = false;
-
-  readonly #availableWallets = observableSignal(this, wallets$, []);
-
-  readonly #installedWallets = computed(() =>
-    this.#availableWallets.value.filter(
-      (wallet) => wallet instanceof InjectedWallet,
-    ),
-  );
-
-  readonly #deepLinkWallets = computed(() =>
-    this.#availableWallets.value.filter(
-      (wallet) => wallet instanceof DeepLinkWallet,
-    ),
-  );
-
-  readonly #nonInstalledWallets = computed(() =>
-    walletConfigs.value.filter(
-      (config): config is WalletConfig<InjectedWalletInfo> =>
-        "downloadUrl" in config &&
-        !this.#installedWallets.value.some((wallet) => config.selector(wallet)),
-    ),
-  );
-
-  override render() {
-    return html`<dc-dialog
-      ?open=${this.open}
-      @close=${(event: Event) =>
-        this.dispatchEvent(new Event(event.type, event))}
-    >
-      <span slot="title">Connect wallet</span>
-      <div slot="content">
-        ${this.#installedWallets.value.length <= 0
-          ? ""
-          : html`<section>
-              <header><h3>Installed</h3></header>
-              <ul id="wallet-list">
-                ${this.#installedWallets.value.map(
-                  (wallet) =>
-                    html`<dc-injected-wallet
-                      .wallet=${wallet}
-                    ></dc-injected-wallet>`,
-                )}
-              </ul>
-            </section>`}
-        <section>
-          <header><h3>Popular</h3></header>
-          <ul>
-            ${this.#nonInstalledWallets.value.map(
-              (wallet) =>
-                html`<dc-downloadable-wallet
-                  .wallet=${wallet}
-                ></dc-downloadable-wallet>`,
-            )}
-            ${this.#deepLinkWallets.value.map(
-              (wallet) =>
-                html`<dc-deep-link-wallet
-                  .wallet=${wallet}
-                ></dc-deep-link-wallet>`,
-            )}
-          </ul>
-        </section>
-      </div>
-    </dc-dialog>`;
   }
 }
 

@@ -2,11 +2,11 @@
 
 ## Installation
 
-### First setup a Reactive DOT application
+### Set up a Reactive DOT application
 
-Follow the guide [here](https://reactivedot.dev/docs/getting-started/setup).
+Start by setting up your Reactive DOT application. Follow the guide [here](https://reactivedot.dev/docs/getting-started/setup).
 
-### Then add DOT Connect as a dependencies
+### Add DOT Connect as a dependency
 
 ::: code-group
 
@@ -24,11 +24,13 @@ pnpm add dot-connect
 
 :::
 
-### Finally add any optional dependencies
+### Install optional dependencies
 
-Install any optional dependencies depending on the wallet types you want to support by following this [documentation](https://reactivedot.dev/docs/getting-started/connect-wallets#install-optional-dependencies).
+Install any optional dependencies based on the wallet types you want to support by following this [documentation](https://reactivedot.dev/docs/getting-started/connect-wallets#install-optional-dependencies).
 
 ## Setup config
+
+Configure your project by adding the following code:
 
 ```ts
 import type { Config } from "@reactive-dot/core";
@@ -69,6 +71,8 @@ registerDotConnect({
 
 ## Import required fonts
 
+To import the necessary fonts, use one of the following methods:
+
 ```ts
 import "dot-connect/font.css";
 ```
@@ -81,9 +85,11 @@ Or
 
 ## Usage
 
-With web component, the connection button can be added directly into any HTML markup.
+### Add a connection button
 
-## As part of JSX
+Add a connection button to your application using a web component. You can include it in your HTML or JSX.
+
+#### Using JSX
 
 ```tsx
 const App = () => (
@@ -93,7 +99,7 @@ const App = () => (
 );
 ```
 
-## As part of plain HTML
+#### Using HTML
 
 ```html
 <!-- ... -->
@@ -102,6 +108,35 @@ const App = () => (
 </body>
 ```
 
+### Manually trigger the connection dialog
+
+Use the `dc-connection-dialog` element to manually control the connection dialog.
+
+#### Declarative approach
+
+To open or close the dialog, use the `open` attribute:
+
+```html
+<!-- Open -->
+<dc-connection-dialog open></dc-connection-dialog>
+<!-- Close -->
+<dc-connection-dialog></dc-connection-dialog>
+```
+
+#### Imperative approach
+
+Invoke the `show()` and `close()` methods on the dialog element:
+
+```html
+<dc-connection-dialog id="connection-dialog"></dc-connection-dialog>
+<script>
+  const dialog = document.getElementById("connection-dialog");
+
+  dialog.show();
+  dialog.close();
+</script>
+```
+
 ## Account management
 
-Accounts can then be accessed via Reactive DOT API, an example on how to do this can be found [here](https://reactivedot.dev/docs/getting-started/connect-wallets#display-available-accounts).
+Access accounts via the Reactive DOT API. For more details and examples, refer to the documentation [here](https://reactivedot.dev/docs/getting-started/connect-wallets#display-available-accounts).
