@@ -880,7 +880,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@dot-connect/docs@workspace:apps/docs"
   dependencies:
-    "@reactive-dot/core": "npm:^0.5.0"
+    "@reactive-dot/core": "npm:^0.7.0"
     "@walletconnect/modal": "npm:^2.6.2"
     "@walletconnect/universal-provider": "npm:^2.14.0"
     dot-connect: "workspace:^"
@@ -2069,11 +2069,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@reactive-dot/core@npm:^0.5.0":
-  version: 0.5.0
-  resolution: "@reactive-dot/core@npm:0.5.0"
+"@reactive-dot/core@npm:^0.7.0":
+  version: 0.7.0
+  resolution: "@reactive-dot/core@npm:0.7.0"
   dependencies:
-    "@reactive-dot/utils": "npm:^0.4.0"
+    "@reactive-dot/utils": "npm:^0.7.0"
   peerDependencies:
     "@walletconnect/modal": 2.x
     "@walletconnect/universal-provider": 2.x
@@ -2083,14 +2083,14 @@ __metadata:
       optional: true
     "@walletconnect/universal-provider":
       optional: true
-  checksum: 10c0/0ba77909180ffbcfc1c32bf89f03629f0a08d43ede9db321cf324151cc470f1c50651f50d827cde834c6a949445e7b6ef5638a02c3042093014457a0d62e3dc9
+  checksum: 10c0/311ada845424acef614e4bfe1eb6ef94257000848f0f98177068a01be0ccd89c4797b31fca941111b85d28dd3ccf8d8ae11e739756c4ad1c10fb2a4aa905a01d
   languageName: node
   linkType: hard
 
-"@reactive-dot/utils@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "@reactive-dot/utils@npm:0.4.0"
-  checksum: 10c0/55387dee80f9d466878064f52e5487f0c4039f67a88e5f146717d931b9d5a6ebc2c26a57f9e7822e6d8c6fd6534dafb04ded8f0e1f4d41d7761353f8acf2892d
+"@reactive-dot/utils@npm:^0.7.0":
+  version: 0.7.0
+  resolution: "@reactive-dot/utils@npm:0.7.0"
+  checksum: 10c0/ec8408c5abd416f0b193df5cd42811b347d9f81745c8859767b85d8d635dfb3fbb46bf324fae729b17a852e6d8d5b530a39ea8529f0850243ffc8e5c1db82a2b
   languageName: node
   linkType: hard
 
@@ -4381,7 +4381,7 @@ __metadata:
   dependencies:
     "@eslint/js": "npm:^9.8.0"
     "@lit-labs/preact-signals": "npm:^1.0.2"
-    "@reactive-dot/core": "npm:^0.5.0"
+    "@reactive-dot/core": "npm:^0.7.0"
     "@tsconfig/recommended": "npm:^1.0.7"
     "@tsconfig/strictest": "npm:^2.0.5"
     "@types/eslint__js": "npm:^8.42.3"
