@@ -7,6 +7,8 @@
     "experimentalDecorators": true,
     "useDefineForClassFields": false,
     "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
     "outDir": "build"
   },
   "include": ["src"]
