@@ -12,7 +12,7 @@
     "@walletconnect/modal": "^2.6.2",
     "@walletconnect/universal-provider": "^2.14.0",
     "dot-connect": "workspace:^",
-    "polkadot-api": "^0.12.1",
+    "polkadot-api": "^0.13.1",
     "vue": "^3.4.37"
   },
   "devDependencies": {
