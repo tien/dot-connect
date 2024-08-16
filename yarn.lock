@@ -880,7 +880,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@dot-connect/docs@workspace:apps/docs"
   dependencies:
-    "@reactive-dot/core": "npm:^0.7.0"
+    "@reactive-dot/core": "npm:^0.8.0"
     "@walletconnect/modal": "npm:^2.6.2"
     "@walletconnect/universal-provider": "npm:^2.15.0"
     dot-connect: "workspace:^"
@@ -2077,28 +2077,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@reactive-dot/core@npm:^0.7.0":
-  version: 0.7.0
-  resolution: "@reactive-dot/core@npm:0.7.0"
+"@reactive-dot/core@npm:^0.8.0":
+  version: 0.8.0
+  resolution: "@reactive-dot/core@npm:0.8.0"
   dependencies:
-    "@reactive-dot/utils": "npm:^0.7.0"
+    "@reactive-dot/utils": "npm:^0.8.0"
   peerDependencies:
     "@walletconnect/modal": 2.x
     "@walletconnect/universal-provider": 2.x
-    polkadot-api: ^0.12.1
+    polkadot-api: ^1.0.0
   peerDependenciesMeta:
     "@walletconnect/modal":
       optional: true
     "@walletconnect/universal-provider":
       optional: true
-  checksum: 10c0/311ada845424acef614e4bfe1eb6ef94257000848f0f98177068a01be0ccd89c4797b31fca941111b85d28dd3ccf8d8ae11e739756c4ad1c10fb2a4aa905a01d
+  checksum: 10c0/b508e13e5b20b7ea9dd863727815f9f235abade7085f701fd26029305c4053c769090494a1f658783d41788993e3485551c7960b105d32cecf8fa84a00941c4b
   languageName: node
   linkType: hard
 
-"@reactive-dot/utils@npm:^0.7.0":
-  version: 0.7.0
-  resolution: "@reactive-dot/utils@npm:0.7.0"
-  checksum: 10c0/ec8408c5abd416f0b193df5cd42811b347d9f81745c8859767b85d8d635dfb3fbb46bf324fae729b17a852e6d8d5b530a39ea8529f0850243ffc8e5c1db82a2b
+"@reactive-dot/utils@npm:^0.8.0":
+  version: 0.8.0
+  resolution: "@reactive-dot/utils@npm:0.8.0"
+  checksum: 10c0/e17be1fe37f567999bbb0871916f5321cbf2879fee9d2af76618792e641ec8929a9c864c835956e6ea970a7508b5d38c8523071192cc268a436f260ba8f11bc0
   languageName: node
   linkType: hard
 
@@ -4403,7 +4403,7 @@ __metadata:
   dependencies:
     "@eslint/js": "npm:^9.9.0"
     "@lit-labs/preact-signals": "npm:^1.0.2"
-    "@reactive-dot/core": "npm:^0.7.0"
+    "@reactive-dot/core": "npm:^0.8.0"
     "@tsconfig/recommended": "npm:^1.0.7"
     "@tsconfig/strictest": "npm:^2.0.5"
     "@types/eslint__js": "npm:^8.42.3"
