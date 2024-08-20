@@ -8,7 +8,7 @@
     "preview": "vitepress preview"
   },
   "dependencies": {
-    "@reactive-dot/core": "^0.7.0",
+    "@reactive-dot/core": "^0.8.0",
     "@walletconnect/modal": "^2.6.2",
     "@walletconnect/universal-provider": "^2.15.0",
     "dot-connect": "workspace:^",
