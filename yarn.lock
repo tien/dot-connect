@@ -880,7 +880,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@dot-connect/docs@workspace:apps/docs"
   dependencies:
-    "@reactive-dot/core": "npm:^0.8.0"
+    "@reactive-dot/core": "npm:^0.9.0"
     "@walletconnect/modal": "npm:^2.6.2"
     "@walletconnect/universal-provider": "npm:^2.15.0"
     dot-connect: "workspace:^"
@@ -2077,9 +2077,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@reactive-dot/core@npm:^0.8.0":
-  version: 0.8.0
-  resolution: "@reactive-dot/core@npm:0.8.0"
+"@reactive-dot/core@npm:^0.9.0":
+  version: 0.9.0
+  resolution: "@reactive-dot/core@npm:0.9.0"
   dependencies:
     "@reactive-dot/utils": "npm:^0.8.0"
   peerDependencies:
@@ -2091,7 +2091,7 @@ __metadata:
       optional: true
     "@walletconnect/universal-provider":
       optional: true
-  checksum: 10c0/b508e13e5b20b7ea9dd863727815f9f235abade7085f701fd26029305c4053c769090494a1f658783d41788993e3485551c7960b105d32cecf8fa84a00941c4b
+  checksum: 10c0/741afbc59fadec727cf9527951acedf1cb169fc76d25830c6561680cb1266ba7e54692a76b3bfd5e93915059b88bd130eb888ff990abe6cea2ebc74d50a7ceae
   languageName: node
   linkType: hard
 
@@ -4303,7 +4303,7 @@ __metadata:
   dependencies:
     "@eslint/js": "npm:^9.9.0"
     "@lit-labs/preact-signals": "npm:^1.0.2"
-    "@reactive-dot/core": "npm:^0.8.0"
+    "@reactive-dot/core": "npm:^0.9.0"
     "@tsconfig/recommended": "npm:^1.0.7"
     "@tsconfig/strictest": "npm:^2.0.5"
     "@types/eslint__js": "npm:^8.42.3"
