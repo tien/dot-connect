@@ -89,16 +89,6 @@ Or
 
 Add a connection button to your application using a web component. You can include it in your HTML or JSX.
 
-#### Using JSX
-
-```tsx
-const App = () => (
-  <div>
-    <dc-connection-button />
-  </div>
-);
-```
-
 #### Using HTML
 
 ```html
@@ -108,22 +98,25 @@ const App = () => (
 </body>
 ```
 
+#### Using React
+
+```tsx
+import { ConnectionButton } from "dot-connect/react.js";
+
+function App() {
+  return (
+    <div>
+      <ConnectionButton />
+    </div>
+  );
+}
+```
+
 ### Manually trigger the connection dialog
 
 Use the `dc-connection-dialog` element to manually control the connection dialog.
 
-#### Declarative approach
-
-To open or close the dialog, use the `open` attribute:
-
-```html
-<!-- Open -->
-<dc-connection-dialog open></dc-connection-dialog>
-<!-- Close -->
-<dc-connection-dialog></dc-connection-dialog>
-```
-
-#### Imperative approach
+#### With Vanilla JS
 
 Invoke the `show()` and `close()` methods on the dialog element:
 
@@ -135,6 +128,22 @@ Invoke the `show()` and `close()` methods on the dialog element:
   dialog.show();
   dialog.close();
 </script>
+```
+
+#### With React
+
+```tsx
+import { ConnectionDialog } from "dot-connect/react.js";
+
+function App() {
+  const [open, setOpen] = useState(false);
+  return (
+    <div>
+      <ConnectionDialog open={open} onClose={() => setOpen(false)} />
+      <button onClick={() => setOpen(true)}>Open dialog</button>
+    </div>
+  );
+}
 ```
 
 ## Account management

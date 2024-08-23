@@ -22,6 +22,7 @@
   "type": "module",
   "exports": {
     ".": "./build/index.js",
+    "./react.js": "./build/react/index.js",
     "./font.css": "./src/fonts.css"
   },
   "files": [
@@ -35,6 +36,7 @@
   },
   "dependencies": {
     "@lit-labs/preact-signals": "^1.0.2",
+    "@lit/react": "^1.0.5",
     "lit": "^3.2.0",
     "qrcode": "^1.5.4"
   },
@@ -45,12 +47,19 @@
     "@tsconfig/strictest": "^2.0.5",
     "@types/eslint__js": "^8.42.3",
     "@types/qrcode": "^1.5.5",
+    "@types/react": "^18.3.4",
     "eslint": "^9.9.0",
     "polkadot-api": "^1.1.0",
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.3.0"
   },
   "peerDependencies": {
-    "@reactive-dot/core": "*"
+    "@reactive-dot/core": "*",
+    "react": ">= 18"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
   }
 }

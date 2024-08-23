@@ -83,8 +83,10 @@ export class ConnectionDialog extends DotConnectElement {
   override render() {
     return html`<dc-dialog
       ?open=${this.open}
-      @close=${(event: Event) =>
-        this.dispatchEvent(new Event(event.type, event))}
+      @close=${(event: Event) => {
+        this.close();
+        this.dispatchEvent(new Event(event.type, event));
+      }}
     >
       <span slot="title">Connect wallet</span>
       <div slot="content">
