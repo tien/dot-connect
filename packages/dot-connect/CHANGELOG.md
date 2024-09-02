@@ -1,5 +1,13 @@
 # dot-connect
 
+## 0.6.0
+
+### Minor Changes
+
+- [#23](https://github.com/tien/dot-connect/pull/23) [`61d071d`](https://github.com/tien/dot-connect/commit/61d071d20d9c8314b9683defacea53bb8696caa1) Thanks [@tien](https://github.com/tien)! - Add source and declaration maps for improved debugging and type checking.
+
+- [#47](https://github.com/tien/dot-connect/pull/47) [`51fa8b7`](https://github.com/tien/dot-connect/commit/51fa8b7e62cd3f48e47db13d6e992758cb2f67e0) Thanks [@tien](https://github.com/tien)! - Added React wrapper components.
+
 ## 0.5.0
 
 ### Minor Changes
