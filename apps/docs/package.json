@@ -10,7 +10,7 @@
   "dependencies": {
     "@reactive-dot/core": "^0.9.0",
     "@walletconnect/modal": "^2.6.2",
-    "@walletconnect/universal-provider": "^2.15.1",
+    "@walletconnect/universal-provider": "^2.15.2",
     "dot-connect": "workspace:^",
     "polkadot-api": "^1.1.0",
     "vue": "^3.4.38"
