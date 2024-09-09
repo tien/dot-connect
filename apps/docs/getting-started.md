@@ -35,7 +35,7 @@ Configure your project by adding the following code:
 ```ts
 import type { Config } from "@reactive-dot/core";
 import { InjectedWalletAggregator } from "@reactive-dot/core/wallets.js";
-import { WalletConnect } from "@reactive-dot/core/wallets/wallet-connect.js";
+import { WalletConnect } from "@reactive-dot/wallet-walletconnect";
 import { registerDotConnect } from "dot-connect";
 
 // ...
