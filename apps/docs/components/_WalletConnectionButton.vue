@@ -3,7 +3,7 @@ import {
   InjectedWalletAggregator,
   initializeWallets,
 } from "@reactive-dot/core/wallets.js";
-import { WalletConnect } from "@reactive-dot/core/wallets/wallet-connect.js";
+import { WalletConnect } from "@reactive-dot/wallet-walletconnect";
 import { registerDotConnect } from "dot-connect";
 
 const wallets = [
