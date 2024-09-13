@@ -71,12 +71,6 @@ export class ConnectionDialog extends DotConnectElement {
           border-top: 1px solid var(--color-on-surface);
           opacity: 0.25;
         }
-
-        #wallet-list {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-        }
       `,
     ];
   }
@@ -95,12 +89,15 @@ export class ConnectionDialog extends DotConnectElement {
           ? ""
           : html`<section>
               <header><h3>Installed</h3></header>
-              <ul id="wallet-list">
-                ${this.#installedWallets.value.map(
-                  (wallet) =>
-                    html`<dc-injected-wallet
-                      .wallet=${wallet}
-                    ></dc-injected-wallet>`,
+              <ul>
+                ${join(
+                  this.#installedWallets.value.map(
+                    (wallet) =>
+                      html`<dc-injected-wallet
+                        .wallet=${wallet}
+                      ></dc-injected-wallet>`,
+                  ),
+                  html`<hr />`,
                 )}
               </ul>
             </section>`}
