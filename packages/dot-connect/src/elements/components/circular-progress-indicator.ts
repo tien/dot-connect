@@ -1,4 +1,4 @@
-import { DotConnectElement } from "./dc-element.js";
+import { DotConnectElement } from "./element.js";
 import { css, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 

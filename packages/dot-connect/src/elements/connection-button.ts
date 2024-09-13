@@ -5,8 +5,8 @@ import {
 } from "../icons/index.js";
 import { observableSignal } from "../observable-signal.js";
 import { accounts$, connectedWallets$ } from "../stores.js";
-import { DotConnectElement } from "./components/dc-element.js";
-import "./dc-connection-dialog.js";
+import { DotConnectElement } from "./components/element.js";
+import "./connection-dialog.js";
 import { signal } from "@lit-labs/preact-signals";
 import { css, html } from "lit";
 import { customElement } from "lit/decorators.js";
