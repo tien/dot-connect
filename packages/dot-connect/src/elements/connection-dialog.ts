@@ -16,7 +16,7 @@ import "./components/qr-code.js";
 import { computed, effect, signal } from "@lit-labs/preact-signals";
 import { connectWallet, disconnectWallet } from "@reactive-dot/core";
 import { DeepLinkWallet, InjectedWallet } from "@reactive-dot/core/wallets.js";
-import { css, html } from "lit";
+import { css, html, nothing } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 import { join } from "lit/directives/join.js";
@@ -108,21 +108,22 @@ export class ConnectionDialog extends DotConnectElement {
           <header><h3>Popular</h3></header>
           <ul>
             ${join(
-              this.#nonInstalledWallets.value.map(
-                (wallet) =>
-                  html`<dc-downloadable-wallet
-                    .wallet=${wallet}
-                  ></dc-downloadable-wallet>`,
-              ),
-              html`<hr />`,
-            )}
-            ${join(
-              this.#deepLinkWallets.value.map(
-                (wallet) =>
-                  html`<dc-deep-link-wallet
-                    .wallet=${wallet}
-                  ></dc-deep-link-wallet>`,
-              ),
+              [
+                ...this.#nonInstalledWallets.value
+                  .filter(DownloadableWallet.shouldRender)
+                  .map(
+                    (wallet) =>
+                      html`<dc-downloadable-wallet
+                        .wallet=${wallet}
+                      ></dc-downloadable-wallet>`,
+                  ),
+                ...this.#deepLinkWallets.value.map(
+                  (wallet) =>
+                    html`<dc-deep-link-wallet
+                      .wallet=${wallet}
+                    ></dc-deep-link-wallet>`,
+                ),
+              ],
               html`<hr />`,
             )}
           </ul>
@@ -338,6 +339,11 @@ export class DownloadableWallet extends DotConnectElement {
   @property({ attribute: false })
   wallet!: InjectedWalletInfo;
 
+  // TODO: this is a hack
+  static shouldRender(wallet: InjectedWalletInfo) {
+    return getDownloadUrl(wallet) !== undefined;
+  }
+
   get #downloadUrl() {
     return getDownloadUrl(this.wallet);
   }
@@ -353,7 +359,7 @@ export class DownloadableWallet extends DotConnectElement {
 
   protected override render() {
     if (this.#downloadUrl === undefined) {
-      return;
+      return nothing;
     }
 
     const isMobile =
