@@ -1,5 +1,11 @@
 # dot-connect
 
+## 0.7.0
+
+### Minor Changes
+
+- [#74](https://github.com/tien/dot-connect/pull/74) [`2cefdde`](https://github.com/tien/dot-connect/commit/2cefddee904ec04f2b08adfd5d492a42f007e190) Thanks [@tien](https://github.com/tien)! - Updated hover, reveal, and click interaction to an always-visible button for improved usability, including better support for touch devices.
+
 ## 0.6.0
 
 ### Minor Changes
