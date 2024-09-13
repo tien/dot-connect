@@ -55,15 +55,19 @@ export class ListItem extends DotConnectElement {
 
       #trailing {
         grid-area: trailing;
-
-        width: 1.25rem;
-        height: 1.25rem;
-
-        opacity: 0;
         transition: opacity 0.125s;
+
+        ::slotted(.revealable) {
+          opacity: 0;
+        }
+
+        ::slotted(.icon) {
+          width: 1.2rem;
+          height: 1.2rem;
+        }
       }
 
-      li:hover #trailing {
+      li:hover #trailing ::slotted(.revealable) {
         opacity: 1;
 
         @starting-style {
@@ -93,7 +97,7 @@ export class ListItem extends DotConnectElement {
       >
         ${this.pending
           ? html`<dc-circular-progress-indicator
-              size="100%"
+              size="1.2rem"
             ></dc-circular-progress-indicator>`
           : html`<slot name="trailing"></slot>`}
       </div>
