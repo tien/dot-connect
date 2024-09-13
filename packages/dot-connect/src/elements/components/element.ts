@@ -43,9 +43,38 @@ export abstract class DotConnectElement extends SignalWatcher(LitElement) {
       border: none;
       border-radius: min(999px, var(--max-border-radius));
       background-color: var(--primary-color);
-      padding: 0.8em 1.25rem;
+      padding: 0.6em 1.25em;
       cursor: pointer;
       transition: scale 0.25s;
+
+      &.sm {
+        font-size: 0.6rem;
+      }
+
+      &.xs {
+        font-size: 0.4rem;
+      }
+
+      &.info {
+        color: var(--info-color);
+      }
+
+      &.success {
+        color: var(--success-color);
+      }
+
+      &.error {
+        color: var(--error-color);
+      }
+
+      &.info,
+      &.success,
+      &.error {
+        background-color: light-dark(
+          color-mix(in srgb, var(--on-surface-color), transparent 90%),
+          var(--on-surface-color)
+        );
+      }
 
       &:hover {
         scale: 1.04;

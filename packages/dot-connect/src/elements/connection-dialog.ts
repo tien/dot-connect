@@ -1,11 +1,4 @@
-import {
-  connected as connectedIcon,
-  disconnected as disconnectedIcon,
-  download as downloadIcon,
-  qrCode as qrCodeIcon,
-  users as usersIcon,
-  wallet as walletIcon,
-} from "../icons/index.js";
+import { users as usersIcon, wallet as walletIcon } from "../icons/index.js";
 import { observableSignal } from "../observable-signal.js";
 import {
   accounts$,
@@ -26,27 +19,10 @@ import { DeepLinkWallet, InjectedWallet } from "@reactive-dot/core/wallets.js";
 import { css, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
+import { join } from "lit/directives/join.js";
 
 @customElement("dc-connection-dialog")
 export class ConnectionDialog extends DotConnectElement {
-  static override get styles() {
-    return [
-      super.styles,
-      css`
-        h3 {
-          font-size: 0.75em;
-          margin: 0.5rem 0.5rem;
-        }
-
-        #wallet-list {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-        }
-      `,
-    ];
-  }
-
   @property({ type: Boolean })
   open = false;
 
@@ -80,6 +56,31 @@ export class ConnectionDialog extends DotConnectElement {
     this.open = false;
   }
 
+  static override get styles() {
+    return [
+      super.styles,
+      css`
+        h3 {
+          font-size: 0.75em;
+          margin: 0.5rem 0.5rem;
+        }
+
+        hr {
+          margin-inline-start: 3.2rem;
+          margin-inline-end: 0.5rem;
+          border-top: 1px solid var(--color-on-surface);
+          opacity: 0.25;
+        }
+
+        #wallet-list {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+      `,
+    ];
+  }
+
   override render() {
     return html`<dc-dialog
       ?open=${this.open}
@@ -106,17 +107,23 @@ export class ConnectionDialog extends DotConnectElement {
         <section>
           <header><h3>Popular</h3></header>
           <ul>
-            ${this.#nonInstalledWallets.value.map(
-              (wallet) =>
-                html`<dc-downloadable-wallet
-                  .wallet=${wallet}
-                ></dc-downloadable-wallet>`,
+            ${join(
+              this.#nonInstalledWallets.value.map(
+                (wallet) =>
+                  html`<dc-downloadable-wallet
+                    .wallet=${wallet}
+                  ></dc-downloadable-wallet>`,
+              ),
+              html`<hr />`,
             )}
-            ${this.#deepLinkWallets.value.map(
-              (wallet) =>
-                html`<dc-deep-link-wallet
-                  .wallet=${wallet}
-                ></dc-deep-link-wallet>`,
+            ${join(
+              this.#deepLinkWallets.value.map(
+                (wallet) =>
+                  html`<dc-deep-link-wallet
+                    .wallet=${wallet}
+                  ></dc-deep-link-wallet>`,
+              ),
+              html`<hr />`,
             )}
           </ul>
         </section>
@@ -127,28 +134,6 @@ export class ConnectionDialog extends DotConnectElement {
 
 @customElement("dc-injected-wallet")
 export class InjectedWalletConnection extends DotConnectElement {
-  static override readonly styles = [
-    super.styles,
-    css`
-      #connection-status.connected {
-        color: var(--success-color);
-      }
-
-      #hover-icon {
-        &.connected {
-          color: var(--error-color);
-        }
-      }
-
-      .icon {
-        display: contents;
-        > * {
-          vertical-align: -0.125em;
-        }
-      }
-    `,
-  ];
-
   @property({ attribute: false })
   wallet!: SupportedWallet;
 
@@ -172,28 +157,28 @@ export class InjectedWalletConnection extends DotConnectElement {
 
   readonly #pending = signal(false);
 
-  protected override render() {
-    return html`<dc-list-item
-      id="list-item"
-      ?clickable=${true}
-      @click=${async () => {
-        if (this.#pending.value) {
-          return;
-        }
+  static override readonly styles = [
+    super.styles,
+    css`
+      button {
+        min-width: 5rem;
+      }
 
-        try {
-          this.#pending.value = true;
-          if (this.#connected.value) {
-            await disconnectWallet(this.wallet);
-          } else {
-            await connectWallet(this.wallet);
-          }
-        } finally {
-          this.#pending.value = false;
+      #connection-status.connected {
+        color: var(--success-color);
+      }
+
+      .icon {
+        display: contents;
+        > * {
+          vertical-align: -0.125em;
         }
-      }}
-      ?pending=${this.#pending.value}
-    >
+      }
+    `,
+  ];
+
+  protected override render() {
+    return html`<dc-list-item id="list-item" ?pending=${this.#pending.value}>
       <div slot="leading">
         ${this.#walletInfo?.logo ?? walletIcon({ size: "100%" })}
       </div>
@@ -207,36 +192,38 @@ export class InjectedWalletConnection extends DotConnectElement {
               <span class="icon">${usersIcon({ size: "1em" })}</span>`
           : "Not connected"}</span
       >
-      <div
-        id="hover-icon"
-        class=${classMap({ connected: this.#connected.value })}
+      <button
         slot="trailing"
+        class=${classMap({
+          success: !this.#connected.value,
+          error: this.#connected.value,
+          sm: true,
+        })}
+        @click=${async () => {
+          if (this.#pending.value) {
+            return;
+          }
+
+          try {
+            this.#pending.value = true;
+            if (this.#connected.value) {
+              await disconnectWallet(this.wallet);
+            } else {
+              await connectWallet(this.wallet);
+            }
+          } finally {
+            this.#pending.value = false;
+          }
+        }}
       >
-        ${this.#connected.value
-          ? disconnectedIcon({ size: "100%" })
-          : connectedIcon({ size: "100%" })}
-      </div>
+        ${this.#connected.value ? "Disconnect" : "Connect"}
+      </button>
     </dc-list-item>`;
   }
 }
 
 @customElement("dc-deep-link-wallet")
 export class DeepLinkWalletConnection extends DotConnectElement {
-  static override readonly styles = [
-    super.styles,
-    css`
-      #connection-status.connected {
-        color: var(--success-color);
-      }
-
-      #hover-icon {
-        &.connected {
-          color: var(--error-color);
-        }
-      }
-    `,
-  ];
-
   @property({ attribute: false })
   wallet!: DeepLinkWallet;
 
@@ -264,30 +251,22 @@ export class DeepLinkWalletConnection extends DotConnectElement {
     });
   }
 
+  static override readonly styles = [
+    super.styles,
+    css`
+      button {
+        min-width: 5rem;
+      }
+
+      #connection-status.connected {
+        color: var(--success-color);
+      }
+    `,
+  ];
+
   protected override render() {
     return html`<div style="display: content;">
-      <dc-list-item
-        id="list-item"
-        ?clickable=${true}
-        @click=${async () => {
-          if (this.#pending.value) {
-            return;
-          }
-
-          try {
-            this.#pending.value = true;
-            if (this.#connected.value) {
-              disconnectWallet(this.wallet);
-            } else {
-              const { uri } = await this.wallet.initiateConnectionHandshake();
-              this.#uri.value = uri;
-            }
-          } finally {
-            this.#pending.value = false;
-          }
-        }}
-        ?pending=${this.#pending.value}
-      >
+      <dc-list-item id="list-item" ?pending=${this.#pending.value}>
         <div slot="leading">
           ${this.#walletInfo?.logo ?? walletIcon({ size: "100%" })}
         </div>
@@ -300,15 +279,33 @@ export class DeepLinkWalletConnection extends DotConnectElement {
           class=${classMap({ connected: this.#connected.value })}
           >${this.#connected.value ? "Connected" : "Not connected"}</span
         >
-        <div
-          id="hover-icon"
-          class=${classMap({ connected: this.#connected.value })}
+        <button
           slot="trailing"
+          class=${classMap({
+            success: !this.#connected.value,
+            error: this.#connected.value,
+            sm: true,
+          })}
+          @click=${async () => {
+            if (this.#pending.value) {
+              return;
+            }
+
+            try {
+              this.#pending.value = true;
+              if (this.#connected.value) {
+                disconnectWallet(this.wallet);
+              } else {
+                const { uri } = await this.wallet.initiateConnectionHandshake();
+                this.#uri.value = uri;
+              }
+            } finally {
+              this.#pending.value = false;
+            }
+          }}
         >
-          ${this.#connected.value
-            ? disconnectedIcon({ size: "100%" })
-            : qrCodeIcon({ size: "100%" })}
-        </div>
+          ${this.#connected.value ? "Disconnect" : "Connect"}
+        </button>
       </dc-list-item>
       ${this.#uri.value === undefined
         ? ""
@@ -338,21 +335,21 @@ export class DeepLinkWalletConnection extends DotConnectElement {
 
 @customElement("dc-downloadable-wallet")
 export class DownloadableWallet extends DotConnectElement {
-  static override readonly styles = [
-    super.styles,
-    css`
-      #hover-icon {
-        color: var(--info-color);
-      }
-    `,
-  ];
-
   @property({ attribute: false })
   wallet!: InjectedWalletInfo;
 
   get #downloadUrl() {
     return getDownloadUrl(this.wallet);
   }
+
+  static override styles = [
+    super.styles,
+    css`
+      button {
+        min-width: 5rem;
+      }
+    `,
+  ];
 
   protected override render() {
     if (this.#downloadUrl === undefined) {
@@ -363,20 +360,20 @@ export class DownloadableWallet extends DotConnectElement {
       this.#downloadUrl.platform === "android" ||
       this.#downloadUrl.platform === "ios";
 
-    return html`<a
-      style="display: content; text-decoration: none;"
-      href=${this.#downloadUrl.url}
-      target="_blank"
-      ><dc-list-item id="list-item" .clickable=${true}>
-        <div slot="leading">${this.wallet.logo}</div>
-        <span slot="headline">${this.wallet.name}</span>
-        <!-- No way to detect wether or not wallet is installed on mobile browser -->
-        ${isMobile ? "" : html`<span slot="supporting">Not installed</span>`}
-        <div id="hover-icon" slot="trailing">
-          ${downloadIcon({ size: "100%" })}
-        </div>
-      </dc-list-item></a
-    >`;
+    return html`<dc-list-item id="list-item">
+      <div slot="leading">${this.wallet.logo}</div>
+      <span slot="headline">${this.wallet.name}</span>
+      <!-- No way to detect wether or not wallet is installed on mobile browser -->
+      ${isMobile ? "" : html`<span slot="supporting">Not installed</span>`}
+      <a
+        slot="trailing"
+        style="display: content; text-decoration: none;"
+        href=${this.#downloadUrl.url}
+        target="_blank"
+      >
+        <button class="info sm">Get</button></a
+      >
+    </dc-list-item>`;
   }
 }
 
