@@ -1,5 +1,5 @@
-import "./elements/dc-connection-button.js";
-import "./elements/dc-connection-dialog.js";
+import "./elements/connection-button.js";
+import "./elements/connection-dialog.js";
 import { walletsOrAggregators } from "./stores.js";
 import type { SupportedWalletOrAggregator } from "./types.js";
 
