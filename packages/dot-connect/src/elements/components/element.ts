@@ -64,32 +64,24 @@ export abstract class DotConnectElement extends SignalWatcher(LitElement) {
       }
 
       &.info {
-        color: light-dark(
-          var(--info-color),
-          color-mix(in srgb, var(--info-color), var(--surface-color) 10%)
-        );
+        color: var(--info-color);
       }
 
       &.success {
-        color: light-dark(
-          var(--success-color),
-          color-mix(in srgb, var(--success-color), var(--surface-color) 10%)
-        );
+        color: var(--success-color);
       }
 
       &.error {
-        color: light-dark(
-          var(--error-color),
-          color-mix(in srgb, var(--error-color), var(--surface-color) 10%)
-        );
+        color: var(--error-color);
       }
 
       &.info,
       &.success,
       &.error {
-        background-color: light-dark(
-          color-mix(in srgb, var(--on-surface-color), transparent 95%),
-          var(--on-surface-color)
+        background-color: color-mix(
+          in srgb,
+          var(--on-surface-color),
+          transparent 95%
         );
       }
 
