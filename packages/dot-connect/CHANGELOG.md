@@ -1,5 +1,15 @@
 # dot-connect
 
+## 0.8.0
+
+### Minor Changes
+
+- [#79](https://github.com/tien/dot-connect/pull/79) [`d4d47be`](https://github.com/tien/dot-connect/commit/d4d47be4cf23f920d810a0cea61ea802ca2a4adc) Thanks [@tien](https://github.com/tien)! - Changed the default color palette to a more neutral one.
+
+### Patch Changes
+
+- [#83](https://github.com/tien/dot-connect/pull/83) [`0f89d05`](https://github.com/tien/dot-connect/commit/0f89d05a1e75c5905d8bc2984d703a712879301d) Thanks [@tien](https://github.com/tien)! - Increased default button padding.
+
 ## 0.7.0
 
 ### Minor Changes
