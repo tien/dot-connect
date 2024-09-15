@@ -7,15 +7,18 @@ export abstract class DotConnectElement extends SignalWatcher(LitElement) {
       --headline-font-family: var(--dc-headline-font-family, Unbounded);
       --body-font-family: var(--dc-body-font-family, Inter);
 
-      --primary-color: var(--dc-primary-color, #e6007a);
-      --on-primary-color: var(--dc-on-primary-color, white);
+      --primary-color: var(--dc-primary-color, #ff2670);
+      --on-primary-color: var(--dc-on-primary-color, #ffffff);
 
-      --surface-color: var(--dc-surface-color, light-dark(white, #1a1b1f));
-      --on-surface-color: var(--dc-on-surface-color, light-dark(black, white));
+      --surface-color: var(--dc-surface-color, light-dark(#ffffff, #1e1e1e));
+      --on-surface-color: var(
+        --dc-on-surface-color,
+        light-dark(#000000, #ffffff)
+      );
 
-      --info-color: var(--dc-info-color, #0e76fd);
-      --success-color: var(--dc-success-color, #1db847);
-      --error-color: var(--dc-error-color, #ff494a);
+      --info-color: var(--dc-info-color, light-dark(#007aff, #0a84ff));
+      --success-color: var(--dc-success-color, light-dark(#34c759, #30d158));
+      --error-color: var(--dc-error-color, light-dark(#ff3b30, #ff453a));
 
       --max-border-radius: var(--dc-max-border-radius, 999px);
     }
@@ -61,22 +64,31 @@ export abstract class DotConnectElement extends SignalWatcher(LitElement) {
       }
 
       &.info {
-        color: var(--info-color);
+        color: light-dark(
+          var(--info-color),
+          color-mix(in srgb, var(--info-color), var(--surface-color) 10%)
+        );
       }
 
       &.success {
-        color: var(--success-color);
+        color: light-dark(
+          var(--success-color),
+          color-mix(in srgb, var(--success-color), var(--surface-color) 10%)
+        );
       }
 
       &.error {
-        color: var(--error-color);
+        color: light-dark(
+          var(--error-color),
+          color-mix(in srgb, var(--error-color), var(--surface-color) 10%)
+        );
       }
 
       &.info,
       &.success,
       &.error {
         background-color: light-dark(
-          color-mix(in srgb, var(--on-surface-color), transparent 90%),
+          color-mix(in srgb, var(--on-surface-color), transparent 95%),
           var(--on-surface-color)
         );
       }

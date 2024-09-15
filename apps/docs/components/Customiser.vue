@@ -4,18 +4,23 @@ import { ref, computed } from "vue";
 
 const colourScheme = ref<"inherit" | "light" | "dark">("inherit");
 
-const primary = ref("#e6007a");
+const primary = ref("#ff2670");
 const onPrimary = ref("#ffffff");
 
 const surface = ref("#ffffff");
-const surfaceDark = ref("#1a1b1f");
+const surfaceDark = ref("#1e1e1e");
 
 const onSurface = ref("#000000");
 const onSurfaceDark = ref("#ffffff");
 
-const info = ref("#0e76fd");
-const success = ref("#1db847");
-const error = ref("#ff494a");
+const info = ref("#007aff");
+const infoDark = ref("#0a84ff");
+
+const success = ref("#34c759");
+const successDark = ref("#30d158");
+
+const error = ref("#ff3b30");
+const errorDark = ref("#ff453a");
 
 const maxBorderRadius = ref(25);
 
@@ -25,9 +30,9 @@ const style = computed(() => ({
   "--dc-on-primary-color": onPrimary.value,
   "--dc-surface-color": `light-dark(${surface.value}, ${surfaceDark.value})`,
   "--dc-on-surface-color": `light-dark(${onSurface.value}, ${onSurfaceDark.value})`,
-  "--dc-info-color": info.value,
-  "--dc-success-color": success.value,
-  "--dc-error-color": error.value,
+  "--dc-info-color": `light-dark(${info.value}, ${infoDark.value})`,
+  "--dc-success-color": `light-dark(${success.value}, ${successDark.value})`,
+  "--dc-error-color": `light-dark(${error.value}, ${errorDark.value})`,
   "--dc-max-border-radius": maxBorderRadius.value + "px",
 }));
 
@@ -101,8 +106,18 @@ function toCss(style: Record<string, any>) {
             </section>
             <section>
               <label><input type="color" v-model="info" /> Info</label>
+              <label
+                ><input type="color" v-model="infoDark" /> Info (Dark)</label
+              >
               <label><input type="color" v-model="success" /> Success</label>
+              <label
+                ><input type="color" v-model="successDark" /> Success
+                (Dark)</label
+              >
               <label><input type="color" v-model="error" /> Error</label>
+              <label
+                ><input type="color" v-model="errorDark" /> Error (Dark)</label
+              >
             </section>
           </div>
         </fieldset>
