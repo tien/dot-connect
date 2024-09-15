@@ -1,5 +1,11 @@
 # dot-connect
 
+## 0.8.1
+
+### Patch Changes
+
+- [#85](https://github.com/tien/dot-connect/pull/85) [`f67fe30`](https://github.com/tien/dot-connect/commit/f67fe3084734d9e76b88b92e18ea43a909ca66f0) Thanks [@tien](https://github.com/tien)! - Updated button with improved contrast for dark mode.
+
 ## 0.8.0
 
 ### Minor Changes
