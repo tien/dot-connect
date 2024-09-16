@@ -1,0 +1,15 @@
+{
+  "extends": ["@tsconfig/recommended", "@tsconfig/strictest"],
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "build"
+  },
+  "include": ["src"]
+}

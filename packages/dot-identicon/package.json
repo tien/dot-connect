@@ -1,0 +1,60 @@
+{
+  "name": "dot-identicon",
+  "version": "0.0.0",
+  "description": "Polkadot's identicon",
+  "keywords": [
+    "front-end",
+    "polkadot",
+    "identicon"
+  ],
+  "homepage": "https://github.com/tien/dot-connect",
+  "bugs": {
+    "url": "https://github.com/tien/dot-connect/issues",
+    "email": "tien.nguyenkhac@icloud.com"
+  },
+  "license": "LGPL-3.0-or-later",
+  "author": "Tiến Nguyễn Khắc <tien.nguyenkhac@icloud.com> (https://tien.zone/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tien/dot-connect.git",
+    "directory": "packages/dot-identicon"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./build/index.js",
+    "./react.js": "./build/react/index.js"
+  },
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "dev": "tsc --build --watch",
+    "build": "rm -rf build && tsc --build",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "@lit-labs/preact-signals": "^1.0.2",
+    "@lit/react": "^1.0.5",
+    "@noble/hashes": "^1.5.0",
+    "lit": "^3.2.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.10.0",
+    "@polkadot-api/substrate-bindings": "^0.7.0",
+    "@tsconfig/recommended": "^1.0.7",
+    "@tsconfig/strictest": "^2.0.5",
+    "@types/eslint__js": "^8.42.3",
+    "@types/react": "^18.3.5",
+    "eslint": "^9.10.0",
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.5.0"
+  },
+  "peerDependencies": {
+    "react": ">= 18"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  }
+}

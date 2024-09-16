@@ -1576,6 +1576,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@noble/hashes@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "@noble/hashes@npm:1.5.0"
+  checksum: 10c0/1b46539695fbfe4477c0822d90c881a04d4fa2921c08c552375b444a48cac9930cb1ee68de0a3c7859e676554d0f3771999716606dc4d8f826e414c11692cdd9
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -2051,7 +2058,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot-api/substrate-bindings@npm:0.7.0":
+"@polkadot-api/substrate-bindings@npm:0.7.0, @polkadot-api/substrate-bindings@npm:^0.7.0":
   version: 0.7.0
   resolution: "@polkadot-api/substrate-bindings@npm:0.7.0"
   dependencies:
@@ -4469,6 +4476,31 @@ __metadata:
     typescript-eslint: "npm:^8.5.0"
   peerDependencies:
     "@reactive-dot/core": "*"
+    react: ">= 18"
+  peerDependenciesMeta:
+    react:
+      optional: true
+  languageName: unknown
+  linkType: soft
+
+"dot-identicon@workspace:packages/dot-identicon":
+  version: 0.0.0-use.local
+  resolution: "dot-identicon@workspace:packages/dot-identicon"
+  dependencies:
+    "@eslint/js": "npm:^9.10.0"
+    "@lit-labs/preact-signals": "npm:^1.0.2"
+    "@lit/react": "npm:^1.0.5"
+    "@noble/hashes": "npm:^1.5.0"
+    "@polkadot-api/substrate-bindings": "npm:^0.7.0"
+    "@tsconfig/recommended": "npm:^1.0.7"
+    "@tsconfig/strictest": "npm:^2.0.5"
+    "@types/eslint__js": "npm:^8.42.3"
+    "@types/react": "npm:^18.3.5"
+    eslint: "npm:^9.10.0"
+    lit: "npm:^3.2.0"
+    typescript: "npm:^5.6.2"
+    typescript-eslint: "npm:^8.5.0"
+  peerDependencies:
     react: ">= 18"
   peerDependenciesMeta:
     react:
