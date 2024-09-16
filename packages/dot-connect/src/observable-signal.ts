@@ -2,7 +2,10 @@ import { Signal } from "@lit-labs/preact-signals";
 import type { ReactiveController, ReactiveControllerHost } from "lit";
 import type { Observable, Subscription } from "rxjs";
 
-class ObservableSignal<TValue, TInitialValue extends TValue | void = void>
+export class ObservableSignal<
+    TValue,
+    TInitialValue extends TValue | void = void,
+  >
   extends Signal<TInitialValue extends void ? TValue | undefined : TValue>
   implements ReactiveController
 {

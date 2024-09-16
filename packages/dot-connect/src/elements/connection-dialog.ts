@@ -1,11 +1,9 @@
 import { users as usersIcon, wallet as walletIcon } from "../icons/index.js";
-import { observableSignal } from "../observable-signal.js";
 import {
-  accounts$,
-  connectedWallets$,
-  walletConfigs,
-  wallets$,
-} from "../stores.js";
+  type ObservableSignal,
+  observableSignal,
+} from "../observable-signal.js";
+import { connectedWallets$, walletConfigs, wallets$ } from "../stores.js";
 import type { SupportedWallet } from "../types.js";
 import { getDownloadUrl } from "../utils.js";
 import type { InjectedWalletInfo, WalletConfig } from "../wallets/types.js";
@@ -16,10 +14,11 @@ import "./components/qr-code.js";
 import { computed, effect, signal } from "@lit-labs/preact-signals";
 import { connectWallet, disconnectWallet } from "@reactive-dot/core";
 import { DeepLinkWallet, InjectedWallet } from "@reactive-dot/core/wallets.js";
-import { css, html, nothing } from "lit";
+import { css, html, nothing, type PropertyValues } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 import { join } from "lit/directives/join.js";
+import type { InjectedPolkadotAccount } from "polkadot-api/pjs-signer";
 
 @customElement("dc-connection-dialog")
 export class ConnectionDialog extends DotConnectElement {
@@ -141,19 +140,19 @@ export class InjectedWalletConnection extends DotConnectElement {
 
   readonly #connectedWallets = observableSignal(this, connectedWallets$, []);
 
-  readonly #connectedAccounts = observableSignal(this, accounts$, []);
-
-  readonly #accounts = computed(() =>
-    this.#connectedAccounts.value.filter(
-      (account) => account.wallet === this.wallet,
-    ),
-  );
+  #accounts!: ObservableSignal<InjectedPolkadotAccount[], never[]>;
 
   readonly #connected = computed(() =>
     this.#connectedWallets.value.includes(this.wallet),
   );
 
   readonly #pending = signal(false);
+
+  protected override updated(changedProperties: PropertyValues) {
+    if (changedProperties.has("wallet")) {
+      this.#accounts = observableSignal(this, this.wallet.accounts$, []);
+    }
+  }
 
   static override readonly styles = [
     super.styles,
