@@ -2,11 +2,11 @@
 layout: home
 
 hero:
-  name: DOT Connect
+  name: DOTConnect
   text: Wallets connector for Substrate DApps
   image:
     src: /purse.png
-    alt: DOT Connect
+    alt: DOTConnect
   actions:
     - theme: brand
       text: Get Started
