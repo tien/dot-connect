@@ -7,6 +7,6 @@ export type Options = {
   wallets: Array<SupportedWalletOrAggregator>;
 };
 
-export const registerDotConnect = (options: Options) => {
+export function registerDotConnect(options: Options) {
   walletsOrAggregators.value = options.wallets;
-};
+}
