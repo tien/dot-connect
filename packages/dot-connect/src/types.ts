@@ -1,13 +1,24 @@
-import type {
+import {
   DeepLinkWallet,
-  InjectedWalletAggregator,
   InjectedWallet,
+  InjectedWalletAggregator,
 } from "@reactive-dot/core/wallets.js";
 
-export type SupportedWallet = InjectedWallet | DeepLinkWallet;
+export const supportedWallets = [InjectedWallet, DeepLinkWallet] as const;
 
-export type SupportedWalletAggregator = InjectedWalletAggregator;
+export type SupportedWallet = InstanceType<(typeof supportedWallets)[number]>;
 
-export type SupportedWalletOrAggregator =
-  | SupportedWallet
-  | SupportedWalletAggregator;
+export const supportedWalletAggregators = [InjectedWalletAggregator] as const;
+
+export type SupportedWalletAggregator = InstanceType<
+  (typeof supportedWalletAggregators)[number]
+>;
+
+export const supportedWalletsOrAggregators = [
+  ...supportedWallets,
+  ...supportedWalletAggregators,
+] as const;
+
+export type SupportedWalletOrAggregator = InstanceType<
+  (typeof supportedWalletsOrAggregators)[number]
+>;
