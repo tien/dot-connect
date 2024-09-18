@@ -1,6 +1,6 @@
 import type { InjectedWalletInfo, Platform } from "./wallets/types.js";
 
-export const identifyBrowser = (): Platform | undefined => {
+export function identifyBrowser(): Platform | undefined {
   const userAgent = globalThis.navigator.userAgent;
 
   const isFirefox = /Firefox/i.test(userAgent);
@@ -22,9 +22,9 @@ export const identifyBrowser = (): Platform | undefined => {
   } else {
     return undefined;
   }
-};
+}
 
-export const getDownloadUrl = (walletInfo: InjectedWalletInfo) => {
+export function getDownloadUrl(walletInfo: InjectedWalletInfo) {
   const platform = identifyBrowser();
 
   if (platform === undefined) {
@@ -54,4 +54,4 @@ export const getDownloadUrl = (walletInfo: InjectedWalletInfo) => {
   }
 
   return { platform, url };
-};
+}
