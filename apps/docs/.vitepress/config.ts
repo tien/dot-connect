@@ -1,7 +1,7 @@
 import { defineConfig } from "vitepress";
 
 export default defineConfig({
-  title: "DOT Connect",
+  title: "DOTConnect",
   description: "Wallets connector for Substrate DApps",
   head: [
     ["link", { rel: "icon", href: "/favicon.ico" }],
@@ -9,7 +9,7 @@ export default defineConfig({
     ["meta", { property: "twitter:image", content: "/social-card.png" }],
   ],
   themeConfig: {
-    logo: { src: "/purse.png", alt: "DOT Connect" },
+    logo: { src: "/purse.png", alt: "DOTConnect" },
     nav: [
       { text: "Home", link: "/" },
       { text: "Docs", link: "/getting-started" },

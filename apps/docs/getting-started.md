@@ -6,7 +6,7 @@
 
 Start by setting up your Reactive DOT application. Follow the guide [here](https://reactivedot.dev/docs/getting-started/setup).
 
-### Add DOT Connect as a dependency
+### Add DOTConnect as a dependency
 
 ::: code-group
 
