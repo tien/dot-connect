@@ -1,5 +1,4 @@
 ---
-"dot-identicon": minor
 "dot-connect": minor
 ---
 
