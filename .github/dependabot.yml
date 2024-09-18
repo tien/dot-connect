@@ -7,6 +7,9 @@ updates:
     groups:
       development:
         dependency-type: development
+      reactive-dot:
+        patterns:
+          - "@reactive-dot/*"
 
   - package-ecosystem: github-actions
     directory: /
