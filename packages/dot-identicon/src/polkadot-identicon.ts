@@ -46,12 +46,4 @@ declare global {
   interface HTMLElementTagNameMap {
     "polkadot-identicon": PolkadotIdenticon;
   }
-
-  // eslint-disable-next-line @typescript-eslint/no-namespace
-  namespace JSX {
-    interface IntrinsicElements {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      "polkadot-identicon": any;
-    }
-  }
 }

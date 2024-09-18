@@ -383,12 +383,4 @@ declare global {
   interface HTMLElementTagNameMap {
     "dc-connection-dialog": ConnectionDialog;
   }
-
-  // eslint-disable-next-line @typescript-eslint/no-namespace
-  namespace JSX {
-    interface IntrinsicElements {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      "dc-connection-dialog": any;
-    }
-  }
 }
