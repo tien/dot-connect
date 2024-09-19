@@ -1,12 +1,41 @@
 import { close as closeIcon } from "../../icons/index.js";
 import { DotConnectElement } from "./element.js";
-import { effect, signal } from "@lit-labs/preact-signals";
-import { css, html } from "lit";
+import { css, html, type PropertyValues } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { ref } from "lit/directives/ref.js";
+import { createRef, ref } from "lit/directives/ref.js";
 
 @customElement("dc-dialog")
 export class Dialog extends DotConnectElement {
+  @property({ type: Boolean })
+  open = false;
+
+  readonly #dialogRef = createRef<HTMLDialogElement>();
+
+  protected override updated(changedProperties: PropertyValues) {
+    if (changedProperties.has("open")) {
+      if (this.open) {
+        this.#dialogRef.value?.showModal();
+      } else {
+        this.#dialogRef.value?.close();
+      }
+    }
+  }
+
+  #isBackdropClick(event: MouseEvent) {
+    if (this.#dialogRef.value === undefined) {
+      return false;
+    }
+
+    const boundingClientRect = this.#dialogRef.value.getBoundingClientRect();
+
+    return (
+      event.clientX < boundingClientRect.left ||
+      event.clientX > boundingClientRect.right ||
+      event.clientY < boundingClientRect.top ||
+      event.clientY > boundingClientRect.bottom
+    );
+  }
+
   static override get styles() {
     return [
       super.styles,
@@ -89,42 +118,24 @@ export class Dialog extends DotConnectElement {
     ];
   }
 
-  @property({ type: Boolean })
-  set open(open: boolean) {
-    this.#open.value = open;
-  }
-
-  readonly #dialogRef = signal<HTMLDialogElement | undefined>(undefined);
-
-  readonly #open = signal(false);
-
-  constructor() {
-    super();
-
-    effect(() => {
-      const dialog = this.#dialogRef.value;
-
-      if (dialog === undefined) {
-        return;
-      }
-
-      if (dialog.open && !this.#open.value) {
-        dialog.close();
-      }
-
-      if (!dialog.open && this.#open.value) {
-        dialog.showModal();
-      }
-    });
-  }
-
   override render() {
     return html`<dialog
-      ${ref(
-        (element) => (this.#dialogRef.value = element as HTMLDialogElement),
-      )}
+      ${ref(this.#dialogRef)}
       @close=${(event: Event) =>
         this.dispatchEvent(new Event(event.type, event))}
+      @pointerdown=${(event: MouseEvent) => {
+        if (this.#isBackdropClick(event)) {
+          this.#dialogRef.value?.addEventListener(
+            "pointerup",
+            (event) => {
+              if (this.#isBackdropClick(event)) {
+                this.#dialogRef.value?.close();
+              }
+            },
+            { once: true },
+          );
+        }
+      }}
     >
       <header>
         <h2><slot name="title"></slot></h2>
