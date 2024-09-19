@@ -889,8 +889,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@dot-connect/docs@workspace:apps/docs"
   dependencies:
-    "@reactive-dot/core": "npm:^0.13.0"
-    "@reactive-dot/wallet-walletconnect": "npm:^0.13.0"
+    "@reactive-dot/core": "npm:^0.14.0"
+    "@reactive-dot/wallet-walletconnect": "npm:^0.14.0"
     dot-connect: "workspace:^"
     polkadot-api: "npm:^1.2.1"
     vitepress: "npm:^1.3.4"
@@ -2112,14 +2112,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@reactive-dot/core@npm:^0.13.0":
-  version: 0.13.0
-  resolution: "@reactive-dot/core@npm:0.13.0"
+"@reactive-dot/core@npm:^0.14.0":
+  version: 0.14.0
+  resolution: "@reactive-dot/core@npm:0.14.0"
   dependencies:
     "@reactive-dot/utils": "npm:^0.8.0"
   peerDependencies:
     polkadot-api: 1.x
-  checksum: 10c0/b350c85134f060c906aeef78bcce76a708f2d0a76a9e182a6891268f1ab3fb5e972b39c0e43ea598c2b4e1e2f20c2f4b6ee3682ce7be22df9bba608555891362
+  checksum: 10c0/ca0eb6840afd20f7d30d07f0e66c84b61a40cedbbb55cfce2fe5fe9200b9d562265fc08fb928e583c8a42266a69c588beb0038c5df1fc3f5d812c3d4a12338ff
   languageName: node
   linkType: hard
 
@@ -2130,14 +2130,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@reactive-dot/wallet-walletconnect@npm:^0.13.0":
-  version: 0.13.0
-  resolution: "@reactive-dot/wallet-walletconnect@npm:0.13.0"
+"@reactive-dot/wallet-walletconnect@npm:^0.14.0":
+  version: 0.14.0
+  resolution: "@reactive-dot/wallet-walletconnect@npm:0.14.0"
   dependencies:
-    "@reactive-dot/core": "npm:^0.13.0"
+    "@reactive-dot/core": "npm:^0.14.0"
     "@walletconnect/modal": "npm:^2.6.2"
     "@walletconnect/universal-provider": "npm:^2.16.1"
-  checksum: 10c0/332883c8fa1c7d4373d84231697ef0c9aa83882a0bc2f6876106627e553ebcb33835823add473ec94e164a84ced89cf1cc072d77fdad510cd282ee1d55d1ad5a
+  checksum: 10c0/67a41cdfbdc3cac605e454ca9e267ceb44ff6e3058d17d0af6699aef066783bb4e61931e0b8e564bd2ca3e6d54736404ebec8be77e547a45bd2e4aca02b9bac3
   languageName: node
   linkType: hard
 
@@ -4461,7 +4461,7 @@ __metadata:
     "@eslint/js": "npm:^9.10.0"
     "@lit-labs/preact-signals": "npm:^1.0.2"
     "@lit/react": "npm:^1.0.5"
-    "@reactive-dot/core": "npm:^0.13.0"
+    "@reactive-dot/core": "npm:^0.14.0"
     "@tsconfig/recommended": "npm:^1.0.7"
     "@tsconfig/strictest": "npm:^2.0.5"
     "@types/eslint__js": "npm:^8.42.3"
