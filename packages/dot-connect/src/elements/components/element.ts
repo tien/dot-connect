@@ -60,7 +60,13 @@ export abstract class DotConnectElement extends SignalWatcher(LitElement) {
       }
 
       &.xs {
-        font-size: 0.4rem;
+        font-size: 0.5rem;
+      }
+
+      &.text {
+        color: var(--primary-color);
+        padding-inline-start: 0;
+        padding-inline-end: 0;
       }
 
       &.info {
@@ -83,6 +89,10 @@ export abstract class DotConnectElement extends SignalWatcher(LitElement) {
           var(--on-surface-color),
           transparent 95%
         );
+      }
+
+      &.text {
+        background-color: transparent;
       }
 
       &:hover {

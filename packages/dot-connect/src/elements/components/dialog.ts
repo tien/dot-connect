@@ -45,14 +45,14 @@ export class Dialog extends DotConnectElement {
 
           @media (min-width: 20rem) {
             width: revert;
-            min-width: 20rem;
+            min-width: min(23rem, 100dvw);
           }
 
           box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.32);
           border: 1px solid rgba(255, 255, 255, 0.08);
           border-radius: min(1.5rem, var(--max-border-radius));
+          padding: 0;
           background-color: var(--surface-color);
-          padding: 1.2rem;
 
           opacity: 0;
           translate: 0 2rem;
@@ -95,13 +95,17 @@ export class Dialog extends DotConnectElement {
         }
 
         header {
+          position: sticky;
+          top: 0;
+
           display: flex;
           align-items: center;
           gap: 1rem;
 
-          margin-bottom: 1rem;
-          padding-bottom: 1rem;
+          margin: 0 1.2rem;
           border-bottom: 1px solid var(--on-surface-color);
+          background-color: var(--surface-color);
+          padding: 1rem 0;
 
           h2 {
             flex: 1;
@@ -113,6 +117,10 @@ export class Dialog extends DotConnectElement {
           #close-button {
             cursor: pointer;
           }
+        }
+
+        #content {
+          margin: 1.2rem;
         }
       `,
     ];
@@ -147,7 +155,9 @@ export class Dialog extends DotConnectElement {
           ${closeIcon({ size: "1rem" })}
         </div>
       </header>
-      <slot name="content"></slot>
+      <div id="content">
+        <slot name="content"></slot>
+      </div>
     </dialog>`;
   }
 }

@@ -84,7 +84,7 @@ export class ConnectionDialog extends DotConnectElement {
       <span slot="title">Connect wallet</span>
       <div slot="content">
         ${this.#installedWallets.value.length <= 0
-          ? ""
+          ? nothing
           : html`<section>
               <header><h3>Installed</h3></header>
               <ul>
@@ -163,19 +163,12 @@ export class InjectedWalletConnection extends DotConnectElement {
       #connection-status.connected {
         color: var(--success-color);
       }
-
-      .icon {
-        display: contents;
-        > * {
-          vertical-align: -0.125em;
-        }
-      }
     `,
   ];
 
   protected override render() {
     return html`<dc-list-item id="list-item" ?pending=${this.#pending.value}>
-      <div slot="leading">
+      <div slot="leading" class="icon">
         ${this.#walletInfo?.logo ?? walletIcon({ size: "100%" })}
       </div>
       <span slot="headline">${this.#walletInfo?.name ?? this.wallet.name}</span>
@@ -263,7 +256,7 @@ export class DeepLinkWalletConnection extends DotConnectElement {
   protected override render() {
     return html`<div style="display: content;">
       <dc-list-item id="list-item" ?pending=${this.#pending.value}>
-        <div slot="leading">
+        <div slot="leading" class="icon">
           ${this.#walletInfo?.logo ?? walletIcon({ size: "100%" })}
         </div>
         <span slot="headline"
@@ -304,7 +297,7 @@ export class DeepLinkWalletConnection extends DotConnectElement {
         </button>
       </dc-list-item>
       ${this.#uri.value === undefined
-        ? ""
+        ? nothing
         : html`<dc-dialog
             ?open=${true}
             @close=${() => (this.#uri.value = undefined)}
@@ -362,10 +355,10 @@ export class DownloadableWallet extends DotConnectElement {
       this.#downloadUrl.platform === "ios";
 
     return html`<dc-list-item id="list-item">
-      <div slot="leading">${this.wallet.logo}</div>
+      <div slot="leading" class="icon">${this.wallet.logo}</div>
       <span slot="headline">${this.wallet.name}</span>
       <!-- No way to detect wether or not wallet is installed on mobile browser -->
-      ${isMobile ? "" : html`<span slot="supporting">Not installed</span>`}
+      ${isMobile ? nothing : html`<span slot="supporting">Not installed</span>`}
       <a
         slot="trailing"
         style="display: content; text-decoration: none;"
