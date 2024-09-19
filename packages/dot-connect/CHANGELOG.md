@@ -1,5 +1,19 @@
 # dot-connect
 
+## 0.9.0
+
+### Minor Changes
+
+- [#108](https://github.com/tien/dot-connect/pull/108) [`665174c`](https://github.com/tien/dot-connect/commit/665174c276217e0187bba82cf60491b9e276edec) Thanks [@tien](https://github.com/tien)! - Added support for dismissing dialog by clicking on the backdrop.
+
+- [#100](https://github.com/tien/dot-connect/pull/100) [`3a1d6c8`](https://github.com/tien/dot-connect/commit/3a1d6c804473ce99013acb384e8e0e035a777c7e) Thanks [@tien](https://github.com/tien)! - BREAKING: removed JSX type extension.
+
+### Patch Changes
+
+- [#104](https://github.com/tien/dot-connect/pull/104) [`2c1832f`](https://github.com/tien/dot-connect/commit/2c1832f20b489102e3fd5d6c88d9f1b96571d49c) Thanks [@tien](https://github.com/tien)! - Added support for passing unsupported wallets in the options configuration.
+
+- [#87](https://github.com/tien/dot-connect/pull/87) [`adb9443`](https://github.com/tien/dot-connect/commit/adb9443e13184f4ce4b00f5773a6105747228861) Thanks [@tien](https://github.com/tien)! - Retrieve the number of connected accounts directly from the wallet.
+
 ## 0.8.1
 
 ### Patch Changes
