@@ -7,6 +7,10 @@ updates:
     groups:
       development:
         dependency-type: development
+      polkadot-api:
+        patterns:
+          - "@polkadot-api/*"
+          - polkadot-api
       reactive-dot:
         patterns:
           - "@reactive-dot/*"
