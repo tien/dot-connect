@@ -4,7 +4,6 @@ import {
   observableSignal,
 } from "../observable-signal.js";
 import { connectedWallets$, walletConfigs, wallets$ } from "../stores.js";
-import type { SupportedWallet } from "../types.js";
 import { getDownloadUrl } from "../utils.js";
 import type { InjectedWalletInfo, WalletConfig } from "../wallets/types.js";
 import "./components/dialog.js";
@@ -132,7 +131,7 @@ export class ConnectionDialog extends DotConnectElement {
 @customElement("dc-injected-wallet")
 export class InjectedWalletConnection extends DotConnectElement {
   @property({ attribute: false })
-  wallet!: SupportedWallet;
+  wallet!: InjectedWallet;
 
   get #walletInfo() {
     return walletConfigs.value.find((config) => config.selector(this.wallet));

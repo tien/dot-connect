@@ -1,8 +1,3 @@
-import type {
-  SupportedWallet,
-  SupportedWalletAggregator,
-  SupportedWalletOrAggregator,
-} from "./types.js";
 import { wallets as rawWalletConfigs } from "./wallets/index.js";
 import { computed, signal } from "@lit-labs/preact-signals";
 import {
@@ -14,27 +9,27 @@ import { Wallet, WalletAggregator } from "@reactive-dot/core/wallets.js";
 import { Observable, combineLatest } from "rxjs";
 import { map } from "rxjs/operators";
 
-export const walletsOrAggregators = signal<SupportedWalletOrAggregator[]>([]);
+export const walletsOrAggregators = signal<Array<Wallet | WalletAggregator>>(
+  [],
+);
 
 const directWallets = computed(() =>
   walletsOrAggregators.value.filter(
-    (walletOrAggregator): walletOrAggregator is SupportedWallet =>
-      walletOrAggregator instanceof Wallet,
+    (walletOrAggregator) => walletOrAggregator instanceof Wallet,
   ),
 );
 
-const directWallets$ = new Observable<SupportedWallet[]>((subscriber) =>
+const directWallets$ = new Observable<Wallet[]>((subscriber) =>
   directWallets.subscribe(subscriber.next.bind(subscriber)),
 );
 
 const aggregators = computed(() =>
   walletsOrAggregators.value.filter(
-    (walletOrAggregator): walletOrAggregator is SupportedWalletAggregator =>
-      walletOrAggregator instanceof WalletAggregator,
+    (walletOrAggregator) => walletOrAggregator instanceof WalletAggregator,
   ),
 );
 
-const aggregators$ = new Observable<SupportedWalletAggregator[]>((subscriber) =>
+const aggregators$ = new Observable<WalletAggregator[]>((subscriber) =>
   aggregators.subscribe(subscriber.next.bind(subscriber)),
 );
 
