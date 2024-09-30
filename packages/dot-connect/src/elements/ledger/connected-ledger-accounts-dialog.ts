@@ -22,11 +22,13 @@ export class ConnectedLedgerAccountsDialog extends DotConnectElement {
   protected retryCount = 0;
 
   #connectLedgerTask = new Task(this, {
-    task: ([wallet]) =>
-      wallet === undefined
-        ? Promise.withResolvers().promise
+    task: ([open, wallet]) =>
+      !open || wallet === undefined
+        ? Promise.withResolvers<
+            Awaited<ReturnType<LedgerWallet["getConnectedAccount"]>>
+          >().promise
         : wallet.getConnectedAccount(),
-    args: () => [this.wallet, this.retryCount] as const,
+    args: () => [this.open, this.wallet, this.retryCount] as const,
   });
 
   protected override willUpdate(changedProperties: PropertyValues) {

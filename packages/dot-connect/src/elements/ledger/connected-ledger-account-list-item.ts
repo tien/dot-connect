@@ -30,7 +30,9 @@ export class ConnectedLedgerAccountListItem extends DotConnectElement {
   readonly #accountTask = new Task(this, {
     task: async ([wallet, path]) =>
       wallet === undefined
-        ? Promise.withResolvers().promise
+        ? Promise.withResolvers<
+            Awaited<ReturnType<LedgerWallet["getConnectedAccount"]>>
+          >().promise
         : wallet.getConnectedAccount(path),
     args: () => [this.wallet, this.accountPath, this.retryCount] as const,
   });

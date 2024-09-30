@@ -889,9 +889,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@dot-connect/docs@workspace:apps/docs"
   dependencies:
-    "@reactive-dot/core": "npm:^0.15.0"
-    "@reactive-dot/wallet-ledger": "npm:0.0.0-snapshot.145"
-    "@reactive-dot/wallet-walletconnect": "npm:^0.15.0"
+    "@reactive-dot/core": "npm:^0.16.0"
+    "@reactive-dot/wallet-ledger": "npm:^0.16.0"
+    "@reactive-dot/wallet-walletconnect": "npm:^0.16.0"
     buffer: "npm:^6.0.3"
     dot-connect: "workspace:^"
     polkadot-api: "npm:^1.3.3"
@@ -2200,44 +2200,44 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@reactive-dot/core@npm:0.0.0-snapshot.145":
-  version: 0.0.0-snapshot.145
-  resolution: "@reactive-dot/core@npm:0.0.0-snapshot.145"
+"@reactive-dot/core@npm:^0.16.0":
+  version: 0.16.0
+  resolution: "@reactive-dot/core@npm:0.16.0"
   dependencies:
-    "@reactive-dot/utils": "npm:^0.0.0-snapshot.145"
+    "@reactive-dot/utils": "npm:^0.8.0"
   peerDependencies:
     polkadot-api: 1.x
-  checksum: 10c0/de3cab75927b2a3ccbf6ef0d2df897e1331fe30b57aa0304a917c7d0031856ae57467fa4995196cc25e4fd553518fe9358c516d7b3f65202d0edb2119bf6c355
+  checksum: 10c0/749e3eeca300f79a4395400892275a5b2e19f0a609654cb462998cbc62ad86c2a7c1bbe37ef2953903b1ff76351ff0f89f367921a9a60685a02a5cc8189a5586
   languageName: node
   linkType: hard
 
-"@reactive-dot/utils@npm:^0.0.0-snapshot.145":
-  version: 0.0.0-snapshot.ffb961c
-  resolution: "@reactive-dot/utils@npm:0.0.0-snapshot.ffb961c"
-  checksum: 10c0/6025ce5d58a0e1e51fd141e438ea543b2271b1e26ff4197ce2c6459aaf57f55bf81d806f64fc2a42c495a4b54277328e4b77894aa2f25993b7459d867a081e65
+"@reactive-dot/utils@npm:^0.8.0":
+  version: 0.8.0
+  resolution: "@reactive-dot/utils@npm:0.8.0"
+  checksum: 10c0/e17be1fe37f567999bbb0871916f5321cbf2879fee9d2af76618792e641ec8929a9c864c835956e6ea970a7508b5d38c8523071192cc268a436f260ba8f11bc0
   languageName: node
   linkType: hard
 
-"@reactive-dot/wallet-ledger@npm:0.0.0-snapshot.145":
-  version: 0.0.0-snapshot.145
-  resolution: "@reactive-dot/wallet-ledger@npm:0.0.0-snapshot.145"
+"@reactive-dot/wallet-ledger@npm:^0.16.0":
+  version: 0.16.0
+  resolution: "@reactive-dot/wallet-ledger@npm:0.16.0"
   dependencies:
     "@ledgerhq/hw-transport-webusb": "npm:^6.29.4"
     "@polkadot-api/ledger-signer": "npm:^0.1.1"
-    "@reactive-dot/core": "npm:^0.0.0-snapshot.145"
+    "@reactive-dot/core": "npm:^0.16.0"
     buffer: "npm:^6.0.3"
-  checksum: 10c0/9553c1b887d99500565b65a3d808acb61882c6272740e17e187f0b911f0caf8f74b227da89cfcd731c546db6e71d971d92ede1c7766d0ba7e0dfbb106d9e1cb4
+  checksum: 10c0/99f2f7349188457248a97f607e54c8d11f96188cd6cfe92396ef181948b534e743a3860ab7010451c026e0c4925a572756392a57c72ec26dcbe0c0aa5b475605
   languageName: node
   linkType: hard
 
-"@reactive-dot/wallet-walletconnect@npm:^0.15.0":
-  version: 0.15.0
-  resolution: "@reactive-dot/wallet-walletconnect@npm:0.15.0"
+"@reactive-dot/wallet-walletconnect@npm:^0.16.0":
+  version: 0.16.0
+  resolution: "@reactive-dot/wallet-walletconnect@npm:0.16.0"
   dependencies:
-    "@reactive-dot/core": "npm:^0.15.0"
+    "@reactive-dot/core": "npm:^0.16.0"
     "@walletconnect/modal": "npm:^2.6.2"
     "@walletconnect/universal-provider": "npm:^2.16.2"
-  checksum: 10c0/518fbc8a4c4bac8b4456be2cd44ceb36db3837443d5d3636720625aaa056370ae6a9e0144ad0dd40be046dbac3e82cfac92b7222f440064cc853e98d4212ba18
+  checksum: 10c0/c4952c72798346a57b1c8fa9cc4b63cddef7a357e3935599b4e80412183da9ab4ce7ada2e27cb3b6fb21b25160afd1a20c0eeacefcc61a1e3143b32025f76ba8
   languageName: node
   linkType: hard
 
@@ -4579,8 +4579,8 @@ __metadata:
     "@lit-labs/preact-signals": "npm:^1.0.2"
     "@lit/react": "npm:^1.0.5"
     "@lit/task": "npm:^1.0.1"
-    "@reactive-dot/core": "npm:^0.15.0"
-    "@reactive-dot/wallet-ledger": "npm:0.0.0-snapshot.145"
+    "@reactive-dot/core": "npm:^0.16.0"
+    "@reactive-dot/wallet-ledger": "npm:^0.16.0"
     "@tsconfig/recommended": "npm:^1.0.7"
     "@tsconfig/strictest": "npm:^2.0.5"
     "@types/eslint__js": "npm:^8.42.3"

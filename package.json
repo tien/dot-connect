@@ -35,8 +35,5 @@
     "husky": "^9.1.6",
     "nx": "^19.8.0",
     "prettier": "^3.3.3"
-  },
-  "resolutions": {
-    "@reactive-dot/core": "0.0.0-snapshot.145"
   }
 }
