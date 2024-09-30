@@ -23,4 +23,3 @@ import Customiser from './components/Customiser.vue'
 ## Try it out!
 
 <Customiser />
-<dc-ledger-dialog open></dc-ledger-dialog>

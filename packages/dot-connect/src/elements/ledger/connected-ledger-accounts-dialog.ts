@@ -1,6 +1,7 @@
 import { DotConnectElement } from "../components/element.js";
 import "./connected-ledger-account-list-item.js";
 import { Task } from "@lit/task";
+import type { LedgerWallet } from "@reactive-dot/wallet-ledger";
 import { css, html, type PropertyValues } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 
@@ -11,6 +12,9 @@ export class ConnectedLedgerAccountsDialog extends DotConnectElement {
   @property({ type: Boolean })
   open = false;
 
+  @property({ attribute: false })
+  wallet!: LedgerWallet;
+
   @state()
   protected accountCount = ConnectedLedgerAccountsDialog.accountIncrement;
 
@@ -18,16 +22,11 @@ export class ConnectedLedgerAccountsDialog extends DotConnectElement {
   protected retryCount = 0;
 
   #connectLedgerTask = new Task(this, {
-    task: async () => {
-      await new Promise((resolve) => setTimeout(resolve, 3000));
-
-      if (Math.random() < 0.5) {
-        throw 0;
-      }
-
-      return true;
-    },
-    args: () => [this.retryCount],
+    task: ([wallet]) =>
+      wallet === undefined
+        ? Promise.withResolvers().promise
+        : wallet.getConnectedAccount(),
+    args: () => [this.wallet, this.retryCount] as const,
   });
 
   protected override willUpdate(changedProperties: PropertyValues) {
@@ -67,7 +66,8 @@ export class ConnectedLedgerAccountsDialog extends DotConnectElement {
               ${Array.from({ length: this.accountCount }).map(
                 (_, index) =>
                   html`<dc-connected-ledger-account-list-item
-                    accountIndex=${index}
+                    .wallet=${this.wallet}
+                    accountPath=${index}
                   ></dc-connected-ledger-account-list-item>`,
               )}
               <button

@@ -26,6 +26,10 @@ export class Dialog extends DotConnectElement {
       return false;
     }
 
+    if (this.#dialogRef.value !== event.target) {
+      return false;
+    }
+
     const boundingClientRect = this.#dialogRef.value.getBoundingClientRect();
 
     return (

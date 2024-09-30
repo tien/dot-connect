@@ -1,8 +1,16 @@
+import { genericChainSpec } from "../../const.js";
+import {
+  type ObservableSignal,
+  observableSignal,
+} from "../../observable-signal.js";
 import "../components/account-list-item.js";
 import { DotConnectElement } from "../components/element.js";
 import "./connected-ledger-accounts-dialog.js";
+import { getAccounts } from "@reactive-dot/core";
+import type { WalletAccount } from "@reactive-dot/core/wallets.js";
+import type { LedgerWallet } from "@reactive-dot/wallet-ledger";
 import "dot-identicon";
-import { css, html, nothing } from "lit";
+import { css, html, nothing, type PropertyValues } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { repeat } from "lit/directives/repeat.js";
 
@@ -11,14 +19,23 @@ export class LedgerDialog extends DotConnectElement {
   @property({ type: Boolean })
   open = false;
 
-  @state()
-  protected connectedAccounts = [
-    { address: "5CLwQ5xmYfBshb9cwndyybRwbc673Rhh4f6s3i3qXbfDebXJ", path: "" },
-    { address: "5CLwQ5xmYfBshb9cwndyybRwbc673Rhh4f6s3i3qXbfDebXJ", path: "" },
-  ] as Array<{ address: string; path: string }>;
+  @property({ attribute: false })
+  wallet!: LedgerWallet;
 
   @state()
   protected addDialogOpen = false;
+
+  #connectedAccounts?: ObservableSignal<WalletAccount[], []>;
+
+  protected override updated(changedProperties: PropertyValues) {
+    if (changedProperties.has("wallet")) {
+      this.#connectedAccounts = observableSignal(
+        this,
+        getAccounts([this.wallet], genericChainSpec),
+        [],
+      );
+    }
+  }
 
   static override styles = [
     super.styles,
@@ -31,7 +48,7 @@ export class LedgerDialog extends DotConnectElement {
         padding: 0 0.5rem 0.75rem 0.5rem;
 
         h3 {
-          font-size: 0.75em;
+          font-size: 0.8em;
         }
       }
 
@@ -58,24 +75,31 @@ export class LedgerDialog extends DotConnectElement {
               Add more
             </button>
           </header>
-          ${repeat(
-            this.connectedAccounts,
-            (account) => account.address,
-            (account, index) =>
-              html`<dc-account-list-item address=${account.address}>
-                  <button slot="trailing" class="error sm">
-                    Remove
-                  </button></dc-account-list-item
-                >${this.connectedAccounts.length <= 1 ||
-                index === this.connectedAccounts.length - 1
-                  ? nothing
-                  : html`<hr />`}`,
-          )}
+          ${this.#connectedAccounts === undefined
+            ? nothing
+            : repeat(
+                this.#connectedAccounts.value,
+                (account) => account.id,
+                (account, index) =>
+                  html`<dc-account-list-item address=${account.address}>
+                      <button
+                        slot="trailing"
+                        class="error sm"
+                        @click=${() => this.wallet.accountStore.delete(account)}
+                      >
+                        Remove
+                      </button></dc-account-list-item
+                    >${this.#connectedAccounts!.value.length <= 1 ||
+                    index === this.#connectedAccounts!.value.length - 1
+                      ? nothing
+                      : html`<hr />`}`,
+              )}
         </section>
       </dc-dialog>
       <dc-connected-ledger-accounts-dialog
         ?open=${this.addDialogOpen}
         @close=${() => (this.addDialogOpen = false)}
+        .wallet=${this.wallet}
       ></dc-connected-ledger-accounts-dialog>`;
   }
 }

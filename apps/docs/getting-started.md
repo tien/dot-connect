@@ -35,6 +35,7 @@ Configure your project by adding the following code:
 ```ts
 import type { Config } from "@reactive-dot/core";
 import { InjectedWalletAggregator } from "@reactive-dot/core/wallets.js";
+import { LedgerWallet } from "@reactive-dot/wallet-ledger";
 import { WalletConnect } from "@reactive-dot/wallet-walletconnect";
 import { registerDotConnect } from "dot-connect";
 
@@ -45,6 +46,7 @@ export const config = {
   // ...
   wallets: [
     new InjectedWalletAggregator(),
+    new LedgerWallet(),
     new WalletConnect({
       projectId: "WALLET_CONNECT_PROJECT_ID",
       providerOptions: {
