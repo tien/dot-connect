@@ -1,5 +1,11 @@
 # dot-connect
 
+## 0.10.0
+
+### Minor Changes
+
+- [#105](https://github.com/tien/dot-connect/pull/105) [`1b24435`](https://github.com/tien/dot-connect/commit/1b24435fb516c0412b0e45b2ea8a54e00891b842) Thanks [@tien](https://github.com/tien)! - Added Ledger wallet support.
+
 ## 0.9.0
 
 ### Minor Changes
