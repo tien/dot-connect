@@ -1,3 +1,4 @@
+import { genericChainSpec } from "./const.js";
 import { wallets as rawWalletConfigs } from "./wallets/index.js";
 import { computed, signal } from "@lit-labs/preact-signals";
 import {
@@ -47,6 +48,6 @@ export const wallets$ = combineLatest([
 
 export const connectedWallets$ = getConnectedWallets(wallets$);
 
-export const accounts$ = getAccounts(wallets$);
+export const accounts$ = getAccounts(wallets$, genericChainSpec);
 
 export const walletConfigs = signal(rawWalletConfigs);

@@ -3,11 +3,17 @@ import {
   InjectedWalletAggregator,
   initializeWallets,
 } from "@reactive-dot/core/wallets.js";
+import { LedgerWallet } from "@reactive-dot/wallet-ledger";
 import { WalletConnect } from "@reactive-dot/wallet-walletconnect";
+import { Buffer } from "buffer/";
 import { registerDotConnect } from "dot-connect";
+
+// @ts-expect-error polyfill types mismatch
+globalThis.Buffer = Buffer;
 
 const wallets = [
   new InjectedWalletAggregator(),
+  new LedgerWallet(),
   new WalletConnect({
     projectId: "6089356d0a4448aeda421a025cc286c9",
     providerOptions: {

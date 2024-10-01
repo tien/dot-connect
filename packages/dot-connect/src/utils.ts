@@ -1,5 +1,10 @@
 import type { InjectedWalletInfo, Platform } from "./wallets/types.js";
 
+export function logAndThrow(error: unknown): never {
+  console.error(error);
+  throw error;
+}
+
 export function identifyBrowser(): Platform | undefined {
   const userAgent = globalThis.navigator.userAgent;
 
