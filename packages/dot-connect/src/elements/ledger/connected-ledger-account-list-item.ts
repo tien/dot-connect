@@ -73,13 +73,15 @@ export class ConnectedLedgerAccountListItem extends DotConnectElement {
           </dc-list-item>
         </div>`,
       complete: (account) => {
+        const name = `Ledger account ${this.accountPath + 1}`;
+
         const connected = this.#connectedAccounts?.value.some(
           (connectedAccount) => connectedAccount.id === account.id,
         );
 
         return html`<dc-account-list-item
           .address=${genericAccountId.dec(account.publicKey)}
-          name="Account ${this.accountPath + 1}"
+          name=${name}
           type="checkbox"
           clickable
           ?checked=${connected}
@@ -87,7 +89,7 @@ export class ConnectedLedgerAccountListItem extends DotConnectElement {
             if (connected) {
               this.wallet.accountStore.delete(account);
             } else {
-              this.wallet.accountStore.add(account);
+              this.wallet.accountStore.add({ ...account, name });
             }
           }}
         ></dc-account-list-item>`;

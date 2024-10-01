@@ -12,6 +12,7 @@ import type { LedgerWallet } from "@reactive-dot/wallet-ledger";
 import "dot-identicon";
 import { css, html, nothing, type PropertyValues } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
+import { ifDefined } from "lit/directives/if-defined.js";
 import { repeat } from "lit/directives/repeat.js";
 
 @customElement("dc-ledger-dialog")
@@ -81,7 +82,10 @@ export class LedgerDialog extends DotConnectElement {
                 this.#connectedAccounts.value,
                 (account) => account.id,
                 (account, index) =>
-                  html`<dc-account-list-item address=${account.address}>
+                  html`<dc-account-list-item
+                      address=${account.address}
+                      name=${ifDefined(account.name)}
+                    >
                       <button
                         slot="trailing"
                         class="error sm"
