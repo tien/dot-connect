@@ -23,19 +23,23 @@ export class ConnectedLedgerAccountsDialog extends DotConnectElement {
   protected retryCount = 0;
 
   #connectLedgerTask = new Task(this, {
-    task: ([open, wallet]) =>
-      !open || wallet === undefined
+    task: ([wallet]) =>
+      wallet === undefined
         ? Promise.withResolvers<
             Awaited<ReturnType<LedgerWallet["getConnectedAccount"]>>
           >().promise
         : wallet.getConnectedAccount().catch(logAndThrow),
-    args: () => [this.open, this.wallet, this.retryCount] as const,
+    args: () => [this.wallet, this.retryCount] as const,
+    autoRun: false,
   });
 
   protected override willUpdate(changedProperties: PropertyValues) {
-    if (changedProperties.get("open")) {
-      this.retryCount++;
-      this.accountCount = ConnectedLedgerAccountsDialog.accountIncrement;
+    if (changedProperties.has("open")) {
+      if (this.open) {
+        this.#connectLedgerTask.run();
+        this.retryCount++;
+        this.accountCount = ConnectedLedgerAccountsDialog.accountIncrement;
+      }
     }
   }
 

@@ -16,6 +16,12 @@ export abstract class DotConnectElement extends SignalWatcher(LitElement) {
         light-dark(#000000, #ffffff)
       );
 
+      --surface-container-color: color-mix(
+        in srgb,
+        var(--on-surface-color),
+        transparent 95%
+      );
+
       --info-color: var(--dc-info-color, light-dark(#007aff, #0a84ff));
       --success-color: var(--dc-success-color, light-dark(#34c759, #30d158));
       --error-color: var(--dc-error-color, light-dark(#ff3b30, #ff453a));
@@ -84,11 +90,7 @@ export abstract class DotConnectElement extends SignalWatcher(LitElement) {
       &.info,
       &.success,
       &.error {
-        background-color: color-mix(
-          in srgb,
-          var(--on-surface-color),
-          transparent 95%
-        );
+        background-color: var(--surface-container-color);
       }
 
       &.text {

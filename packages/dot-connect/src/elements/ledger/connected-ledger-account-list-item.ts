@@ -39,7 +39,7 @@ export class ConnectedLedgerAccountListItem extends DotConnectElement {
   });
 
   protected override willUpdate(changedProperties: PropertyValues) {
-    if (changedProperties.get("open")) {
+    if (changedProperties.has("open")) {
       this.retryCount++;
     }
   }

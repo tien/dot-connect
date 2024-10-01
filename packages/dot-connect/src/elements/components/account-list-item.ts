@@ -40,6 +40,7 @@ export class AccountListItem extends DotConnectElement {
         <polkadot-identicon
           address=${this.address}
           size="100%"
+          backgroundColor="var(--surface-container-color)"
         ></polkadot-identicon>
       </div>
       <span slot="headline">${this.name ?? this.shortenedAddress}</span>
