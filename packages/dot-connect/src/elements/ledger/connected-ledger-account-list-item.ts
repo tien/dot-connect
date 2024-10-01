@@ -10,7 +10,7 @@ import { getAccounts } from "@reactive-dot/core";
 import type { WalletAccount } from "@reactive-dot/core/wallets.js";
 import type { LedgerWallet } from "@reactive-dot/wallet-ledger";
 import { css, html, type PropertyValues } from "lit";
-import { customElement, property, state } from "lit/decorators.js";
+import { customElement, property } from "lit/decorators.js";
 import { AccountId } from "polkadot-api";
 
 const genericAccountId = AccountId();
@@ -23,9 +23,6 @@ export class ConnectedLedgerAccountListItem extends DotConnectElement {
   @property({ type: Number })
   accountPath!: number;
 
-  @state()
-  retryCount = 0;
-
   #connectedAccounts?: ObservableSignal<WalletAccount[], []>;
 
   readonly #accountTask = new Task(this, {
@@ -35,12 +32,12 @@ export class ConnectedLedgerAccountListItem extends DotConnectElement {
             Awaited<ReturnType<LedgerWallet["getConnectedAccount"]>>
           >().promise
         : wallet.getConnectedAccount(path).catch(logAndThrow),
-    args: () => [this.wallet, this.accountPath, this.retryCount] as const,
+    args: () => [this.wallet, this.accountPath] as const,
   });
 
   protected override willUpdate(changedProperties: PropertyValues) {
     if (changedProperties.has("open")) {
-      this.retryCount++;
+      this.#accountTask.run();
     }
   }
 
@@ -98,7 +95,11 @@ export class ConnectedLedgerAccountListItem extends DotConnectElement {
       error: () =>
         html`<dc-list-item>
           <span slot="headline">Failed to load account</span>
-          <button slot="trailing" class="xs" @click=${() => this.retryCount++}>
+          <button
+            slot="trailing"
+            class="xs"
+            @click=${() => this.#accountTask.run()}
+          >
             Retry
           </button>
         </dc-list-item>`,

@@ -19,9 +19,6 @@ export class ConnectedLedgerAccountsDialog extends DotConnectElement {
   @state()
   protected accountCount = ConnectedLedgerAccountsDialog.accountIncrement;
 
-  @state()
-  protected retryCount = 0;
-
   #connectLedgerTask = new Task(this, {
     task: ([wallet]) =>
       wallet === undefined
@@ -29,15 +26,18 @@ export class ConnectedLedgerAccountsDialog extends DotConnectElement {
             Awaited<ReturnType<LedgerWallet["getConnectedAccount"]>>
           >().promise
         : wallet.getConnectedAccount().catch(logAndThrow),
-    args: () => [this.wallet, this.retryCount] as const,
+    args: () => [this.wallet] as const,
     autoRun: false,
   });
 
   protected override willUpdate(changedProperties: PropertyValues) {
+    if (changedProperties.has("wallet")) {
+      this.#connectLedgerTask.run();
+    }
+
     if (changedProperties.has("open")) {
       if (this.open) {
         this.#connectLedgerTask.run();
-        this.retryCount++;
         this.accountCount = ConnectedLedgerAccountsDialog.accountIncrement;
       }
     }
@@ -88,7 +88,10 @@ export class ConnectedLedgerAccountsDialog extends DotConnectElement {
             `,
             error: () =>
               html`<p>Failed to connect Ledger device.</p>
-                <button id="retry-button" @click=${() => this.retryCount++}>
+                <button
+                  id="retry-button"
+                  @click=${() => this.#connectLedgerTask.run()}
+                >
                   Try again
                 </button>`,
           })}
