@@ -1,3 +1,4 @@
+import { logAndThrow } from "../../utils.js";
 import { DotConnectElement } from "../components/element.js";
 import "./connected-ledger-account-list-item.js";
 import { Task } from "@lit/task";
@@ -27,7 +28,7 @@ export class ConnectedLedgerAccountsDialog extends DotConnectElement {
         ? Promise.withResolvers<
             Awaited<ReturnType<LedgerWallet["getConnectedAccount"]>>
           >().promise
-        : wallet.getConnectedAccount(),
+        : wallet.getConnectedAccount().catch(logAndThrow),
     args: () => [this.open, this.wallet, this.retryCount] as const,
   });
 

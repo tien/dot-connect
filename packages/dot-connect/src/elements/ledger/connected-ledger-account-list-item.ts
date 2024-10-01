@@ -3,6 +3,7 @@ import {
   observableSignal,
   type ObservableSignal,
 } from "../../observable-signal.js";
+import { logAndThrow } from "../../utils.js";
 import { DotConnectElement } from "../components/element.js";
 import { Task } from "@lit/task";
 import { getAccounts } from "@reactive-dot/core";
@@ -33,7 +34,7 @@ export class ConnectedLedgerAccountListItem extends DotConnectElement {
         ? Promise.withResolvers<
             Awaited<ReturnType<LedgerWallet["getConnectedAccount"]>>
           >().promise
-        : wallet.getConnectedAccount(path),
+        : wallet.getConnectedAccount(path).catch(logAndThrow),
     args: () => [this.wallet, this.accountPath, this.retryCount] as const,
   });
 
