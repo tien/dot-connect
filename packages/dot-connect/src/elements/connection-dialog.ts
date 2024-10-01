@@ -120,7 +120,7 @@ export class ConnectionDialog extends DotConnectElement {
             </section>`,
         )}
         ${when(
-          this.#hardwareWallets.value.length > 0,
+          "USB" in globalThis && this.#hardwareWallets.value.length > 0,
           () =>
             html`<section>
               <header><h3>Hardware</h3></header>
