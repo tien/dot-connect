@@ -890,9 +890,8 @@ __metadata:
   resolution: "@dot-connect/docs@workspace:apps/docs"
   dependencies:
     "@reactive-dot/core": "npm:^0.16.0"
-    "@reactive-dot/wallet-ledger": "npm:^0.16.0"
+    "@reactive-dot/wallet-ledger": "npm:^0.16.1"
     "@reactive-dot/wallet-walletconnect": "npm:^0.16.0"
-    buffer: "npm:^6.0.3"
     dot-connect: "workspace:^"
     polkadot-api: "npm:^1.3.3"
     vitepress: "npm:^1.3.4"
@@ -2227,6 +2226,18 @@ __metadata:
     "@reactive-dot/core": "npm:^0.16.0"
     buffer: "npm:^6.0.3"
   checksum: 10c0/99f2f7349188457248a97f607e54c8d11f96188cd6cfe92396ef181948b534e743a3860ab7010451c026e0c4925a572756392a57c72ec26dcbe0c0aa5b475605
+  languageName: node
+  linkType: hard
+
+"@reactive-dot/wallet-ledger@npm:^0.16.1":
+  version: 0.16.1
+  resolution: "@reactive-dot/wallet-ledger@npm:0.16.1"
+  dependencies:
+    "@ledgerhq/hw-transport-webusb": "npm:^6.29.4"
+    "@polkadot-api/ledger-signer": "npm:^0.1.1"
+    "@reactive-dot/core": "npm:^0.16.0"
+    buffer: "npm:^6.0.3"
+  checksum: 10c0/75135b0ddf8c9890b1f3aa7acb5ccf4864c41b3fb077a5727c7546499d96ea5cb39b19bbc6e2f26834c27651786d564171b03cb07b36b085a9663660d6aad358
   languageName: node
   linkType: hard
 
