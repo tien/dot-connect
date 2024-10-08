@@ -1500,12 +1500,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lit/react@npm:^1.0.5":
-  version: 1.0.5
-  resolution: "@lit/react@npm:1.0.5"
+"@lit/react@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "@lit/react@npm:1.0.6"
   peerDependencies:
     "@types/react": 17 || 18
-  checksum: 10c0/bf6ebf41c900e08d42ff68f2df0eea17c2c3bf365bf8c952e264dce3c0f24799ac422c3c0059a1e039fa4dcb4de0977cfdcf1b06603353ea79aacb0613f4d333
+  checksum: 10c0/9d80548dbf9fde8dad1ed82a0dd570428d98700db39ebd7e2b86552bb53bd8e371047332db5a1498ca80fff08d245f5b077397e885a6cca352301ee94ba707c6
   languageName: node
   linkType: hard
 
@@ -4613,7 +4613,7 @@ __metadata:
   dependencies:
     "@eslint/js": "npm:^9.12.0"
     "@lit-labs/preact-signals": "npm:^1.0.2"
-    "@lit/react": "npm:^1.0.5"
+    "@lit/react": "npm:^1.0.6"
     "@lit/task": "npm:^1.0.1"
     "@reactive-dot/core": "npm:^0.16.0"
     "@reactive-dot/wallet-ledger": "npm:^0.16.1"
@@ -4644,7 +4644,7 @@ __metadata:
   dependencies:
     "@eslint/js": "npm:^9.12.0"
     "@lit-labs/preact-signals": "npm:^1.0.2"
-    "@lit/react": "npm:^1.0.5"
+    "@lit/react": "npm:^1.0.6"
     "@noble/hashes": "npm:^1.5.0"
     "@polkadot-api/substrate-bindings": "npm:^0.9.1"
     "@tsconfig/recommended": "npm:^1.0.7"
