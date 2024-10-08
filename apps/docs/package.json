@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@reactive-dot/core": "^0.16.0",
-    "@reactive-dot/wallet-ledger": "^0.16.1",
+    "@reactive-dot/wallet-ledger": "^0.16.3",
     "@reactive-dot/wallet-walletconnect": "^0.16.0",
     "dot-connect": "workspace:^",
     "polkadot-api": "^1.4.1",
