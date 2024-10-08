@@ -1,5 +1,11 @@
 # dot-connect
 
+## 0.11.0
+
+### Minor Changes
+
+- [#142](https://github.com/tien/dot-connect/pull/142) [`065ede4`](https://github.com/tien/dot-connect/commit/065ede45acd36f510a3fde751d63991ee8a26715) Thanks [@tien](https://github.com/tien)! - Added a button to copy deeplink wallets’ URL.
+
 ## 0.10.0
 
 ### Minor Changes
