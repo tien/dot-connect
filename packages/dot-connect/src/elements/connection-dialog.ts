@@ -1,4 +1,8 @@
-import { users as usersIcon, wallet as walletIcon } from "../icons/index.js";
+import {
+  copy as copyIcon,
+  users as usersIcon,
+  wallet as walletIcon,
+} from "../icons/index.js";
 import {
   observableSignal,
   type ObservableSignal,
@@ -319,6 +323,25 @@ export class DeepLinkWalletConnection extends BaseWalletConnection<DeepLinkWalle
     </button>`;
   }
 
+  static override styles = [
+    super.styles,
+    css`
+      #url-container {
+        display: flex;
+        justify-content: center;
+
+        button {
+          padding: 0;
+          cursor: copy;
+
+          svg {
+            vertical-align: -0.125em;
+          }
+        }
+      }
+    `,
+  ];
+
   protected override render() {
     return html`<div style="display: content;">
       ${super.render()}
@@ -342,6 +365,15 @@ export class DeepLinkWalletConnection extends BaseWalletConnection<DeepLinkWalle
                   return `data:image/svg+xml;base64,${globalThis.btoa(svg)}`;
                 })()}
               ></dc-qr-code>
+              <div id="url-container">
+                <button
+                  class="text info"
+                  @click=${() =>
+                    globalThis.navigator.clipboard.writeText(this.#uri.value!)}
+                >
+                  Copy link ${copyIcon({ size: "1em" })}
+                </button>
+              </div>
             </div>
           </dc-dialog>`}
     </div>`;
