@@ -6,3 +6,4 @@ export { qrCode } from "./qr-code.js";
 export { users } from "./users.js";
 export { wallet } from "./wallet.js";
 export { wallets } from "./wallets.js";
+export { copy } from "./copy.js";

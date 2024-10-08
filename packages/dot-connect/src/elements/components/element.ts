@@ -93,12 +93,18 @@ export abstract class DotConnectElement extends SignalWatcher(LitElement) {
         background-color: var(--surface-container-color);
       }
 
-      &.text {
+      &.text,
+      &.icon {
         background-color: transparent;
       }
 
       &:hover {
         scale: 1.04;
+      }
+
+      &:active {
+        scale: 1;
+        filter: brightness(1.125);
       }
     }
 
