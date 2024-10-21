@@ -33,7 +33,7 @@ Install any optional dependencies based on the wallet types you want to support 
 Configure your project by adding the following code:
 
 ```ts
-import type { Config } from "@reactive-dot/core";
+import { defineConfig } from "@reactive-dot/core";
 import { InjectedWalletAggregator } from "@reactive-dot/core/wallets.js";
 import { LedgerWallet } from "@reactive-dot/wallet-ledger";
 import { WalletConnect } from "@reactive-dot/wallet-walletconnect";
@@ -42,7 +42,7 @@ import { registerDotConnect } from "dot-connect";
 // ...
 
 // More information on how to set up your config: https://reactivedot.dev/docs/getting-started/setup#create-config
-export const config = {
+export const config = defineConfig({
   // ...
   wallets: [
     new InjectedWalletAggregator(),
@@ -63,7 +63,7 @@ export const config = {
       ],
     }),
   ],
-} as const satisfies Config;
+});
 
 // Register dot-connect custom elements & configure supported wallets
 registerDotConnect({
