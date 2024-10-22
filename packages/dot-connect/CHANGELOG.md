@@ -1,5 +1,11 @@
 # dot-connect
 
+## 0.11.1
+
+### Patch Changes
+
+- [#162](https://github.com/tien/dot-connect/pull/162) [`a70ae51`](https://github.com/tien/dot-connect/commit/a70ae51158c01989694b21c60990aa16bf18bcee) Thanks [@tien](https://github.com/tien)! - Fixed issue where readonly wallet array are not accepted.
+
 ## 0.11.0
 
 ### Minor Changes
