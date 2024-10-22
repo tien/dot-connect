@@ -10,9 +10,9 @@ import { Wallet, WalletAggregator } from "@reactive-dot/core/wallets.js";
 import { Observable, combineLatest } from "rxjs";
 import { map } from "rxjs/operators";
 
-export const walletsOrAggregators = signal<Array<Wallet | WalletAggregator>>(
-  [],
-);
+export const walletsOrAggregators = signal<
+  ReadonlyArray<Wallet | WalletAggregator>
+>([]);
 
 const directWallets = computed(() =>
   walletsOrAggregators.value.filter(
