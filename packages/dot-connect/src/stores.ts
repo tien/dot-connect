@@ -6,17 +6,17 @@ import {
   getAccounts,
   getConnectedWallets,
 } from "@reactive-dot/core";
-import { Wallet, WalletAggregator } from "@reactive-dot/core/wallets.js";
+import { Wallet, WalletProvider } from "@reactive-dot/core/wallets.js";
 import { Observable, combineLatest } from "rxjs";
 import { map } from "rxjs/operators";
 
-export const walletsOrAggregators = signal<
-  ReadonlyArray<Wallet | WalletAggregator>
+export const walletsOrProviders = signal<
+  ReadonlyArray<Wallet | WalletProvider>
 >([]);
 
 const directWallets = computed(() =>
-  walletsOrAggregators.value.filter(
-    (walletOrAggregator) => walletOrAggregator instanceof Wallet,
+  walletsOrProviders.value.filter(
+    (walletOrProvider) => walletOrProvider instanceof Wallet,
   ),
 );
 
@@ -24,25 +24,22 @@ const directWallets$ = new Observable<Wallet[]>((subscriber) =>
   directWallets.subscribe(subscriber.next.bind(subscriber)),
 );
 
-const aggregators = computed(() =>
-  walletsOrAggregators.value.filter(
-    (walletOrAggregator) => walletOrAggregator instanceof WalletAggregator,
+const providers = computed(() =>
+  walletsOrProviders.value.filter(
+    (walletOrProvider) => walletOrProvider instanceof WalletProvider,
   ),
 );
 
-const aggregators$ = new Observable<WalletAggregator[]>((subscriber) =>
-  aggregators.subscribe(subscriber.next.bind(subscriber)),
+const providers$ = new Observable<WalletProvider[]>((subscriber) =>
+  providers.subscribe(subscriber.next.bind(subscriber)),
 );
 
-const aggregatorWallets$ = aggregateWallets(aggregators$);
+const providerWallets$ = aggregateWallets(providers$);
 
-export const wallets$ = combineLatest([
-  directWallets$,
-  aggregatorWallets$,
-]).pipe(
-  map(([directWallets, aggregatorWallets]) => [
+export const wallets$ = combineLatest([directWallets$, providerWallets$]).pipe(
+  map(([directWallets, providerWallets]) => [
     ...directWallets,
-    ...aggregatorWallets,
+    ...providerWallets,
   ]),
 );
 
