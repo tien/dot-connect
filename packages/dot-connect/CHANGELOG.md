@@ -1,5 +1,11 @@
 # dot-connect
 
+## 0.11.2
+
+### Patch Changes
+
+- [#167](https://github.com/tien/dot-connect/pull/167) [`2d3f70f`](https://github.com/tien/dot-connect/commit/2d3f70fb81e6b35d3da1eb4c08d9df862e70aa01) Thanks [@tien](https://github.com/tien)! - Bumped ReactiveDOT.
+
 ## 0.11.1
 
 ### Patch Changes
