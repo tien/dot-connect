@@ -1,5 +1,11 @@
 # dot-connect
 
+## 0.11.3
+
+### Patch Changes
+
+- [#180](https://github.com/tien/dot-connect/pull/180) [`a2618ba`](https://github.com/tien/dot-connect/commit/a2618ba91fc8810743599c3381c9f4d434c2f8d0) Thanks [@tien](https://github.com/tien)! - Fixed unhandled connection errors causing certain test runners to halt unexpectedly.
+
 ## 0.11.2
 
 ### Patch Changes
