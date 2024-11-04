@@ -269,6 +269,8 @@ export class WalletConnection extends BaseWalletConnection {
           } else {
             await connectWallet(this.wallet);
           }
+        } catch (error) {
+          console.error(error);
         } finally {
           this.pending.value = false;
         }
@@ -309,11 +311,13 @@ export class DeepLinkWalletConnection extends BaseWalletConnection<DeepLinkWalle
         try {
           this.pending.value = true;
           if (this.connected.value) {
-            disconnectWallet(this.wallet);
+            await disconnectWallet(this.wallet);
           } else {
             const { uri } = await this.wallet.initiateConnectionHandshake();
             this.#uri.value = uri;
           }
+        } catch (error) {
+          console.error(error);
         } finally {
           this.pending.value = false;
         }
