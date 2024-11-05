@@ -1,5 +1,11 @@
 # dot-connect
 
+## 0.12.0
+
+### Minor Changes
+
+- [#183](https://github.com/tien/dot-connect/pull/183) [`5d1161e`](https://github.com/tien/dot-connect/commit/5d1161e87a890a89d49032ebe05ea214ce87fe1a) Thanks [@tien](https://github.com/tien)! - Added compatibility with the latest version of ReactiveDOT.
+
 ## 0.11.3
 
 ### Patch Changes
