@@ -1,5 +1,11 @@
 # dot-connect
 
+## 0.12.1
+
+### Patch Changes
+
+- [#195](https://github.com/tien/dot-connect/pull/195) [`6cb5afb`](https://github.com/tien/dot-connect/commit/6cb5afb83ebadeb6e6552937d21091d3c1e05015) Thanks [@tien](https://github.com/tien)! - Fixed an issue where Ledger logic was being triggered before the dialog opened.
+
 ## 0.12.0
 
 ### Minor Changes
