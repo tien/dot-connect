@@ -406,16 +406,24 @@ export class HardwareWalletConnection extends BaseWalletConnection<LedgerWallet>
   protected override render() {
     return html`<div style="display: contents">
       ${super.render()}
-      <dc-ledger-dialog
-        ?open=${this.open === "manage"}
-        @close=${() => (this.open = false)}
-        .wallet=${this.wallet}
-      ></dc-ledger-dialog>
-      <dc-connected-ledger-accounts-dialog
-        ?open=${this.open === "connect"}
-        @close=${() => (this.open = false)}
-        .wallet=${this.wallet}
-      ></dc-connected-ledger-accounts-dialog>
+      ${when(
+        this.open === "manage",
+        () =>
+          html`<dc-ledger-dialog
+            open
+            @close=${() => (this.open = false)}
+            .wallet=${this.wallet}
+          ></dc-ledger-dialog>`,
+      )}
+      ${when(
+        this.open === "connect",
+        () =>
+          html`<dc-connected-ledger-accounts-dialog
+            open
+            @close=${() => (this.open = false)}
+            .wallet=${this.wallet}
+          ></dc-connected-ledger-accounts-dialog>`,
+      )}
     </div>`;
   }
 }

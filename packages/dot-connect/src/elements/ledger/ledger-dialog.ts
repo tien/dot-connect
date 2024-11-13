@@ -14,6 +14,7 @@ import { css, html, nothing, type PropertyValues } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { repeat } from "lit/directives/repeat.js";
+import { when } from "lit/directives/when.js";
 
 @customElement("dc-ledger-dialog")
 export class LedgerDialog extends DotConnectElement {
@@ -100,11 +101,15 @@ export class LedgerDialog extends DotConnectElement {
               )}
         </section>
       </dc-dialog>
-      <dc-connected-ledger-accounts-dialog
-        ?open=${this.addDialogOpen}
-        @close=${() => (this.addDialogOpen = false)}
-        .wallet=${this.wallet}
-      ></dc-connected-ledger-accounts-dialog>`;
+      ${when(
+        this.addDialogOpen,
+        () =>
+          html`<dc-connected-ledger-accounts-dialog
+            open
+            @close=${() => (this.addDialogOpen = false)}
+            .wallet=${this.wallet}
+          ></dc-connected-ledger-accounts-dialog>`,
+      )}`;
   }
 }
 
