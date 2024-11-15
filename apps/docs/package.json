@@ -12,7 +12,7 @@
     "@reactive-dot/wallet-ledger": "^0.16.16",
     "@reactive-dot/wallet-walletconnect": "^0.16.16",
     "dot-connect": "workspace:^",
-    "polkadot-api": "^1.7.3",
+    "polkadot-api": "^1.7.4",
     "vue": "^3.5.12"
   },
   "devDependencies": {
