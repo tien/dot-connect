@@ -44,8 +44,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.14.0",
-    "@reactive-dot/core": "^0.26.0",
-    "@reactive-dot/wallet-ledger": "^0.16.16",
+    "@reactive-dot/core": "^0.26.2",
+    "@reactive-dot/wallet-ledger": "^0.16.18",
     "@tsconfig/recommended": "^1.0.8",
     "@tsconfig/strictest": "^2.0.5",
     "@types/eslint__js": "^8.42.3",
