@@ -26,8 +26,7 @@
     "./font.css": "./assets/fonts/index.css"
   },
   "files": [
-    "build",
-    "assets"
+    "build"
   ],
   "scripts": {
     "dev": "tsc --build --watch",
