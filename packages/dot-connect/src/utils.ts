@@ -1,4 +1,5 @@
 import type { InjectedWalletInfo, Platform } from "./wallets/types.js";
+import type { HTMLTemplateResult } from "lit";
 
 export function logAndThrow(error: unknown): never {
   console.error(error);
@@ -59,4 +60,14 @@ export function getDownloadUrl(walletInfo: InjectedWalletInfo) {
   }
 
   return { platform, url };
+}
+
+// TODO: replace with `new URL("logo.svg", import.meta.url)`
+// once Vite fixes https://github.com/vitejs/vite/issues/8427
+export function urlFromSvg(svg: HTMLTemplateResult) {
+  return new URL(
+    URL.createObjectURL(
+      new Blob([svg.strings.join()], { type: "image/svg+xml" }),
+    ),
+  );
 }
