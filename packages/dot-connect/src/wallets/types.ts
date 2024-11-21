@@ -1,9 +1,8 @@
 import type { Wallet } from "@reactive-dot/core/wallets.js";
-import type { HTMLTemplateResult } from "lit";
 
 export type BaseWalletInfo = {
   name: string;
-  logo: HTMLTemplateResult;
+  logo: URL;
 };
 
 export type Platform = "chrome" | "firefox" | "ios" | "android";

@@ -4,6 +4,8 @@ import "./elements/ledger/ledger-dialog.js";
 import { walletsOrProviders$ } from "./stores.js";
 import type { Wallet, WalletProvider } from "@reactive-dot/core/wallets.js";
 
+export { getWalletMetadata } from "./get-wallet-metadata.js";
+
 export type Options = {
   wallets: ReadonlyArray<Wallet | WalletProvider>;
 };

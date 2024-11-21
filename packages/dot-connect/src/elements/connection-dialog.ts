@@ -226,7 +226,9 @@ abstract class BaseWalletConnection<
   protected override render() {
     return html`<dc-list-item ?pending=${this.pending.value}>
       <div slot="leading" class="icon">
-        ${this.walletInfo?.logo ?? walletIcon({ size: "100%" })}
+        ${this.walletInfo === undefined
+          ? walletIcon({ size: "100%" })
+          : html`<img src=${this.walletInfo.logo.href} />`}
       </div>
       <span slot="headline">${this.walletInfo?.name ?? this.wallet.name}</span>
       <span
@@ -359,15 +361,7 @@ export class DeepLinkWalletConnection extends BaseWalletConnection<DeepLinkWalle
             <div slot="content">
               <dc-qr-code
                 .uri=${this.#uri.value}
-                .logoSrc=${(() => {
-                  const svg = this.walletInfo?.logo.strings.join("");
-
-                  if (svg === undefined) {
-                    return;
-                  }
-
-                  return `data:image/svg+xml;base64,${globalThis.btoa(svg)}`;
-                })()}
+                .logoSrc=${this.walletInfo?.logo.href}
               ></dc-qr-code>
               <div id="url-container">
                 <button
@@ -461,7 +455,9 @@ export class DownloadableWallet extends DotConnectElement {
       this.#downloadUrl.platform === "ios";
 
     return html`<dc-list-item>
-      <div slot="leading" class="icon">${this.wallet.logo}</div>
+      <div slot="leading" class="icon">
+        <img src=${this.wallet.logo.href} />
+      </div>
       <span slot="headline">${this.wallet.name}</span>
       <!-- No way to detect wether or not wallet is installed on mobile browser -->
       ${isMobile ? nothing : html`<span slot="supporting">Not installed</span>`}

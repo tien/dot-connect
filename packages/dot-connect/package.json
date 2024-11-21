@@ -23,11 +23,11 @@
   "exports": {
     ".": "./build/index.js",
     "./react.js": "./build/react/index.js",
-    "./font.css": "./src/fonts.css"
+    "./font.css": "./assets/fonts/index.css"
   },
   "files": [
     "build",
-    "src/fonts.css"
+    "assets"
   ],
   "scripts": {
     "dev": "tsc --build --watch",
