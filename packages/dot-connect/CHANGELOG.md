@@ -1,5 +1,11 @@
 # dot-connect
 
+## 0.13.2
+
+### Patch Changes
+
+- [#214](https://github.com/tien/dot-connect/pull/214) [`d303ff0`](https://github.com/tien/dot-connect/commit/d303ff0ac07b385eb27beeac08c739f1cfbcbb6d) Thanks [@tien](https://github.com/tien)! - Fixed missing assets in bundle.
+
 ## 0.13.1
 
 ### Patch Changes
