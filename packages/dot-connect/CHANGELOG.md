@@ -1,5 +1,11 @@
 # dot-connect
 
+## 0.13.1
+
+### Patch Changes
+
+- [#212](https://github.com/tien/dot-connect/pull/212) [`dcb8215`](https://github.com/tien/dot-connect/commit/dcb8215d1570284192f1f8386224079719727d32) Thanks [@tien](https://github.com/tien)! - Applied workaround for Vite static asset URL [bug](https://github.com/vitejs/vite/issues/8427).
+
 ## 0.13.0
 
 ### Minor Changes
