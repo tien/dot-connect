@@ -43,18 +43,18 @@
     "qrcode": "^1.5.4"
   },
   "devDependencies": {
-    "@eslint/js": "^9.14.0",
-    "@reactive-dot/core": "^0.26.0",
-    "@reactive-dot/wallet-ledger": "^0.16.16",
+    "@eslint/js": "^9.15.0",
+    "@reactive-dot/core": "^0.26.2",
+    "@reactive-dot/wallet-ledger": "^0.16.18",
     "@tsconfig/recommended": "^1.0.8",
     "@tsconfig/strictest": "^2.0.5",
     "@types/eslint__js": "^8.42.3",
     "@types/qrcode": "^1.5.5",
     "@types/react": "^18.3.12",
-    "eslint": "^9.14.0",
-    "polkadot-api": "^1.7.3",
+    "eslint": "^9.15.0",
+    "polkadot-api": "^1.7.6",
     "typescript": "^5.6.3",
-    "typescript-eslint": "^8.12.2"
+    "typescript-eslint": "^8.15.0"
   },
   "peerDependencies": {
     "@reactive-dot/core": ">= 0.25.1",
