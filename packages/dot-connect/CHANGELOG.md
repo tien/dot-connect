@@ -1,5 +1,11 @@
 # dot-connect
 
+## 0.13.0
+
+### Minor Changes
+
+- [#209](https://github.com/tien/dot-connect/pull/209) [`0b1c10b`](https://github.com/tien/dot-connect/commit/0b1c10bf4cbe03ae21951a7fb8bd739bdd7e0836) Thanks [@tien](https://github.com/tien)! - Added function for getting wallet's metadata.
+
 ## 0.12.1
 
 ### Patch Changes
