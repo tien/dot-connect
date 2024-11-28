@@ -9,10 +9,10 @@
   "author": "Tiến Nguyễn Khắc <tien.nguyenkhac@icloud.com> (https://tien.zone/)",
   "repository": "github:tien/dot-connect",
   "type": "module",
-  "packageManager": "yarn@4.5.0",
+  "packageManager": "yarn@4.5.3",
   "volta": {
-    "node": "20.18.0",
-    "yarn": "4.5.0"
+    "node": "22.11.0",
+    "yarn": "4.5.3"
   },
   "workspaces": [
     "apps/*",
