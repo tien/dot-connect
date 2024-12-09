@@ -8,11 +8,11 @@
     "preview": "vitepress preview"
   },
   "dependencies": {
-    "@reactive-dot/core": "^0.26.2",
-    "@reactive-dot/wallet-ledger": "^0.16.18",
-    "@reactive-dot/wallet-walletconnect": "^0.16.18",
+    "@reactive-dot/core": "^0.27.1",
+    "@reactive-dot/wallet-ledger": "^0.16.20",
+    "@reactive-dot/wallet-walletconnect": "^0.16.20",
     "dot-connect": "workspace:^",
-    "polkadot-api": "^1.7.6",
+    "polkadot-api": "^1.7.7",
     "vue": "^3.5.13"
   },
   "devDependencies": {
