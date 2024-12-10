@@ -2398,7 +2398,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot-api/substrate-bindings@npm:0.9.4, @polkadot-api/substrate-bindings@npm:^0.9.4":
+"@polkadot-api/substrate-bindings@npm:0.9.4":
   version: 0.9.4
   resolution: "@polkadot-api/substrate-bindings@npm:0.9.4"
   dependencies:
@@ -2407,6 +2407,18 @@ __metadata:
     "@scure/base": "npm:^1.1.9"
     scale-ts: "npm:^1.6.1"
   checksum: 10c0/eb4226807a07ed8f65ae641a1973d8b0b97410392b7c8d23002c9881d4098f31e31a14157a4e4adf250afd66355406a6108995d14a72ff3dfc15b17f314d2e61
+  languageName: node
+  linkType: hard
+
+"@polkadot-api/substrate-bindings@npm:^0.10.0":
+  version: 0.10.0
+  resolution: "@polkadot-api/substrate-bindings@npm:0.10.0"
+  dependencies:
+    "@noble/hashes": "npm:^1.5.0"
+    "@polkadot-api/utils": "npm:0.1.2"
+    "@scure/base": "npm:^1.1.9"
+    scale-ts: "npm:^1.6.1"
+  checksum: 10c0/0cf119f278517560188a55b867162eec92690e90a1d05ecd8c3770a6db1850f0113d536204efa92bfdc92aaa4cd0422f4833ecfcca4abf08da9976e7f880479f
   languageName: node
   linkType: hard
 
@@ -5026,7 +5038,7 @@ __metadata:
     "@lit-labs/preact-signals": "npm:^1.0.2"
     "@lit/react": "npm:^1.0.6"
     "@noble/hashes": "npm:^1.6.1"
-    "@polkadot-api/substrate-bindings": "npm:^0.9.4"
+    "@polkadot-api/substrate-bindings": "npm:^0.10.0"
     "@tsconfig/recommended": "npm:^1.0.8"
     "@tsconfig/strictest": "npm:^2.0.5"
     "@types/eslint__js": "npm:^8.42.3"
