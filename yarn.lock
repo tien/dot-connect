@@ -856,7 +856,7 @@ __metadata:
   dependencies:
     "@reactive-dot/core": "npm:^0.27.1"
     "@reactive-dot/wallet-ledger": "npm:^0.16.20"
-    "@reactive-dot/wallet-walletconnect": "npm:^0.16.20"
+    "@reactive-dot/wallet-walletconnect": "npm:^0.17.0"
     dot-connect: "workspace:^"
     polkadot-api: "npm:^1.7.7"
     vitepress: "npm:^1.5.0"
@@ -2483,14 +2483,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@reactive-dot/wallet-walletconnect@npm:^0.16.20":
-  version: 0.16.20
-  resolution: "@reactive-dot/wallet-walletconnect@npm:0.16.20"
+"@reactive-dot/wallet-walletconnect@npm:^0.17.0":
+  version: 0.17.0
+  resolution: "@reactive-dot/wallet-walletconnect@npm:0.17.0"
   dependencies:
     "@reactive-dot/core": "npm:^0.27.1"
     "@walletconnect/modal": "npm:^2.7.0"
     "@walletconnect/universal-provider": "npm:^2.17.2"
-  checksum: 10c0/bb30a254202150f68087838804dd4651df251e1d5d5071ce27eec962d312ca8cbb47f8acf72cd209d6c188196b3fdb0e2d253a9ccb8f62a9904e78dc14f09169
+  checksum: 10c0/fd581c99413a31c8309e08a2523c97a36daa8b74181bf621201bd9adb30acf9c1b15ab63c0d15c40e58df38b6a2e8d5c40c4e7562132d5d289681fb4707bcbca
   languageName: node
   linkType: hard
 
