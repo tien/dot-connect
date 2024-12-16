@@ -43,7 +43,7 @@
     "qrcode": "^1.5.4"
   },
   "devDependencies": {
-    "@eslint/js": "^9.16.0",
+    "@eslint/js": "^9.17.0",
     "@reactive-dot/core": "^0.27.1",
     "@reactive-dot/wallet-ledger": "^0.16.20",
     "@tsconfig/recommended": "^1.0.8",
@@ -51,7 +51,7 @@
     "@types/eslint__js": "^8.42.3",
     "@types/qrcode": "^1.5.5",
     "@types/react": "^19.0.1",
-    "eslint": "^9.16.0",
+    "eslint": "^9.17.0",
     "polkadot-api": "^1.7.7",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.18.0"
