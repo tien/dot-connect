@@ -854,9 +854,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@dot-connect/docs@workspace:apps/docs"
   dependencies:
-    "@reactive-dot/core": "npm:^0.27.1"
-    "@reactive-dot/wallet-ledger": "npm:^0.16.20"
-    "@reactive-dot/wallet-walletconnect": "npm:^0.16.20"
+    "@reactive-dot/core": "npm:^0.29.0"
+    "@reactive-dot/wallet-ledger": "npm:^0.16.21"
+    "@reactive-dot/wallet-walletconnect": "npm:^0.17.1"
     dot-connect: "workspace:^"
     polkadot-api: "npm:^1.7.7"
     vitepress: "npm:^1.5.0"
@@ -1844,13 +1844,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@noble/hashes@npm:^1.4.0":
-  version: 1.4.0
-  resolution: "@noble/hashes@npm:1.4.0"
-  checksum: 10c0/8c3f005ee72e7b8f9cff756dfae1241485187254e3f743873e22073d63906863df5d4f13d441b7530ea614b7a093f0d889309f28b59850f33b66cb26a779a4a5
-  languageName: node
-  linkType: hard
-
 "@noble/hashes@npm:^1.5.0":
   version: 1.5.0
   resolution: "@noble/hashes@npm:1.5.0"
@@ -2219,18 +2212,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot-api/ledger-signer@npm:^0.1.6":
-  version: 0.1.6
-  resolution: "@polkadot-api/ledger-signer@npm:0.1.6"
+"@polkadot-api/ledger-signer@npm:^0.1.8":
+  version: 0.1.9
+  resolution: "@polkadot-api/ledger-signer@npm:0.1.9"
   dependencies:
-    "@polkadot-api/merkleize-metadata": "npm:1.1.9"
+    "@polkadot-api/merkleize-metadata": "npm:1.1.12"
     "@polkadot-api/polkadot-signer": "npm:0.1.6"
-    "@polkadot-api/signers-common": "npm:0.1.1"
-    "@polkadot-api/substrate-bindings": "npm:0.9.3"
+    "@polkadot-api/signers-common": "npm:0.1.4"
+    "@polkadot-api/substrate-bindings": "npm:0.11.0"
     "@polkadot-api/utils": "npm:0.1.2"
   peerDependencies:
     "@ledgerhq/hw-transport": 6
-  checksum: 10c0/1c7cc67fa530af1f3481106c62b082052a8c7aec0cf5f2ab7bb63b48c5157bab3abed554a578ee505a5fb3cd96bd127e607513527800d0df634948934ef4b05a
+  checksum: 10c0/ae3e75bb6463f4ae3816def8b36c272655f31345ca90c9c600d346fc69a96205960174e3b031324736724c78a69c95313d144d3a109821823adf9975a8591e28
   languageName: node
   linkType: hard
 
@@ -2243,24 +2236,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot-api/merkleize-metadata@npm:1.1.9":
-  version: 1.1.9
-  resolution: "@polkadot-api/merkleize-metadata@npm:1.1.9"
+"@polkadot-api/merkleize-metadata@npm:1.1.12":
+  version: 1.1.12
+  resolution: "@polkadot-api/merkleize-metadata@npm:1.1.12"
   dependencies:
-    "@polkadot-api/metadata-builders": "npm:0.9.1"
-    "@polkadot-api/substrate-bindings": "npm:0.9.3"
+    "@polkadot-api/metadata-builders": "npm:0.10.0"
+    "@polkadot-api/substrate-bindings": "npm:0.11.0"
     "@polkadot-api/utils": "npm:0.1.2"
-  checksum: 10c0/096ec12790095e6f11e89585caaa061195bcf4724bf8ddec478cf03513c3dc667e8d28ee0aebdbb715674b9763941432d59ab6cbbec4f66a1b12bc8ee3b16f8a
+  checksum: 10c0/d3fac5be41878dd8c318dd76c9f09e3a6e769f8791386bc4c5a5c27c272efa0c4d3cf839034dfc2b28324c0a35b9bf5fd9df2e33392cff7760f8f5b40f41fe20
   languageName: node
   linkType: hard
 
-"@polkadot-api/metadata-builders@npm:0.9.1":
-  version: 0.9.1
-  resolution: "@polkadot-api/metadata-builders@npm:0.9.1"
+"@polkadot-api/metadata-builders@npm:0.10.0":
+  version: 0.10.0
+  resolution: "@polkadot-api/metadata-builders@npm:0.10.0"
   dependencies:
-    "@polkadot-api/substrate-bindings": "npm:0.9.3"
+    "@polkadot-api/substrate-bindings": "npm:0.11.0"
     "@polkadot-api/utils": "npm:0.1.2"
-  checksum: 10c0/768c14b578fe2d25c58904479a6d37da38f86e84fe11e01d16a86d56640138a2efb67c0706578e871de8529106491b9299173422d29259b045387cf7a35c6210
+  checksum: 10c0/0fb49a6cd4e2b66e3c3983f66e427b5763da0b67d5c4847c190e6e546f67bc4908d456b2afe80ce85316736d3aa408d779f309b292957648820aca44e6578719
   languageName: node
   linkType: hard
 
@@ -2340,18 +2333,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot-api/signers-common@npm:0.1.1":
-  version: 0.1.1
-  resolution: "@polkadot-api/signers-common@npm:0.1.1"
-  dependencies:
-    "@polkadot-api/metadata-builders": "npm:0.9.1"
-    "@polkadot-api/polkadot-signer": "npm:0.1.6"
-    "@polkadot-api/substrate-bindings": "npm:0.9.3"
-    "@polkadot-api/utils": "npm:0.1.2"
-  checksum: 10c0/17f1811e568ae3d655ae90dffdc3dd7327dc1d99673f6362f241c1e5595e188797755cb4b4bcbfae321385dadb38258b16725ea89e5de1fe8088a2dd227c9b34
-  languageName: node
-  linkType: hard
-
 "@polkadot-api/signers-common@npm:0.1.2":
   version: 0.1.2
   resolution: "@polkadot-api/signers-common@npm:0.1.2"
@@ -2361,6 +2342,18 @@ __metadata:
     "@polkadot-api/substrate-bindings": "npm:0.9.4"
     "@polkadot-api/utils": "npm:0.1.2"
   checksum: 10c0/5bbb36f0258ec37e9daf459d40252329cb721a83dd1b1867a9f90e44946ab69b2f6ec8f11cb30ff330f4222280b1a92f828648e1b4edee341779d7849e909140
+  languageName: node
+  linkType: hard
+
+"@polkadot-api/signers-common@npm:0.1.4":
+  version: 0.1.4
+  resolution: "@polkadot-api/signers-common@npm:0.1.4"
+  dependencies:
+    "@polkadot-api/metadata-builders": "npm:0.10.0"
+    "@polkadot-api/polkadot-signer": "npm:0.1.6"
+    "@polkadot-api/substrate-bindings": "npm:0.11.0"
+    "@polkadot-api/utils": "npm:0.1.2"
+  checksum: 10c0/f3406ec0e8166181de9c0bc99af3302fa96d1d309ac6c0a8f6ee59c4db1ff397443b7610a02c6d9c08a0db6256ae9b31299f88e8685ddef67b02b7b1ecd31d6c
   languageName: node
   linkType: hard
 
@@ -2386,15 +2379,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot-api/substrate-bindings@npm:0.9.3":
-  version: 0.9.3
-  resolution: "@polkadot-api/substrate-bindings@npm:0.9.3"
+"@polkadot-api/substrate-bindings@npm:0.11.0":
+  version: 0.11.0
+  resolution: "@polkadot-api/substrate-bindings@npm:0.11.0"
   dependencies:
-    "@noble/hashes": "npm:^1.4.0"
+    "@noble/hashes": "npm:^1.6.1"
     "@polkadot-api/utils": "npm:0.1.2"
-    "@scure/base": "npm:^1.1.7"
+    "@scure/base": "npm:^1.2.1"
     scale-ts: "npm:^1.6.1"
-  checksum: 10c0/d0b2e9adf3b28e7aaa1f52e26fd7b200defe1b83499450227289bff0ec784e7dab334e93dc8d989e10e31d6cbb3ac561afd50f1c25e54b9ddc2be02826ca43c2
+  checksum: 10c0/8e0ea627a036b2bfd34adba06bb535d5ec473b118c53c2de88e48f245907decebbebd701b27f62d351509c6d28c88630160c1a4110ef5a61b0ca53088e94864f
   languageName: node
   linkType: hard
 
@@ -2452,15 +2445,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@reactive-dot/core@npm:^0.27.1":
-  version: 0.27.1
-  resolution: "@reactive-dot/core@npm:0.27.1"
+"@reactive-dot/core@npm:^0.29.0":
+  version: 0.29.0
+  resolution: "@reactive-dot/core@npm:0.29.0"
   dependencies:
     "@reactive-dot/utils": "npm:^0.9.0"
     "@substrate/smoldot-discovery": "npm:^2.0.1"
   peerDependencies:
     polkadot-api: 1.x
-  checksum: 10c0/9e0c94ddcb03ee50471f335833301f85a369e13a2063301d2a8a13b1eeba6e2cfe4696a04d9b0e6ba776bab92dd749e7e37ec8490f8f021809496df5c0da109e
+  checksum: 10c0/d76b76346de23aae8369a35096551a5fb6ff5b8620ee91955827b867d3009f40c72054bc420b985f124dec1f4f17059bb38a4646fe7dbf871a8ef8d4ececd850
   languageName: node
   linkType: hard
 
@@ -2471,26 +2464,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@reactive-dot/wallet-ledger@npm:^0.16.20":
-  version: 0.16.20
-  resolution: "@reactive-dot/wallet-ledger@npm:0.16.20"
+"@reactive-dot/wallet-ledger@npm:^0.16.21":
+  version: 0.16.21
+  resolution: "@reactive-dot/wallet-ledger@npm:0.16.21"
   dependencies:
     "@ledgerhq/hw-transport-webusb": "npm:^6.29.4"
-    "@polkadot-api/ledger-signer": "npm:^0.1.6"
-    "@reactive-dot/core": "npm:^0.27.1"
+    "@polkadot-api/ledger-signer": "npm:^0.1.8"
+    "@reactive-dot/core": "npm:^0.29.0"
     buffer: "npm:^6.0.3"
-  checksum: 10c0/c600c0e3ed88f41e66a699909e0d0e3eb79e735e3d958a1a42299c2f7f84a121d19325edab255fafb196307ccdd33860b8933bcaf64f6fc2e22ac2fc98b75b3a
+  checksum: 10c0/67c910883d10bd1e5bde2e6537d946d9fc4e1cc8458a0be235182cf757adf98cfc83d348284eb0e90f6f6f63157f58a213d1f5abc6ca9ab228d1470b873358e3
   languageName: node
   linkType: hard
 
-"@reactive-dot/wallet-walletconnect@npm:^0.16.20":
-  version: 0.16.20
-  resolution: "@reactive-dot/wallet-walletconnect@npm:0.16.20"
+"@reactive-dot/wallet-walletconnect@npm:^0.17.1":
+  version: 0.17.1
+  resolution: "@reactive-dot/wallet-walletconnect@npm:0.17.1"
   dependencies:
-    "@reactive-dot/core": "npm:^0.27.1"
+    "@reactive-dot/core": "npm:^0.29.0"
     "@walletconnect/modal": "npm:^2.7.0"
     "@walletconnect/universal-provider": "npm:^2.17.2"
-  checksum: 10c0/bb30a254202150f68087838804dd4651df251e1d5d5071ce27eec962d312ca8cbb47f8acf72cd209d6c188196b3fdb0e2d253a9ccb8f62a9904e78dc14f09169
+  checksum: 10c0/fbd17c15e79cc11a3052df2ddd7d800c375e8b6950dd11dcf713b79b7f50e7a3ee5289d5a55c1ecd55c0194d1d9f69b87631e9391dfa73d5bfd87adb142a14b1
   languageName: node
   linkType: hard
 
@@ -2732,14 +2725,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@scure/base@npm:^1.1.7":
-  version: 1.1.7
-  resolution: "@scure/base@npm:1.1.7"
-  checksum: 10c0/2d06aaf39e6de4b9640eb40d2e5419176ebfe911597856dcbf3bc6209277ddb83f4b4b02cb1fd1208f819654268ec083da68111d3530bbde07bae913e2fc2e5d
-  languageName: node
-  linkType: hard
-
-"@scure/base@npm:^1.1.9":
+"@scure/base@npm:^1.1.9, @scure/base@npm:^1.2.1":
   version: 1.2.1
   resolution: "@scure/base@npm:1.2.1"
   checksum: 10c0/e61068854370855b89c50c28fa4092ea6780f1e0db64ea94075ab574ebcc964f719a3120dc708db324991f4b3e652d92ebda03fce2bf6a4900ceeacf9c0ff933
@@ -4995,8 +4981,8 @@ __metadata:
     "@lit-labs/preact-signals": "npm:^1.0.2"
     "@lit/react": "npm:^1.0.6"
     "@lit/task": "npm:^1.0.1"
-    "@reactive-dot/core": "npm:^0.27.1"
-    "@reactive-dot/wallet-ledger": "npm:^0.16.20"
+    "@reactive-dot/core": "npm:^0.29.0"
+    "@reactive-dot/wallet-ledger": "npm:^0.16.21"
     "@tsconfig/recommended": "npm:^1.0.8"
     "@tsconfig/strictest": "npm:^2.0.5"
     "@types/eslint__js": "npm:^8.42.3"
