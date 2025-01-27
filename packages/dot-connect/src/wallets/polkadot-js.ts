@@ -9,8 +9,6 @@ export const polkadotJs: WalletConfig<InjectedWalletInfo> = {
   platforms: ["chrome", "firefox"],
   logo: urlFromSvg(
     html`<svg
-      x="0px"
-      y="0px"
       viewBox="15 15 140 140"
       style="enable-background:new 0 0 170 170;zoom: 1;"
       xmlns="http://www.w3.org/2000/svg"
