@@ -1,4 +1,5 @@
 import { ledger } from "./ledger.js";
+import { mimir } from "./mimir.js";
 import { nova } from "./nova.js";
 import { polkadotJs } from "./polkadot-js.js";
 import { subWallet } from "./subwallet.js";
@@ -12,4 +13,5 @@ export const wallets = [
   subWallet,
   ledger,
   walletConnect,
+  mimir,
 ];

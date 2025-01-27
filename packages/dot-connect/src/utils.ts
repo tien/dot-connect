@@ -47,6 +47,10 @@ export function getDownloadUrl(walletInfo: InjectedWalletInfo) {
 
   const urls = walletInfo.downloadUrl;
 
+  if (urls === undefined) {
+    return;
+  }
+
   const exactUrl: string | undefined =
     platform in urls
       ? // @ts-expect-error TODO
@@ -56,7 +60,7 @@ export function getDownloadUrl(walletInfo: InjectedWalletInfo) {
   const url = exactUrl ?? ("default" in urls ? urls.default : undefined);
 
   if (url === undefined) {
-    return undefined;
+    return;
   }
 
   return { platform, url };
