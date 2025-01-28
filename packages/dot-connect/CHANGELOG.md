@@ -1,5 +1,11 @@
 # dot-connect
 
+## 0.14.0
+
+### Minor Changes
+
+- [#258](https://github.com/tien/dot-connect/pull/258) [`569d64b`](https://github.com/tien/dot-connect/commit/569d64bac8a7b44033a86ec9e0786d24f6518a86) Thanks [@tien](https://github.com/tien)! - Added Mimir wallet metadata.
+
 ## 0.13.2
 
 ### Patch Changes
