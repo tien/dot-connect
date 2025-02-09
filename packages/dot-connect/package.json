@@ -43,21 +43,21 @@
     "qrcode": "^1.5.4"
   },
   "devDependencies": {
-    "@eslint/js": "^9.19.0",
-    "@reactive-dot/core": "^0.29.0",
-    "@reactive-dot/wallet-ledger": "^0.16.21",
+    "@eslint/js": "^9.20.0",
+    "@reactive-dot/core": "^0.30.0",
+    "@reactive-dot/wallet-ledger": "^0.16.22",
     "@tsconfig/recommended": "^1.0.8",
     "@tsconfig/strictest": "^2.0.5",
     "@types/eslint__js": "^8.42.3",
     "@types/qrcode": "^1.5.5",
     "@types/react": "^19.0.8",
-    "eslint": "^9.19.0",
-    "polkadot-api": "^1.8.4",
+    "eslint": "^9.20.0",
+    "polkadot-api": "^1.9.0",
     "typescript": "^5.7.3",
-    "typescript-eslint": "^8.21.0"
+    "typescript-eslint": "^8.23.0"
   },
   "peerDependencies": {
-    "@reactive-dot/core": ">= 0.25.1",
+    "@reactive-dot/core": ">= 0.30.x",
     "react": ">= 18"
   },
   "peerDependenciesMeta": {

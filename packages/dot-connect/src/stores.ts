@@ -5,7 +5,7 @@ import {
   aggregateWallets,
   getAccounts,
   getConnectedWallets,
-} from "@reactive-dot/core";
+} from "@reactive-dot/core/internal/actions.js";
 import type { Wallet, WalletProvider } from "@reactive-dot/core/wallets.js";
 import { BehaviorSubject } from "rxjs";
 import { switchMap } from "rxjs/operators";

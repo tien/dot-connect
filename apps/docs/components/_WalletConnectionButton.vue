@@ -1,9 +1,9 @@
 <script lang="ts" type="module">
-import { aggregateWallets } from "@reactive-dot/core";
 import {
   initializeWallets,
-  InjectedWalletProvider,
-} from "@reactive-dot/core/wallets.js";
+  aggregateWallets,
+} from "@reactive-dot/core/internal/actions.js";
+import { InjectedWalletProvider } from "@reactive-dot/core/wallets.js";
 import { LedgerWallet } from "@reactive-dot/wallet-ledger";
 import { WalletConnect } from "@reactive-dot/wallet-walletconnect";
 import { registerDotConnect } from "dot-connect";
