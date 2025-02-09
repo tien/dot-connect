@@ -1,5 +1,13 @@
 # dot-connect
 
+## 0.14.1
+
+### Patch Changes
+
+- [#270](https://github.com/tien/dot-connect/pull/270) [`b6e787a`](https://github.com/tien/dot-connect/commit/b6e787a4c5d662c68a223c14c565245a411fe2dd) Thanks [@tien](https://github.com/tien)! - Fixed accounts state not updating in some cases.
+
+- [#268](https://github.com/tien/dot-connect/pull/268) [`6109de4`](https://github.com/tien/dot-connect/commit/6109de48bdc29b33c3d1bd52c0373b17d8c86d3a) Thanks [@tien](https://github.com/tien)! - Fixed an infinite event dispatch loop when adding or removing accounts from Ledger.
+
 ## 0.14.0
 
 ### Minor Changes
