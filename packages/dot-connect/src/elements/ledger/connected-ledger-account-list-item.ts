@@ -1,8 +1,5 @@
 import { genericChainSpec } from "../../const.js";
-import {
-  observableSignal,
-  type ObservableSignal,
-} from "../../observable-signal.js";
+import { observableSignal } from "../../observable-signal.js";
 import { logAndThrow } from "../../utils.js";
 import { DotConnectElement } from "../components/element.js";
 import { Task } from "@lit/task";
@@ -10,8 +7,9 @@ import { getAccounts } from "@reactive-dot/core/internal/actions.js";
 import type { WalletAccount } from "@reactive-dot/core/wallets.js";
 import type { LedgerWallet } from "@reactive-dot/wallet-ledger";
 import { css, html, type PropertyValues } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { customElement, property, state } from "lit/decorators.js";
 import { AccountId } from "polkadot-api";
+import { of } from "rxjs";
 
 const genericAccountId = AccountId();
 
@@ -23,7 +21,12 @@ export class ConnectedLedgerAccountListItem extends DotConnectElement {
   @property({ type: Number })
   accountPath!: number;
 
-  #connectedAccounts?: ObservableSignal<WalletAccount[], []>;
+  @state()
+  protected connectedAccounts = observableSignal(
+    this,
+    of([] as WalletAccount[]),
+    [],
+  );
 
   readonly #accountTask = new Task(this, {
     task: async ([wallet, path]) =>
@@ -43,7 +46,7 @@ export class ConnectedLedgerAccountListItem extends DotConnectElement {
 
   protected override updated(changedProperties: PropertyValues) {
     if (changedProperties.has("wallet")) {
-      this.#connectedAccounts = observableSignal(
+      this.connectedAccounts = observableSignal(
         this,
         getAccounts([this.wallet], genericChainSpec),
         [],
@@ -75,7 +78,7 @@ export class ConnectedLedgerAccountListItem extends DotConnectElement {
       complete: (account) => {
         const name = `Ledger account ${this.accountPath + 1}`;
 
-        const connected = this.#connectedAccounts?.value.some(
+        const connected = this.connectedAccounts.value.some(
           (connectedAccount) => connectedAccount.id === account.id,
         );
 

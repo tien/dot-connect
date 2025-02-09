@@ -3,10 +3,7 @@ import {
   users as usersIcon,
   wallet as walletIcon,
 } from "../icons/index.js";
-import {
-  observableSignal,
-  type ObservableSignal,
-} from "../observable-signal.js";
+import { observableSignal } from "../observable-signal.js";
 import { connectedWallets$, walletConfigs, wallets$ } from "../stores.js";
 import { getDownloadUrl } from "../utils.js";
 import type { InjectedWalletInfo, WalletConfig } from "../wallets/types.js";
@@ -32,6 +29,7 @@ import { customElement, property, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 import { join } from "lit/directives/join.js";
 import { when } from "lit/directives/when.js";
+import { of } from "rxjs";
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -199,7 +197,12 @@ abstract class BaseWalletConnection<
 
   readonly #connectedWallets = observableSignal(this, connectedWallets$, []);
 
-  protected accounts!: ObservableSignal<PolkadotSignerAccount[], never[]>;
+  @state()
+  protected accounts = observableSignal(
+    this,
+    of([] as PolkadotSignerAccount[]),
+    [],
+  );
 
   protected readonly connected = computed(() =>
     this.#connectedWallets.value.includes(this.wallet),
@@ -384,7 +387,7 @@ export class DeepLinkWalletConnection extends BaseWalletConnection<DeepLinkWalle
 @customElement("dc-hardware-wallet")
 export class HardwareWalletConnection extends BaseWalletConnection<LedgerWallet> {
   @state()
-  open: false | "manage" | "connect" = false;
+  protected open: false | "manage" | "connect" = false;
 
   protected override trailing() {
     return html`<button

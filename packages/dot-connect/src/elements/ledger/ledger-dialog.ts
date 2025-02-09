@@ -1,8 +1,5 @@
 import { genericChainSpec } from "../../const.js";
-import {
-  type ObservableSignal,
-  observableSignal,
-} from "../../observable-signal.js";
+import { observableSignal } from "../../observable-signal.js";
 import "../components/account-list-item.js";
 import { DotConnectElement } from "../components/element.js";
 import "./connected-ledger-accounts-dialog.js";
@@ -15,6 +12,7 @@ import { customElement, property, state } from "lit/decorators.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { repeat } from "lit/directives/repeat.js";
 import { when } from "lit/directives/when.js";
+import { of } from "rxjs";
 
 @customElement("dc-ledger-dialog")
 export class LedgerDialog extends DotConnectElement {
@@ -27,11 +25,16 @@ export class LedgerDialog extends DotConnectElement {
   @state()
   protected addDialogOpen = false;
 
-  #connectedAccounts?: ObservableSignal<WalletAccount[], []>;
+  @state()
+  protected connectedAccounts = observableSignal(
+    this,
+    of([] as WalletAccount[]),
+    [],
+  );
 
   protected override updated(changedProperties: PropertyValues) {
     if (changedProperties.has("wallet")) {
-      this.#connectedAccounts = observableSignal(
+      this.connectedAccounts = observableSignal(
         this,
         getAccounts([this.wallet], genericChainSpec),
         [],
@@ -77,28 +80,26 @@ export class LedgerDialog extends DotConnectElement {
               Add more
             </button>
           </header>
-          ${this.#connectedAccounts === undefined
-            ? nothing
-            : repeat(
-                this.#connectedAccounts.value,
-                (account) => account.id,
-                (account, index) =>
-                  html`<dc-account-list-item
-                      address=${account.address}
-                      name=${ifDefined(account.name)}
-                    >
-                      <button
-                        slot="trailing"
-                        class="error sm"
-                        @click=${() => this.wallet.accountStore.delete(account)}
-                      >
-                        Remove
-                      </button></dc-account-list-item
-                    >${this.#connectedAccounts!.value.length <= 1 ||
-                    index === this.#connectedAccounts!.value.length - 1
-                      ? nothing
-                      : html`<hr />`}`,
-              )}
+          ${repeat(
+            this.connectedAccounts.value,
+            (account) => account.id,
+            (account, index) =>
+              html`<dc-account-list-item
+                  address=${account.address}
+                  name=${ifDefined(account.name)}
+                >
+                  <button
+                    slot="trailing"
+                    class="error sm"
+                    @click=${() => this.wallet.accountStore.delete(account)}
+                  >
+                    Remove
+                  </button></dc-account-list-item
+                >${this.connectedAccounts.value.length <= 1 ||
+                index === this.connectedAccounts.value.length - 1
+                  ? nothing
+                  : html`<hr />`}`,
+          )}
         </section>
       </dc-dialog>
       ${when(
