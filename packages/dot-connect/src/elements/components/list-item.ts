@@ -7,6 +7,8 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { createRef, ref, type Ref } from "lit/directives/ref.js";
 import { styleMap } from "lit/directives/style-map.js";
 
+const composedEvent = Symbol("composedEvent");
+
 @customElement("dc-list-item")
 export class ListItem extends DotConnectElement {
   @property({ type: Boolean })
@@ -143,10 +145,16 @@ export class ListItem extends DotConnectElement {
                 id="checkbox"
                 type="checkbox"
                 ?checked=${this.checked}
-                @change=${(event: Event) =>
-                  this.#checkboxRef.value?.dispatchEvent(
-                    new Event(event.type, { ...event, composed: true }),
-                  )}
+                @change=${(event: Event) => {
+                  if (!(composedEvent in event)) {
+                    this.#checkboxRef.value?.dispatchEvent(
+                      Object.assign(
+                        new Event(event.type, { ...event, composed: true }),
+                        { [composedEvent]: true },
+                      ),
+                    );
+                  }
+                }}
               />`;
             default:
               return html`<slot name="trailing"></slot>`;
