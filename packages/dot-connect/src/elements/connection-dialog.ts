@@ -17,7 +17,10 @@ import "./components/qr-code.js";
 import "./ledger/connected-ledger-accounts-dialog.js";
 import "./ledger/ledger-dialog.js";
 import { computed, effect, signal } from "@lit-labs/preact-signals";
-import { connectWallet, disconnectWallet } from "@reactive-dot/core";
+import {
+  connectWallet,
+  disconnectWallet,
+} from "@reactive-dot/core/internal/actions.js";
 import {
   DeepLinkWallet,
   type PolkadotSignerAccount,

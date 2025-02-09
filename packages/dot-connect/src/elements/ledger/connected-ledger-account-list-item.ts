@@ -6,7 +6,7 @@ import {
 import { logAndThrow } from "../../utils.js";
 import { DotConnectElement } from "../components/element.js";
 import { Task } from "@lit/task";
-import { getAccounts } from "@reactive-dot/core";
+import { getAccounts } from "@reactive-dot/core/internal/actions.js";
 import type { WalletAccount } from "@reactive-dot/core/wallets.js";
 import type { LedgerWallet } from "@reactive-dot/wallet-ledger";
 import { css, html, type PropertyValues } from "lit";

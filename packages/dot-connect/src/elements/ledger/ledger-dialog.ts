@@ -6,7 +6,7 @@ import {
 import "../components/account-list-item.js";
 import { DotConnectElement } from "../components/element.js";
 import "./connected-ledger-accounts-dialog.js";
-import { getAccounts } from "@reactive-dot/core";
+import { getAccounts } from "@reactive-dot/core/internal/actions.js";
 import type { WalletAccount } from "@reactive-dot/core/wallets.js";
 import type { LedgerWallet } from "@reactive-dot/wallet-ledger";
 import "dot-identicon";
