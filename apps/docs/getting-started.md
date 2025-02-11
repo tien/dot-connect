@@ -4,7 +4,7 @@
 
 ### Set up a Reactive DOT application
 
-Start by setting up your Reactive DOT application. Follow the guide [here](https://reactivedot.dev/docs/getting-started/setup).
+Start by setting up your Reactive DOT application. Follow the guide [here](https://reactivedot.dev/react/getting-started/setup).
 
 ### Add DOTConnect as a dependency
 
@@ -26,7 +26,7 @@ pnpm add dot-connect
 
 ### Install optional dependencies
 
-Install any optional dependencies based on the wallet types you want to support by following this [documentation](https://reactivedot.dev/docs/getting-started/connect-wallets#install-optional-dependencies).
+Install any optional dependencies based on the wallet types you want to support by following this [documentation](https://reactivedot.dev/react/getting-started/connect-wallets#install-optional-dependencies).
 
 ## Setup config
 
@@ -41,7 +41,7 @@ import { registerDotConnect } from "dot-connect";
 
 // ...
 
-// More information on how to set up your config: https://reactivedot.dev/docs/getting-started/setup#create-config
+// More information on how to set up your config: https://reactivedot.dev/react/getting-started/setup#create-config
 export const config = defineConfig({
   // ...
   wallets: [
@@ -150,4 +150,4 @@ function App() {
 
 ## Account management
 
-Access accounts via the Reactive DOT API. For more details and examples, refer to the documentation [here](https://reactivedot.dev/docs/getting-started/connect-wallets#display-available-accounts).
+Access accounts via the Reactive DOT API. For more details and examples, refer to the documentation [here](https://reactivedot.dev/react/getting-started/connect-wallets#display-available-accounts).
