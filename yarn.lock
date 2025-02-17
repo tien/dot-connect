@@ -1584,13 +1584,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lit-labs/preact-signals@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "@lit-labs/preact-signals@npm:1.0.2"
+"@lit-labs/preact-signals@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@lit-labs/preact-signals@npm:1.0.3"
   dependencies:
     "@preact/signals-core": "npm:^1.3.0"
     lit: "npm:^3.1.2"
-  checksum: 10c0/bb27f24388d363c751ec5e50f09a58ed5d274c59635e679f425ba8c2cbe1e30342a2f19d4f29fae4c065a854f0f28ce53dd16e48df1f560161b6a9215207bb86
+  checksum: 10c0/7064ee9dc127016b5b1a36eff56feb45887b3cfd9a65c947c6145980a6317b912f570402945a95af9f17d22fe81d45524993fcd8226ec8e1dcece430d75657d7
   languageName: node
   linkType: hard
 
@@ -4645,7 +4645,7 @@ __metadata:
   resolution: "dot-connect@workspace:packages/dot-connect"
   dependencies:
     "@eslint/js": "npm:^9.20.0"
-    "@lit-labs/preact-signals": "npm:^1.0.2"
+    "@lit-labs/preact-signals": "npm:^1.0.3"
     "@lit/react": "npm:^1.0.7"
     "@lit/task": "npm:^1.0.2"
     "@reactive-dot/core": "npm:^0.30.0"
@@ -4676,7 +4676,7 @@ __metadata:
   resolution: "dot-identicon@workspace:packages/dot-identicon"
   dependencies:
     "@eslint/js": "npm:^9.20.0"
-    "@lit-labs/preact-signals": "npm:^1.0.2"
+    "@lit-labs/preact-signals": "npm:^1.0.3"
     "@lit/react": "npm:^1.0.7"
     "@noble/hashes": "npm:^1.7.1"
     "@polkadot-api/substrate-bindings": "npm:^0.11.0"
