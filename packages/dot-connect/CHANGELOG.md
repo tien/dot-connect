@@ -1,5 +1,11 @@
 # dot-connect
 
+## 0.14.2
+
+### Patch Changes
+
+- [#285](https://github.com/tien/dot-connect/pull/285) [`bf9baa3`](https://github.com/tien/dot-connect/commit/bf9baa3068c9600d8a23c7f77789e65ba3fb1ac8) Thanks [@tien](https://github.com/tien)! - Fixed Nova Wallet detection.
+
 ## 0.14.1
 
 ### Patch Changes
