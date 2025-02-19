@@ -1,10 +1,13 @@
-import { urlFromSvg } from "../utils.js";
+import { identifyBrowser, urlFromSvg } from "../utils.js";
 import type { InjectedWalletInfo, WalletConfig } from "./types.js";
 import type { Wallet } from "@reactive-dot/core/wallets.js";
 import { html } from "lit";
 
 export const nova: WalletConfig<InjectedWalletInfo> = {
-  selector: (_wallet: Wallet) => false,
+  selector: (wallet: Wallet) =>
+    wallet.id === "injected/polkadot-js" &&
+    // TODO: remove once Nova is fixed
+    ["ios", "android"].includes(identifyBrowser()!),
   name: "Nova Wallet",
   platforms: ["ios", "android"],
   logo: urlFromSvg(
