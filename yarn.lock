@@ -848,7 +848,7 @@ __metadata:
     "@reactive-dot/wallet-ledger": "npm:^0.16.22"
     "@reactive-dot/wallet-walletconnect": "npm:^0.17.2"
     dot-connect: "workspace:^"
-    polkadot-api: "npm:^1.9.0"
+    polkadot-api: "npm:^1.9.1"
     vitepress: "npm:^1.6.3"
     vue: "npm:^3.5.13"
   languageName: unknown
@@ -4658,7 +4658,7 @@ __metadata:
     dot-identicon: "workspace:^"
     eslint: "npm:^9.20.0"
     lit: "npm:^3.2.1"
-    polkadot-api: "npm:^1.9.0"
+    polkadot-api: "npm:^1.9.1"
     qrcode: "npm:^1.5.4"
     typescript: "npm:^5.7.3"
     typescript-eslint: "npm:^8.23.0"
@@ -7793,9 +7793,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"polkadot-api@npm:^1.9.0":
-  version: 1.9.0
-  resolution: "polkadot-api@npm:1.9.0"
+"polkadot-api@npm:^1.9.1":
+  version: 1.9.1
+  resolution: "polkadot-api@npm:1.9.1"
   dependencies:
     "@polkadot-api/cli": "npm:0.11.0"
     "@polkadot-api/ink-contracts": "npm:0.2.5"
@@ -7821,7 +7821,7 @@ __metadata:
   bin:
     papi: bin/cli.mjs
     polkadot-api: bin/cli.mjs
-  checksum: 10c0/1bfca260a10b658507bfcfe85dba9c8cc9592347604cc235dc3e11b27b8e6275e95bbef490a18d6f5574c2d729551ad2738970d6d756434b1d755656a8fe72a9
+  checksum: 10c0/3d1a7c1b904e8f5760e44456cc035579790cbb088718f63ce995ff5de5722d1062e697c0346b0ee50cb15d73b75c90e35c507b6fb3f5833647a12811cee73592
   languageName: node
   linkType: hard
 
