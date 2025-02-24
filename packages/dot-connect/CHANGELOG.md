@@ -1,5 +1,11 @@
 # dot-connect
 
+## 0.15.0
+
+### Minor Changes
+
+- [#289](https://github.com/tien/dot-connect/pull/289) [`2e1f97c`](https://github.com/tien/dot-connect/commit/2e1f97c9676e8d14e9e1feaadc0946a4a8b67854) Thanks [@tien](https://github.com/tien)! - Added direct Mimir wallet detection.
+
 ## 0.14.2
 
 ### Patch Changes
