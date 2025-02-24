@@ -5,11 +5,13 @@ import {
 } from "@reactive-dot/core/internal/actions.js";
 import { InjectedWalletProvider } from "@reactive-dot/core/wallets.js";
 import { LedgerWallet } from "@reactive-dot/wallet-ledger";
+import { MimirWalletProvider } from "@reactive-dot/wallet-mimir";
 import { WalletConnect } from "@reactive-dot/wallet-walletconnect";
 import { registerDotConnect } from "dot-connect";
 
 const wallets = [
   new InjectedWalletProvider(),
+  new MimirWalletProvider(),
   new LedgerWallet(),
   new WalletConnect({
     projectId: "6089356d0a4448aeda421a025cc286c9",

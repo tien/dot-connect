@@ -10,6 +10,7 @@
   "dependencies": {
     "@reactive-dot/core": "^0.34.0",
     "@reactive-dot/wallet-ledger": "^0.16.26",
+    "@reactive-dot/wallet-mimir": "^0.1.0",
     "@reactive-dot/wallet-walletconnect": "^0.17.6",
     "dot-connect": "workspace:^",
     "polkadot-api": "^1.9.1",
