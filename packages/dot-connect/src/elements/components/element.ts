@@ -4,8 +4,12 @@ import { LitElement, css, type CSSResultGroup } from "lit";
 export abstract class DotConnectElement extends SignalWatcher(LitElement) {
   static override readonly styles: CSSResultGroup = css`
     * {
-      --headline-font-family: var(--dc-headline-font-family, Unbounded);
-      --body-font-family: var(--dc-body-font-family, Inter);
+      --headline-font-family: var(
+        --dc-headline-font-family,
+        Unbounded,
+        sans-serif
+      );
+      --body-font-family: var(--dc-body-font-family, Inter, sans-serif);
 
       --primary-color: var(--dc-primary-color, #ff2670);
       --on-primary-color: var(--dc-on-primary-color, #ffffff);
@@ -32,7 +36,7 @@ export abstract class DotConnectElement extends SignalWatcher(LitElement) {
     :host {
       all: initial;
       color-scheme: inherit;
-      font-family: var(--body-font-family), sans-serif;
+      font-family: var(--body-font-family);
       color: var(--on-surface-color);
     }
 
@@ -42,7 +46,7 @@ export abstract class DotConnectElement extends SignalWatcher(LitElement) {
     h4,
     h5,
     h6 {
-      font-family: var(--headline-font-family), sans-serif;
+      font-family: var(--headline-font-family);
       margin: 0;
     }
 

@@ -34,6 +34,8 @@ const style = computed(() => ({
   "--dc-success-color": `light-dark(${success.value}, ${successDark.value})`,
   "--dc-error-color": `light-dark(${error.value}, ${errorDark.value})`,
   "--dc-max-border-radius": maxBorderRadius.value + "px",
+  "--dc-headline-font-family": "Unbounded, sans-serif",
+  "--dc-body-font-family": "Inter, sans-serif",
 }));
 
 function toCss(style: Record<string, any>) {
@@ -48,7 +50,8 @@ function toCss(style: Record<string, any>) {
 
       return acc;
     }, [] as string[])
-    .join(";\n  ");
+    .map((style) => `${style};`)
+    .join("\n  ");
 
   return `:root {
   ${styles}
