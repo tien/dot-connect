@@ -404,7 +404,7 @@ export class HardwareWalletConnection extends BaseWalletConnection<LedgerWallet>
   }
 
   protected override render() {
-    return html`<div style="display: contents">
+    return html`
       ${super.render()}
       ${when(
         this.open === "manage",
@@ -424,7 +424,7 @@ export class HardwareWalletConnection extends BaseWalletConnection<LedgerWallet>
             .wallet=${this.wallet}
           ></dc-connected-ledger-accounts-dialog>`,
       )}
-    </div>`;
+    `;
   }
 }
 
