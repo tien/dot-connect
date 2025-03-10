@@ -17,6 +17,7 @@ export class ConnectionButton extends DotConnectElement {
     super.styles,
     css`
       :host {
+        display: contents;
         font-size: 1.5em;
       }
 
@@ -36,11 +37,7 @@ export class ConnectionButton extends DotConnectElement {
   readonly #accounts = observableSignal(this, accounts$, []);
 
   override render() {
-    return html`<div>
-      <dc-connection-dialog
-        ?open=${this.#dialogOpen.value}
-        @close=${() => (this.#dialogOpen.value = false)}
-      ></dc-connection-dialog>
+    return html`
       <button @click=${() => (this.#dialogOpen.value = true)}>
         ${this.#connectedWallets.value.length > 0
           ? html`Connected | ${this.#connectedWallets.value.length}
@@ -54,7 +51,11 @@ export class ConnectionButton extends DotConnectElement {
           : html`Connect
               <span class="icon">${walletsIcon({ size: "1em" })}</span>`}
       </button>
-    </div>`;
+      <dc-connection-dialog
+        ?open=${this.#dialogOpen.value}
+        @close=${() => (this.#dialogOpen.value = false)}
+      ></dc-connection-dialog>
+    `;
   }
 }
 
