@@ -38,7 +38,7 @@ export class ConnectionButton extends DotConnectElement {
 
   override render() {
     return html`
-      <button @click=${() => (this.#dialogOpen.value = true)}>
+      <button part="button" @click=${() => (this.#dialogOpen.value = true)}>
         ${this.#connectedWallets.value.length > 0
           ? html`Connected | ${this.#connectedWallets.value.length}
               <span class="icon"
