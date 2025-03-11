@@ -1,5 +1,22 @@
 # dot-connect
 
+## 0.16.0
+
+### Minor Changes
+
+- [#306](https://github.com/tien/dot-connect/pull/306) [`a4ef76c`](https://github.com/tien/dot-connect/commit/a4ef76c775be2b7d7c75126e8401b71270b14764) Thanks [@tien](https://github.com/tien)! - Made button styleable.
+
+### Patch Changes
+
+- [#303](https://github.com/tien/dot-connect/pull/303) [`b87ee3a`](https://github.com/tien/dot-connect/commit/b87ee3a43f48b19c6b9f651f0f6d7c8b4df83597) Thanks [@tien](https://github.com/tien)! - Removed unnecessary container elements.
+
+- [#307](https://github.com/tien/dot-connect/pull/307) [`595b283`](https://github.com/tien/dot-connect/commit/595b2839ede75059839ddcbcecdb7e75a456409e) Thanks [@tien](https://github.com/tien)! - Removed `display: contents`, allowing custom elements to have margin, padding, etc.
+
+- [#305](https://github.com/tien/dot-connect/pull/305) [`6eb9c8d`](https://github.com/tien/dot-connect/commit/6eb9c8db30d2a697fe9b47112d99d47eafd4c62f) Thanks [@tien](https://github.com/tien)! - Made font fallbacks overridable
+
+- Updated dependencies [[`595b283`](https://github.com/tien/dot-connect/commit/595b2839ede75059839ddcbcecdb7e75a456409e)]:
+  - dot-identicon@0.1.1
+
 ## 0.15.0
 
 ### Minor Changes
