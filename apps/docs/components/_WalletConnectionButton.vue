@@ -1,8 +1,4 @@
 <script lang="ts" type="module">
-import {
-  initializeWallets,
-  aggregateWallets,
-} from "@reactive-dot/core/internal/actions.js";
 import { InjectedWalletProvider } from "@reactive-dot/core/wallets.js";
 import { LedgerWallet } from "@reactive-dot/wallet-ledger";
 import { MimirWalletProvider } from "@reactive-dot/wallet-mimir";
@@ -32,8 +28,6 @@ const wallets = [
 registerDotConnect({
   wallets,
 });
-
-void aggregateWallets(wallets).then(initializeWallets);
 
 export default {
   setup() {},
