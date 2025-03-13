@@ -1,5 +1,11 @@
 # dot-connect
 
+## 0.17.0
+
+### Minor Changes
+
+- [#310](https://github.com/tien/dot-connect/pull/310) [`5448cbb`](https://github.com/tien/dot-connect/commit/5448cbb6c45aea319e2727d9e98e755d0c9569a8) Thanks [@tien](https://github.com/tien)! - Always initialize wallets on usage.
+
 ## 0.16.0
 
 ### Minor Changes
