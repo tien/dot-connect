@@ -1,5 +1,11 @@
 # dot-connect
 
+## 0.18.0
+
+### Minor Changes
+
+- [#313](https://github.com/tien/dot-connect/pull/313) [`99d8ca4`](https://github.com/tien/dot-connect/commit/99d8ca420f795b719470ab6cd45bfefff9f6a75e) Thanks [@tien](https://github.com/tien)! - Fixed an issue where the connection button text would sometimes break into two lines.
+
 ## 0.17.0
 
 ### Minor Changes
