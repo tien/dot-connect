@@ -20,6 +20,10 @@ export class ConnectionButton extends DotConnectElement {
         font-size: 1.5em;
       }
 
+      #button {
+        text-wrap-mode: nowrap;
+      }
+
       .icon {
         display: contents;
         > * {
@@ -37,7 +41,11 @@ export class ConnectionButton extends DotConnectElement {
 
   override render() {
     return html`
-      <button part="button" @click=${() => (this.#dialogOpen.value = true)}>
+      <button
+        id="button"
+        part="button"
+        @click=${() => (this.#dialogOpen.value = true)}
+      >
         ${this.#connectedWallets.value.length > 0
           ? html`Connected | ${this.#connectedWallets.value.length}
               <span class="icon"
