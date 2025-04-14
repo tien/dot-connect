@@ -39,7 +39,7 @@
     "@lit/react": "^1.0.7",
     "@lit/task": "^1.0.2",
     "dot-identicon": "workspace:^",
-    "lit": "^3.2.1",
+    "lit": "^3.3.0",
     "qrcode": "^1.5.4"
   },
   "devDependencies": {
