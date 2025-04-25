@@ -51,7 +51,7 @@
     "@types/qrcode": "^1.5.5",
     "@types/react": "^19.0.10",
     "eslint": "^9.22.0",
-    "polkadot-api": "^1.9.5",
+    "polkadot-api": "^1.10.0",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.26.1"
   },
