@@ -7,7 +7,7 @@ import type { Wallet, WalletProvider } from "@reactive-dot/core/wallets.js";
 export { getWalletMetadata } from "./get-wallet-metadata.js";
 
 export type Options = {
-  wallets: ReadonlyArray<Wallet | WalletProvider>;
+  wallets: Array<Wallet | WalletProvider>;
 };
 
 export function registerDotConnect(options: Options) {
