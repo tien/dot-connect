@@ -1,3 +1,4 @@
+import { bittensor } from "./bittensor.js";
 import { ledger } from "./ledger.js";
 import { mimir } from "./mimir.js";
 import { nova } from "./nova.js";
@@ -11,6 +12,7 @@ export const wallets = [
   polkadotJs,
   nova,
   subWallet,
+  bittensor,
   ledger,
   walletConnect,
   mimir,

@@ -9,6 +9,7 @@ export type Platform = "chrome" | "firefox" | "ios" | "android";
 
 export type InjectedWalletInfo = BaseWalletInfo & {
   platforms: Platform[];
+  recommended?: boolean;
   downloadUrl?:
     | undefined
     | string

@@ -54,5 +54,6 @@ export const talisman: WalletConfig<InjectedWalletInfo> = {
       />
     </svg>`,
   ),
+  recommended: true,
   downloadUrl: "https://talisman.xyz/download",
 };
