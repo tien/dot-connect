@@ -12,7 +12,7 @@ import { BehaviorSubject } from "rxjs";
 import { switchMap, tap } from "rxjs/operators";
 
 export const walletsOrProviders$ = new BehaviorSubject<
-  ReadonlyArray<Wallet | WalletProvider>
+  Array<Wallet | WalletProvider>
 >([]);
 
 export const wallets$ = walletsOrProviders$.pipe(
