@@ -1,5 +1,11 @@
 # dot-identicon
 
+## 0.1.2
+
+### Patch Changes
+
+- [#333](https://github.com/tien/dot-connect/pull/333) [`af93b0c`](https://github.com/tien/dot-connect/commit/af93b0c8c0fe23aed67f4e0c0f8df907ca942cf8) Thanks [@tien](https://github.com/tien)! - Replaced Preact with TC39 signals.
+
 ## 0.1.1
 
 ### Patch Changes
