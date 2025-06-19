@@ -35,12 +35,13 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "@lit-labs/preact-signals": "^1.0.3",
+    "@lit-labs/signals": "^0.1.2",
     "@lit/react": "^1.0.7",
     "@lit/task": "^1.0.2",
     "dot-identicon": "workspace:^",
-    "lit": "^3.2.1",
-    "qrcode": "^1.5.4"
+    "lit": "^3.3.0",
+    "qrcode": "^1.5.4",
+    "signal-utils": "^0.21.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",

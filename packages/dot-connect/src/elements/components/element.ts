@@ -1,4 +1,4 @@
-import { SignalWatcher } from "@lit-labs/preact-signals";
+import { SignalWatcher } from "@lit-labs/signals";
 import { LitElement, css, type CSSResultGroup } from "lit";
 
 export abstract class DotConnectElement extends SignalWatcher(LitElement) {

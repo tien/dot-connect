@@ -1,6 +1,6 @@
 import { genericChainSpec } from "./const.js";
 import { wallets as rawWalletConfigs } from "./wallets/index.js";
-import { signal } from "@lit-labs/preact-signals";
+import { signal } from "@lit-labs/signals";
 import {
   aggregateWallets,
   getAccounts,

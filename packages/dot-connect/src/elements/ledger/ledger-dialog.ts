@@ -81,7 +81,7 @@ export class LedgerDialog extends DotConnectElement {
             </button>
           </header>
           ${repeat(
-            this.connectedAccounts.value,
+            this.connectedAccounts.get(),
             (account) => account.id,
             (account, index) =>
               html`<dc-account-list-item
@@ -95,8 +95,8 @@ export class LedgerDialog extends DotConnectElement {
                   >
                     Remove
                   </button></dc-account-list-item
-                >${this.connectedAccounts.value.length <= 1 ||
-                index === this.connectedAccounts.value.length - 1
+                >${this.connectedAccounts.get().length <= 1 ||
+                index === this.connectedAccounts.get().length - 1
                   ? nothing
                   : html`<hr />`}`,
           )}

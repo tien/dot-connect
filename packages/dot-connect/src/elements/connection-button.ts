@@ -7,7 +7,7 @@ import { observableSignal } from "../observable-signal.js";
 import { accounts$, connectedWallets$ } from "../stores.js";
 import { DotConnectElement } from "./components/element.js";
 import "./connection-dialog.js";
-import { signal } from "@lit-labs/preact-signals";
+import { signal } from "@lit-labs/signals";
 import { css, html } from "lit";
 import { customElement } from "lit/decorators.js";
 
@@ -44,23 +44,23 @@ export class ConnectionButton extends DotConnectElement {
       <button
         id="button"
         part="button"
-        @click=${() => (this.#dialogOpen.value = true)}
+        @click=${() => this.#dialogOpen.set(true)}
       >
-        ${this.#connectedWallets.value.length > 0
-          ? html`Connected | ${this.#connectedWallets.value.length}
+        ${this.#connectedWallets.get().length > 0
+          ? html`Connected | ${this.#connectedWallets.get().length}
               <span class="icon"
-                >${this.#connectedWallets.value.length === 1
+                >${this.#connectedWallets.get().length === 1
                   ? walletIcon({ size: "1em" })
                   : walletsIcon({ size: "1em" })}</span
               >
-              ${this.#accounts.value.length}
+              ${this.#accounts.get().length}
               <span class="icon">${usersIcon({ size: "1em" })}</span>`
           : html`Connect
               <span class="icon">${walletsIcon({ size: "1em" })}</span>`}
       </button>
       <dc-connection-dialog
-        ?open=${this.#dialogOpen.value}
-        @close=${() => (this.#dialogOpen.value = false)}
+        ?open=${this.#dialogOpen.get()}
+        @close=${() => this.#dialogOpen.set(false)}
       ></dc-connection-dialog>
     `;
   }
