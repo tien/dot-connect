@@ -51,6 +51,7 @@ export const nova: WalletConfig<InjectedWalletInfo> = {
       />
     </svg>`,
   ),
+  recommended: true,
   downloadUrl: {
     ios: "https://apps.apple.com/us/app/nova-polkadot-wallet/id1597119355",
     android:

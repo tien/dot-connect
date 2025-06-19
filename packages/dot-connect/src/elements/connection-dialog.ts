@@ -73,6 +73,7 @@ export class ConnectionDialog extends DotConnectElement {
       .filter(
         (config): config is WalletConfig<InjectedWalletInfo> =>
           "downloadUrl" in config &&
+          "recommended" in config &&
           !this.#installedWallets
             .get()
             .some((wallet) => config.selector(wallet)),

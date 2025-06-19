@@ -53,6 +53,7 @@ export const subWallet: WalletConfig<InjectedWalletInfo> = {
       </defs>
     </svg>`,
   ),
+  recommended: true,
   downloadUrl: {
     chrome:
       "https://chrome.google.com/webstore/detail/subwallet-polkadot-extens/onhogfjeacnfoofkfgppdlbmlmnplgbn",
