@@ -1,12 +1,9 @@
-import { Signal } from "@lit-labs/preact-signals";
+import { Signal } from "@lit-labs/signals";
 import type { ReactiveController, ReactiveControllerHost } from "lit";
 import type { Observable, Subscription } from "rxjs";
 
-export class ObservableSignal<
-    TValue,
-    TInitialValue extends TValue | void = void,
-  >
-  extends Signal<TInitialValue extends void ? TValue | undefined : TValue>
+export class ObservableSignal<TValue>
+  extends Signal.State<TValue>
   implements ReactiveController
 {
   #observable: Observable<TValue>;
@@ -16,19 +13,17 @@ export class ObservableSignal<
   constructor(
     host: ReactiveControllerHost,
     observable: Observable<TValue>,
-    initialValue?: TInitialValue,
+    initialValue?: TValue,
   ) {
-    super();
+    super(initialValue as TValue);
     this.#observable = observable;
-    this.value = initialValue as TInitialValue extends void
-      ? TValue | undefined
-      : TValue;
+    this.set(initialValue as TValue);
     host.addController(this);
   }
 
   hostConnected(): void {
     this.#subscription ??= this.#observable.subscribe({
-      next: (value) => (this.value = value),
+      next: (value) => this.set(value),
     });
   }
 
@@ -38,11 +33,8 @@ export class ObservableSignal<
   }
 }
 
-export const observableSignal = <
-  TValue,
-  TInitialValue extends TValue | void = void,
->(
+export const observableSignal = <TValue>(
   host: ReactiveControllerHost,
   observable: Observable<TValue>,
-  initialValue?: TInitialValue,
+  initialValue?: TValue,
 ) => new ObservableSignal(host, observable, initialValue);

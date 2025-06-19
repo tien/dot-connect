@@ -1488,13 +1488,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lit-labs/preact-signals@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "@lit-labs/preact-signals@npm:1.0.3"
+"@lit-labs/signals@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "@lit-labs/signals@npm:0.1.2"
   dependencies:
-    "@preact/signals-core": "npm:^1.3.0"
-    lit: "npm:^3.1.2"
-  checksum: 10c0/7064ee9dc127016b5b1a36eff56feb45887b3cfd9a65c947c6145980a6317b912f570402945a95af9f17d22fe81d45524993fcd8226ec8e1dcece430d75657d7
+    lit: "npm:^2.0.0 || ^3.0.0"
+    signal-polyfill: "npm:^0.2.0"
+  checksum: 10c0/45409ee80216ba2c4796cc9fbec6663e051d42f6643a7dfaa2100f88fac56e2c814c72052839a66ea2418b807e123b4475cb4ab897bfec17bc47fc8009f04b18
   languageName: node
   linkType: hard
 
@@ -1514,7 +1514,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lit/reactive-element@npm:^1.0.0 || ^2.0.0, @lit/reactive-element@npm:^2.0.4":
+"@lit/reactive-element@npm:^1.0.0 || ^2.0.0":
   version: 2.0.4
   resolution: "@lit/reactive-element@npm:2.0.4"
   dependencies:
@@ -1529,6 +1529,15 @@ __metadata:
   dependencies:
     "@lit-labs/ssr-dom-shim": "npm:^1.0.0"
   checksum: 10c0/10f1d25e24e32feb21c4c6f9e11d062901241602e12c4ecf746b3138f87fed4d8394194645514d5c1bfd5f33f3fd56ee8ef41344e2cb4413c40fe4961ec9d419
+  languageName: node
+  linkType: hard
+
+"@lit/reactive-element@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "@lit/reactive-element@npm:2.1.0"
+  dependencies:
+    "@lit-labs/ssr-dom-shim": "npm:^1.2.0"
+  checksum: 10c0/3cd61c4e7cc8effeb2c246d5dada8fbe0a730e9e0dd488eb38c91a4f63b773e3b7f86f8384051677298e73de470c7ca6b5634df3ca190b307f8bb8e0d51bb91c
   languageName: node
   linkType: hard
 
@@ -2324,13 +2333,6 @@ __metadata:
     "@polkadot-api/json-rpc-provider-proxy": "npm:0.2.4"
     ws: "npm:^8.18.1"
   checksum: 10c0/5b253ad1055d6b78a9c13241de0d7ca12cde7eb68bd8eb33cbc45a76d1860f2d2e9dc0fb652bc2402ad5c12c26651ef840c4e95642dd0ea5f870941f32b5412a
-  languageName: node
-  linkType: hard
-
-"@preact/signals-core@npm:^1.3.0":
-  version: 1.7.0
-  resolution: "@preact/signals-core@npm:1.7.0"
-  checksum: 10c0/f5eef567368ed26e68eb1456e190961b3e49fe6920dca05cfdf9073788887ceb33b419b653037b6c27db7a0a8d8fe3dc09c16ae711b5b391602980c4bfd426a3
   languageName: node
   linkType: hard
 
@@ -4649,7 +4651,7 @@ __metadata:
   resolution: "dot-connect@workspace:packages/dot-connect"
   dependencies:
     "@eslint/js": "npm:^9.22.0"
-    "@lit-labs/preact-signals": "npm:^1.0.3"
+    "@lit-labs/signals": "npm:^0.1.2"
     "@lit/react": "npm:^1.0.7"
     "@lit/task": "npm:^1.0.2"
     "@reactive-dot/core": "npm:^0.36.3"
@@ -4660,9 +4662,10 @@ __metadata:
     "@types/react": "npm:^19.0.10"
     dot-identicon: "workspace:^"
     eslint: "npm:^9.22.0"
-    lit: "npm:^3.2.1"
+    lit: "npm:^3.3.0"
     polkadot-api: "npm:^1.9.5"
     qrcode: "npm:^1.5.4"
+    signal-utils: "npm:^0.21.1"
     typescript: "npm:^5.8.2"
     typescript-eslint: "npm:^8.26.1"
   peerDependencies:
@@ -4679,7 +4682,6 @@ __metadata:
   resolution: "dot-identicon@workspace:packages/dot-identicon"
   dependencies:
     "@eslint/js": "npm:^9.22.0"
-    "@lit-labs/preact-signals": "npm:^1.0.3"
     "@lit/react": "npm:^1.0.7"
     "@noble/hashes": "npm:^1.7.1"
     "@polkadot-api/substrate-bindings": "npm:^0.11.1"
@@ -4687,7 +4689,7 @@ __metadata:
     "@tsconfig/strictest": "npm:^2.0.5"
     "@types/react": "npm:^19.0.10"
     eslint: "npm:^9.22.0"
-    lit: "npm:^3.2.1"
+    lit: "npm:^3.3.0"
     typescript: "npm:^5.8.2"
     typescript-eslint: "npm:^8.26.1"
   peerDependencies:
@@ -6487,25 +6489,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lit-element@npm:^4.0.4":
-  version: 4.0.6
-  resolution: "lit-element@npm:4.0.6"
+"lit-element@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "lit-element@npm:4.2.0"
   dependencies:
     "@lit-labs/ssr-dom-shim": "npm:^1.2.0"
-    "@lit/reactive-element": "npm:^2.0.4"
-    lit-html: "npm:^3.1.2"
-  checksum: 10c0/f96c0ac66eeb06d15b734f6eaf5ea2ff51356f88bde4d7058c29b1f60f542b092e579240082a3363c41e25b7a296d7d5f2a64165672b2adef5a413f49710b1f9
-  languageName: node
-  linkType: hard
-
-"lit-element@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "lit-element@npm:4.1.0"
-  dependencies:
-    "@lit-labs/ssr-dom-shim": "npm:^1.2.0"
-    "@lit/reactive-element": "npm:^2.0.4"
-    lit-html: "npm:^3.2.0"
-  checksum: 10c0/0394b1fda00495754d505fc63993221bd65195dab8fb2888ce3e088ad97b5ba457a0993b871a92bfafe17c0d8cfb7c190bce22ea191e1d0b47b6ee9991cc617d
+    "@lit/reactive-element": "npm:^2.1.0"
+    lit-html: "npm:^3.3.0"
+  checksum: 10c0/20577f2092ac1e1bd82fba2bbc9ce0122b35dc2495906d3fbcb437c3727b9c8ed1c0691b8b859f65a51e910db1341d95233c117e1e1c88c450b30e2d3b62fdb8
   languageName: node
   linkType: hard
 
@@ -6518,21 +6509,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lit-html@npm:^3.1.2":
-  version: 3.1.4
-  resolution: "lit-html@npm:3.1.4"
+"lit-html@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "lit-html@npm:3.3.0"
   dependencies:
     "@types/trusted-types": "npm:^2.0.2"
-  checksum: 10c0/538c084ab1d39b59c5c094f7ad7a8bc5c41a17b46f375bb841b304263c1f2546065eeace6e330c20f1f15f2c285b66b46d140e2be618de2e65610c58b53a5af3
-  languageName: node
-  linkType: hard
-
-"lit-html@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "lit-html@npm:3.2.0"
-  dependencies:
-    "@types/trusted-types": "npm:^2.0.2"
-  checksum: 10c0/cc0d58fc581d0d838361b3e46a34113ec458822c6600e6eb8dac9a671e4d983c0d34af07a1b3b60cc257e91b7e87760044779328f14d46742915d2c46fe68688
+  checksum: 10c0/c1065048d89d93df6a46cdeed9abd637ae9bcc0847ee108dccbb2e1627a4074074e1d3ac9360e08a736d76f8c76b2c88166dbe465406da123b9137e29c2e0034
   languageName: node
   linkType: hard
 
@@ -6547,25 +6529,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lit@npm:^3.1.2":
-  version: 3.1.4
-  resolution: "lit@npm:3.1.4"
+"lit@npm:^2.0.0 || ^3.0.0, lit@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "lit@npm:3.3.0"
   dependencies:
-    "@lit/reactive-element": "npm:^2.0.4"
-    lit-element: "npm:^4.0.4"
-    lit-html: "npm:^3.1.2"
-  checksum: 10c0/afa4954638e80f627c60bcbd2d800af710b9b3394a36cee9865b5ea5de95b4ec6d33de43ac0bf256b5b7c981d45c7c8ac0c7ddba6fcbd0c67d65986b0279b960
-  languageName: node
-  linkType: hard
-
-"lit@npm:^3.2.1":
-  version: 3.2.1
-  resolution: "lit@npm:3.2.1"
-  dependencies:
-    "@lit/reactive-element": "npm:^2.0.4"
-    lit-element: "npm:^4.1.0"
-    lit-html: "npm:^3.2.0"
-  checksum: 10c0/064a31459fe54ad052c0685d058dd5aef089ddc97a247888ef91a0356dfef60c8cc531e48077bbd2cb4e9f48cb86f0ff0951bb535f1d9f144d2351f253291f66
+    "@lit/reactive-element": "npm:^2.1.0"
+    lit-element: "npm:^4.2.0"
+    lit-html: "npm:^3.3.0"
+  checksum: 10c0/27e6d109c04c8995f47c82a546407c5ed8d399705f9511d1f3ee562eb1ab4bc00fae5ec897da55fb50f202b2a659466e23cccd809d039e7d4f935fcecb2bc6a7
   languageName: node
   linkType: hard
 
@@ -8502,6 +8473,22 @@ __metadata:
   version: 4.1.0
   resolution: "signal-exit@npm:4.1.0"
   checksum: 10c0/41602dce540e46d599edba9d9860193398d135f7ff72cab629db5171516cfae628d21e7bfccde1bbfdf11c48726bc2a6d1a8fb8701125852fbfda7cf19c6aa83
+  languageName: node
+  linkType: hard
+
+"signal-polyfill@npm:^0.2.0":
+  version: 0.2.2
+  resolution: "signal-polyfill@npm:0.2.2"
+  checksum: 10c0/485b0e66d93961454af32e7fbff88130138dffcbf7bce35e5c873d760ceb9ce33a125dd63cc59454c739c43246980515b1162cbe0ebc975a974ee036fb58d18a
+  languageName: node
+  linkType: hard
+
+"signal-utils@npm:^0.21.1":
+  version: 0.21.1
+  resolution: "signal-utils@npm:0.21.1"
+  peerDependencies:
+    signal-polyfill: ^0.2.0
+  checksum: 10c0/e42ea9b4af0b6054eb4e4f7dd97d9fb2c115fba34c024e4ebbf2879785b8e61c1d6562ccddeef185bbd64f80f985b38a3631e35bfdfd317dcd42224c05aed587
   languageName: node
   linkType: hard
 

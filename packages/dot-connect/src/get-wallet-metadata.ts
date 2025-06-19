@@ -6,7 +6,7 @@ import type { Wallet } from "@reactive-dot/core/wallets.js";
  */
 export function getWalletMetadata(wallet: Wallet) {
   const walletConfig = walletConfigs
-    .peek()
+    .get()
     .find((config) => config.selector(wallet));
 
   if (walletConfig === undefined) {

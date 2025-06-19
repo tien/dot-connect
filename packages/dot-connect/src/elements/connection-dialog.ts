@@ -13,7 +13,7 @@ import "./components/list-item.js";
 import "./components/qr-code.js";
 import "./ledger/connected-ledger-accounts-dialog.js";
 import "./ledger/ledger-dialog.js";
-import { computed, effect, signal } from "@lit-labs/preact-signals";
+import { computed, signal } from "@lit-labs/signals";
 import {
   connectWallet,
   disconnectWallet,
@@ -30,6 +30,7 @@ import { classMap } from "lit/directives/class-map.js";
 import { join } from "lit/directives/join.js";
 import { when } from "lit/directives/when.js";
 import { of } from "rxjs";
+import { effect } from "signal-utils/subtle/microtask-effect";
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -45,31 +46,37 @@ export class ConnectionDialog extends DotConnectElement {
   readonly #availableWallets = observableSignal(this, wallets$, []);
 
   readonly #installedWallets = computed(() =>
-    this.#availableWallets.value.filter(
-      (wallet) =>
-        !this.#deepLinkWallets.value.includes(wallet as DeepLinkWallet) &&
-        !this.#hardwareWallets.value.includes(wallet),
-    ),
+    this.#availableWallets
+      .get()
+      .filter(
+        (wallet) =>
+          !this.#deepLinkWallets.get().includes(wallet as DeepLinkWallet) &&
+          !this.#hardwareWallets.get().includes(wallet),
+      ),
   );
 
   readonly #deepLinkWallets = computed(() =>
-    this.#availableWallets.value.filter(
-      (wallet) => wallet instanceof DeepLinkWallet,
-    ),
+    this.#availableWallets
+      .get()
+      .filter((wallet) => wallet instanceof DeepLinkWallet),
   );
 
   readonly #hardwareWallets = computed(() =>
-    this.#availableWallets.value.filter((wallet) =>
-      ["ledger"].includes(wallet.id),
-    ),
+    this.#availableWallets
+      .get()
+      .filter((wallet) => ["ledger"].includes(wallet.id)),
   );
 
   readonly #nonInstalledWallets = computed(() =>
-    walletConfigs.value.filter(
-      (config): config is WalletConfig<InjectedWalletInfo> =>
-        "downloadUrl" in config &&
-        !this.#installedWallets.value.some((wallet) => config.selector(wallet)),
-    ),
+    walletConfigs
+      .get()
+      .filter(
+        (config): config is WalletConfig<InjectedWalletInfo> =>
+          "downloadUrl" in config &&
+          !this.#installedWallets
+            .get()
+            .some((wallet) => config.selector(wallet)),
+      ),
   );
 
   show() {
@@ -110,64 +117,72 @@ export class ConnectionDialog extends DotConnectElement {
       <span slot="title">Connect wallet</span>
       <div slot="content">
         ${when(
-          this.#installedWallets.value.length > 0,
+          this.#installedWallets.get().length > 0,
           () =>
             html`<section>
               <header><h3>Installed</h3></header>
               <ul>
                 ${join(
-                  this.#installedWallets.value.map(
-                    (wallet) => html`<dc-wallet .wallet=${wallet}></dc-wallet>`,
-                  ),
+                  this.#installedWallets
+                    .get()
+                    .map(
+                      (wallet) =>
+                        html`<dc-wallet .wallet=${wallet}></dc-wallet>`,
+                    ),
                   html`<hr />`,
                 )}
               </ul>
             </section>`,
         )}
         ${when(
-          "USB" in globalThis && this.#hardwareWallets.value.length > 0,
+          "USB" in globalThis && this.#hardwareWallets.get().length > 0,
           () =>
             html`<section>
               <header><h3>Hardware</h3></header>
               <ul>
                 ${join(
-                  this.#hardwareWallets.value.map(
-                    (wallet) =>
-                      html`<dc-hardware-wallet
-                        .wallet=${wallet}
-                      ></dc-hardware-wallet>`,
-                  ),
+                  this.#hardwareWallets
+                    .get()
+                    .map(
+                      (wallet) =>
+                        html`<dc-hardware-wallet
+                          .wallet=${wallet}
+                        ></dc-hardware-wallet>`,
+                    ),
                   html`<hr />`,
                 )}
               </ul>
             </section>`,
         )}
         ${when(
-          this.#deepLinkWallets.value.length > 0,
+          this.#deepLinkWallets.get().length > 0,
           () =>
             html`<section>
               <header><h3>Remote</h3></header>
               <ul>
                 ${join(
-                  this.#deepLinkWallets.value.map(
-                    (wallet) =>
-                      html`<dc-deep-link-wallet
-                        .wallet=${wallet}
-                      ></dc-deep-link-wallet>`,
-                  ),
+                  this.#deepLinkWallets
+                    .get()
+                    .map(
+                      (wallet) =>
+                        html`<dc-deep-link-wallet
+                          .wallet=${wallet}
+                        ></dc-deep-link-wallet>`,
+                    ),
                   html`<hr />`,
                 )}
               </ul>
             </section>`,
         )}
         ${when(
-          this.#nonInstalledWallets.value.length > 0,
+          this.#nonInstalledWallets.get().length > 0,
           () =>
             html`<section>
               <header><h3>Popular</h3></header>
               <ul>
                 ${join(
-                  this.#nonInstalledWallets.value
+                  this.#nonInstalledWallets
+                    .get()
                     .filter(DownloadableWallet.shouldRender)
                     .map(
                       (wallet) =>
@@ -192,7 +207,7 @@ abstract class BaseWalletConnection<
   wallet!: TWallet;
 
   protected get walletInfo() {
-    return walletConfigs.value.find((config) => config.selector(this.wallet));
+    return walletConfigs.get().find((config) => config.selector(this.wallet));
   }
 
   readonly #connectedWallets = observableSignal(this, connectedWallets$, []);
@@ -205,7 +220,7 @@ abstract class BaseWalletConnection<
   );
 
   protected readonly connected = computed(() =>
-    this.#connectedWallets.value.includes(this.wallet),
+    this.#connectedWallets.get().includes(this.wallet),
   );
 
   protected readonly pending = signal(false);
@@ -230,7 +245,7 @@ abstract class BaseWalletConnection<
   ];
 
   protected override render() {
-    return html`<dc-list-item ?pending=${this.pending.value}>
+    return html`<dc-list-item ?pending=${this.pending.get()}>
       <div slot="leading" class="icon">
         ${this.walletInfo === undefined
           ? walletIcon({ size: "100%" })
@@ -240,9 +255,9 @@ abstract class BaseWalletConnection<
       <span
         id="connection-status"
         slot="supporting"
-        class=${classMap({ connected: this.connected.value })}
-        >${this.connected.value
-          ? html`Connected | ${this.accounts.value.length}
+        class=${classMap({ connected: this.connected.get() })}
+        >${this.connected.get()
+          ? html`Connected | ${this.accounts.get().length}
               <span class="icon">${usersIcon({ size: "1em" })}</span>`
           : "Not connected"}</span
       >
@@ -261,18 +276,18 @@ export class WalletConnection extends BaseWalletConnection {
     return html`<button
       slot="trailing"
       class=${classMap({
-        success: !this.connected.value,
-        error: this.connected.value,
+        success: !this.connected.get(),
+        error: this.connected.get(),
         sm: true,
       })}
       @click=${async () => {
-        if (this.pending.value) {
+        if (this.pending.get()) {
           return;
         }
 
         try {
-          this.pending.value = true;
-          if (this.connected.value) {
+          this.pending.set(true);
+          if (this.connected.get()) {
             await disconnectWallet(this.wallet);
           } else {
             await connectWallet(this.wallet);
@@ -280,11 +295,11 @@ export class WalletConnection extends BaseWalletConnection {
         } catch (error) {
           console.error(error);
         } finally {
-          this.pending.value = false;
+          this.pending.set(false);
         }
       }}
     >
-      ${this.connected.value ? "Disconnect" : "Connect"}
+      ${this.connected.get() ? "Disconnect" : "Connect"}
     </button>`;
   }
 }
@@ -297,8 +312,8 @@ export class DeepLinkWalletConnection extends BaseWalletConnection<DeepLinkWalle
     super();
 
     effect(() => {
-      if (this.connected.value) {
-        this.#uri.value = undefined;
+      if (this.connected.get()) {
+        this.#uri.set(undefined);
       }
     });
   }
@@ -307,31 +322,31 @@ export class DeepLinkWalletConnection extends BaseWalletConnection<DeepLinkWalle
     return html`<button
       slot="trailing"
       class=${classMap({
-        success: !this.connected.value,
-        error: this.connected.value,
+        success: !this.connected.get(),
+        error: this.connected.get(),
         sm: true,
       })}
       @click=${async () => {
-        if (this.pending.value) {
+        if (this.pending.get()) {
           return;
         }
 
         try {
-          this.pending.value = true;
-          if (this.connected.value) {
+          this.pending.set(true);
+          if (this.connected.get()) {
             await disconnectWallet(this.wallet);
           } else {
             const { uri } = await this.wallet.initiateConnectionHandshake();
-            this.#uri.value = uri;
+            this.#uri.set(uri);
           }
         } catch (error) {
           console.error(error);
         } finally {
-          this.pending.value = false;
+          this.pending.set(false);
         }
       }}
     >
-      ${this.connected.value ? "Disconnect" : "Connect"}
+      ${this.connected.get() ? "Disconnect" : "Connect"}
     </button>`;
   }
 
@@ -357,23 +372,23 @@ export class DeepLinkWalletConnection extends BaseWalletConnection<DeepLinkWalle
   protected override render() {
     return html`<div style="display: content;">
       ${super.render()}
-      ${this.#uri.value === undefined
+      ${this.#uri.get() === undefined
         ? nothing
         : html`<dc-dialog
             ?open=${true}
-            @close=${() => (this.#uri.value = undefined)}
+            @close=${() => this.#uri.set(undefined)}
           >
             <span slot="title">Scan QR code</span>
             <div slot="content">
               <dc-qr-code
-                .uri=${this.#uri.value}
+                .uri=${this.#uri.get()}
                 .logoSrc=${this.walletInfo?.logo.href}
               ></dc-qr-code>
               <div id="url-container">
                 <button
                   class="text info"
                   @click=${() =>
-                    globalThis.navigator.clipboard.writeText(this.#uri.value!)}
+                    globalThis.navigator.clipboard.writeText(this.#uri.get()!)}
                 >
                   Copy link ${copyIcon({ size: "1em" })}
                 </button>
@@ -393,13 +408,13 @@ export class HardwareWalletConnection extends BaseWalletConnection<LedgerWallet>
     return html`<button
       slot="trailing"
       class=${classMap({
-        success: !this.connected.value,
-        info: this.connected.value,
+        success: !this.connected.get(),
+        info: this.connected.get(),
         sm: true,
       })}
-      @click=${() => (this.open = this.connected.value ? "manage" : "connect")}
+      @click=${() => (this.open = this.connected.get() ? "manage" : "connect")}
     >
-      ${this.connected.value ? "Manage" : "Connect"}
+      ${this.connected.get() ? "Manage" : "Connect"}
     </button>`;
   }
 

@@ -78,9 +78,9 @@ export class ConnectedLedgerAccountListItem extends DotConnectElement {
       complete: (account) => {
         const name = `Ledger account ${this.accountPath + 1}`;
 
-        const connected = this.connectedAccounts.value.some(
-          (connectedAccount) => connectedAccount.id === account.id,
-        );
+        const connected = this.connectedAccounts
+          .get()
+          .some((connectedAccount) => connectedAccount.id === account.id);
 
         return html`<dc-account-list-item
           .address=${genericAccountId.dec(account.publicKey)}
