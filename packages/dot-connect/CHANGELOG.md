@@ -1,5 +1,11 @@
 # dot-connect
 
+## 0.19.1
+
+### Patch Changes
+
+- [#346](https://github.com/tien/dot-connect/pull/346) [`5e8626a`](https://github.com/tien/dot-connect/commit/5e8626afe838eeeabdd31a25bf1606c2ac204ac4) Thanks [@tien](https://github.com/tien)! - Resolved an issue where certain network accounts were not included in the total count calculation.
+
 ## 0.19.0
 
 ### Minor Changes
