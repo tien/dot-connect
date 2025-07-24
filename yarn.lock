@@ -1587,12 +1587,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lit/task@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "@lit/task@npm:1.0.2"
+"@lit/task@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@lit/task@npm:1.0.3"
   dependencies:
     "@lit/reactive-element": "npm:^1.0.0 || ^2.0.0"
-  checksum: 10c0/888a1b7fbd522d64028c8592feb236ac7bbd57678a4a82e5934abee9c33fe0567af014d72fb6ca0edf6866d9ef182df7ca15500ba493aafd6c26d2e832f341aa
+  checksum: 10c0/538ae891209bcfd6d0dcc20d2314b1233609d97caf59d3e3c69a7a83a7fa070f539d58ea903060b2bb3fd9cf3cab528acb3fcc258a6e2e5091aff1b6191ccabc
   languageName: node
   linkType: hard
 
@@ -4864,7 +4864,7 @@ __metadata:
     "@eslint/js": "npm:^9.31.0"
     "@lit-labs/signals": "npm:^0.1.2"
     "@lit/react": "npm:^1.0.7"
-    "@lit/task": "npm:^1.0.2"
+    "@lit/task": "npm:^1.0.3"
     "@reactive-dot/core": "npm:^0.43.2"
     "@reactive-dot/wallet-ledger": "npm:^0.16.43"
     "@tsconfig/recommended": "npm:^1.0.10"
