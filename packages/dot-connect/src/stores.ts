@@ -1,4 +1,3 @@
-import { genericChainSpec } from "./const.js";
 import { wallets as rawWalletConfigs } from "./wallets/index.js";
 import { signal } from "@lit-labs/signals";
 import {
@@ -22,6 +21,6 @@ export const wallets$ = walletsOrProviders$.pipe(
 
 export const connectedWallets$ = getConnectedWallets(wallets$);
 
-export const accounts$ = getAccounts(wallets$, genericChainSpec);
+export const accounts$ = getAccounts(wallets$);
 
 export const walletConfigs = signal(rawWalletConfigs);

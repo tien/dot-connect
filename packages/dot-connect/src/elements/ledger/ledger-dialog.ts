@@ -1,4 +1,3 @@
-import { genericChainSpec } from "../../const.js";
 import { observableSignal } from "../../observable-signal.js";
 import "../components/account-list-item.js";
 import { DotConnectElement } from "../components/element.js";
@@ -36,7 +35,7 @@ export class LedgerDialog extends DotConnectElement {
     if (changedProperties.has("wallet")) {
       this.connectedAccounts = observableSignal(
         this,
-        getAccounts([this.wallet], genericChainSpec),
+        getAccounts([this.wallet]),
         [],
       );
     }
