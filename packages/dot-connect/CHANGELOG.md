@@ -1,5 +1,11 @@
 # dot-connect
 
+## 0.20.0
+
+### Minor Changes
+
+- [#348](https://github.com/tien/dot-connect/pull/348) [`304ab16`](https://github.com/tien/dot-connect/commit/304ab16b1d3a046683111bfa08a7ecba7335e37b) Thanks [@tien](https://github.com/tien)! - Added support for a dark color scheme for the Bittensor logo.
+
 ## 0.19.1
 
 ### Patch Changes
