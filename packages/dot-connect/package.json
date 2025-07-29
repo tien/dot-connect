@@ -37,7 +37,7 @@
   "dependencies": {
     "@lit-labs/signals": "^0.1.2",
     "@lit/react": "^1.0.7",
-    "@lit/task": "^1.0.2",
+    "@lit/task": "^1.0.3",
     "dot-identicon": "workspace:^",
     "lit": "^3.3.0",
     "qrcode": "^1.5.4",
