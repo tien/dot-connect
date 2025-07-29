@@ -14,6 +14,13 @@ export const bittensor: WalletConfig<InjectedWalletInfo> = {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 34.44 36.91"
     >
+      <style>
+        @media (prefers-color-scheme: dark) {
+          :root {
+            fill: #fff;
+          }
+        }
+      </style>
       <path
         d="M20.88,28.32V13.19c0-3.78-3.12-6.86-6.9-6.86V30.51c0,4.81,4.08,6.4,6.6,6.4,2.09,0,3.27-.36,4.69-1.36-3.98-.42-4.39-2.82-4.39-7.23Z"
       />
