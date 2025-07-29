@@ -35,7 +35,7 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "@lit-labs/signals": "^0.1.2",
+    "@lit-labs/signals": "^0.1.3",
     "@lit/react": "^1.0.7",
     "@lit/task": "^1.0.2",
     "dot-identicon": "workspace:^",
