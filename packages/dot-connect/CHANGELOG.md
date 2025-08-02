@@ -1,5 +1,18 @@
 # dot-connect
 
+## 0.21.0
+
+### Minor Changes
+
+- [#350](https://github.com/tien/dot-connect/pull/350) [`a67bfcd`](https://github.com/tien/dot-connect/commit/a67bfcd3371f9a2d0cc43a7c64d349a35f844312) Thanks [@tien](https://github.com/tien)! - Updated the wallet identifier for Nova Wallet. Nova Wallet now correctly injects its own wallet instance, eliminating the need for the Polkadot.{js} hack.
+
+### Patch Changes
+
+- [#352](https://github.com/tien/dot-connect/pull/352) [`092918a`](https://github.com/tien/dot-connect/commit/092918aacbc58f725bc8f1c79e4e80185677f7a6) Thanks [@tien](https://github.com/tien)! - Bumped dependencies.
+
+- Updated dependencies [[`092918a`](https://github.com/tien/dot-connect/commit/092918aacbc58f725bc8f1c79e4e80185677f7a6)]:
+  - dot-identicon@0.1.3
+
 ## 0.20.0
 
 ### Minor Changes

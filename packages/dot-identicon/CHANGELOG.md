@@ -1,5 +1,11 @@
 # dot-identicon
 
+## 0.1.3
+
+### Patch Changes
+
+- [#352](https://github.com/tien/dot-connect/pull/352) [`092918a`](https://github.com/tien/dot-connect/commit/092918aacbc58f725bc8f1c79e4e80185677f7a6) Thanks [@tien](https://github.com/tien)! - Bumped dependencies.
+
 ## 0.1.2
 
 ### Patch Changes
