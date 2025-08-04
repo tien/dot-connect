@@ -35,7 +35,7 @@ const style = computed(() => ({
   "--dc-error-color": `light-dark(${error.value}, ${errorDark.value})`,
   "--dc-max-border-radius": maxBorderRadius.value + "px",
   "--dc-headline-font-family": "Unbounded, sans-serif",
-  "--dc-body-font-family": "Inter, sans-serif",
+  "--dc-body-font-family": "Manrope, sans-serif",
 }));
 
 function toCss(style: Record<string, any>) {
