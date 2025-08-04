@@ -1,5 +1,11 @@
 # dot-connect
 
+## 0.22.0
+
+### Minor Changes
+
+- [#353](https://github.com/tien/dot-connect/pull/353) [`1de6441`](https://github.com/tien/dot-connect/commit/1de644111dea05001c1ada8898c7441f72d29cf5) Thanks [@tien](https://github.com/tien)! - Updated default fonts.
+
 ## 0.21.0
 
 ### Minor Changes
