@@ -7,9 +7,15 @@ export abstract class DotConnectElement extends SignalWatcher(LitElement) {
       --headline-font-family: var(
         --dc-headline-font-family,
         Unbounded,
+        system-ui,
         sans-serif
       );
-      --body-font-family: var(--dc-body-font-family, Inter, sans-serif);
+      --body-font-family: var(
+        --dc-body-font-family,
+        Manrope,
+        system-ui,
+        sans-serif
+      );
 
       --primary-color: var(--dc-primary-color, #ff2670);
       --on-primary-color: var(--dc-on-primary-color, #ffffff);
