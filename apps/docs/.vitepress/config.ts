@@ -31,7 +31,7 @@ export default defineConfig({
       { text: "Theming", link: "/theming" },
     ],
     socialLinks: [
-      { icon: "github", link: "https://github.com/tien/dot-connect" },
+      { icon: "github", link: "https://github.com/buffed-labs/dot-connect" },
     ],
   },
 });

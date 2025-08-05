@@ -2,12 +2,12 @@
   "private": true,
   "homepage": "https://dotconnect.dev/",
   "bugs": {
-    "url": "https://github.com/tien/dot-connect/issues",
+    "url": "https://github.com/buffed-labs/dot-connect/issues",
     "email": "tien.nguyenkhac@icloud.com"
   },
   "license": "LGPL-3.0-or-later",
   "author": "Tiến Nguyễn Khắc <tien.nguyenkhac@icloud.com> (https://tien.zone/)",
-  "repository": "github:tien/dot-connect",
+  "repository": "github:buffed-labs/dot-connect",
   "type": "module",
   "packageManager": "yarn@4.5.3",
   "volta": {
