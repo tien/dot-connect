@@ -13,7 +13,7 @@ hero:
       link: /getting-started
     - theme: alt
       text: View on GitHub
-      link: https://github.com/tien/dot-connect
+      link: https://github.com/buffed-labs/dot-connect
 ---
 
 <script setup>
