@@ -54,7 +54,7 @@
     "eslint": "^9.32.0",
     "polkadot-api": "^1.15.2",
     "typescript": "^5.9.2",
-    "typescript-eslint": "^8.38.0"
+    "typescript-eslint": "^8.39.0"
   },
   "peerDependencies": {
     "@reactive-dot/core": ">= 0.30.x",
