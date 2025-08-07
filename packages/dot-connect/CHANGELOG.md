@@ -1,5 +1,11 @@
 # dot-connect
 
+## 0.22.1
+
+### Patch Changes
+
+- [#359](https://github.com/buffed-labs/dot-connect/pull/359) [`2e2c486`](https://github.com/buffed-labs/dot-connect/commit/2e2c486eab7763217643fd5e907ff38aac63cf74) Thanks [@tien](https://github.com/tien)! - Fixed incorrect ledger account count.
+
 ## 0.22.0
 
 ### Minor Changes
