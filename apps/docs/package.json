@@ -8,7 +8,7 @@
     "preview": "vitepress preview"
   },
   "dependencies": {
-    "@reactive-dot/core": "^0.46.0",
+    "@reactive-dot/core": "^0.46.1",
     "@reactive-dot/wallet-ledger": "^0.16.46",
     "@reactive-dot/wallet-mimir": "^0.1.16",
     "@reactive-dot/wallet-walletconnect": "^0.17.27",
