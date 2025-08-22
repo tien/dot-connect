@@ -38,14 +38,14 @@
     "lit": "^3.3.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.32.0",
-    "@polkadot-api/substrate-bindings": "^0.15.1",
+    "@eslint/js": "^9.33.0",
+    "@polkadot-api/substrate-bindings": "^0.16.0",
     "@tsconfig/recommended": "^1.0.10",
     "@tsconfig/strictest": "^2.0.5",
-    "@types/react": "^19.1.9",
-    "eslint": "^9.32.0",
+    "@types/react": "^19.1.10",
+    "eslint": "^9.33.0",
     "typescript": "^5.9.2",
-    "typescript-eslint": "^8.39.0"
+    "typescript-eslint": "^8.40.0"
   },
   "peerDependencies": {
     "react": ">= 18"
